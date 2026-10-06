@@ -1,0 +1,687 @@
+---
+title: "Aula 8 – Rmarkdown + Github"
+subtitle: "<br>P_NT265A/NE403 - Análise de dados e apresentação de gráficos usando a linguagem R"
+author: "[Maurício Vancine](https://mauriciovancine.github.io)"
+date: "11/26/2026"
+date-format: long
+format: 
+  revealjs:
+    theme: [custom.scss]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    preview-links: false
+    chalkboard: true
+    logo: "https://www.unicamp.br/wp-content/uploads/sites/33/2024/09/uec.svg"
+    execute:
+      echo: true
+      eval: true
+      warning: false
+      message: false
+editor: source
+lang: pt-br
+---
+
+
+# Conferindo os computadores
+
+# 
+![](img/general_hard_soft.png){fig-align='center'}
+
+:::footer
+[Café com Código](https://www.instagram.com/cafecomcodigo/?hl=pt)
+:::
+
+## Conferindo os computadores
+
+<br>
+**R (>4.5.x)**  
+[https://www.r-project.org](https://www.r-project.org/)
+
+<br>
+
+**RStudio (>2025.9.x)**  
+[https://www.rstudio.com](https://www.rstudio.com/)
+
+<br>
+
+**git (>2.34.x)**  
+[https://git-scm.com](https://git-scm.com/)
+
+![](img/r_logo.svg){.absolute width=20% right=150 top=100}
+![](img/rstudio_logo.svg){.absolute width=35% right=50 top=300}
+![](img/git_logo.png){.absolute width=30% right=100 top=470}
+
+# Prática 1
+
+## Prática 1
+
+**GitHub**
+
+Vamos criar uma conta no GitHub (caso não possuam)
+
+![](img/github_logo.png){.absolute width=50% right=250 top=200}
+
+:::footer
+[GitHub](https://github.com)
+:::
+
+## Prática 1
+
+**GitHub**
+
+Salvem ou recuperem essas informações!
+
+<br><br>
+
+**username**: mauriciovancine  
+**email**: mauricio.vancine@gmail.com  
+**senha**: !@#$%¨&*+
+
+![](img/gif_gandalf.gif){.absolute width=40% right=-100 top=300}
+
+# Prática 2
+
+## Criando um repositório
+
+**Criar repositório**: `Perfil > Repositories > New`
+
+![](img/github_criar_repositorio01.png){fig-align='center'}
+
+## Criando um repositório
+
+**Criar um repositório**
+
+1. Nome do repositório
+1. Descrição (opcional)
+1. Público ou privado
+1. Add um README.md
+1. Add .gitignore
+1. Licença
+1. Criar repositório
+
+![](img/github_criar_repositorio02.png){.absolute width=60% right=-30 top=120}
+
+## Prática 2
+
+**Criem um repositório de exemplo**
+
+<br>
+
+1. Criem um repositório chamado `teste`
+1. Criem um arquivo `README.md` nesse repositório
+1. Preencham com algum detalhe do curso neste `README.md`
+
+# Prática 3
+
+## Prática 3
+
+**Criem uma página inicial para o perfil do GitHub**
+
+![](https://www.alura.com.br/artigos/assets/como-criar-um-readme-para-seu-perfil-github/imagem1.gif)
+
+::: footer
+[Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
+:::
+
+## Prática 3
+
+**Criem uma página inicial para o perfil do GitHub**
+
+<br>
+
+1. Criem um repositório com o nome de usuário de vocês (e.g. `mauriciovancine`)
+1. Criem um arquivo `README.md` nesse repositório
+1. Preencham com algum conteúdo em Markdown
+1. Comitem e voltem para a página de perfil
+
+::: footer
+[Como criar um README para o seu perfil do GitHub](https://www.alura.com.br/artigos/como-criar-um-readme-para-seu-perfil-github?srsltid=AfmBOopGVNPqjqVMXQ42hTQpH0exadVwz6U8jsiiNDAyehD0k--sct7e)
+:::
+
+# Prática 4
+
+## Prática 4
+
+**RStudio**
+
+![](img/rstudio.png){fig-align='center'}
+
+## Prática 4
+
+**RStudio**
+
+::: {style="font-size: 80%;"}
+- `Tools > Global Options > Git/SVN`
+:::
+
+![](img/rstudio_git_config01.png){.absolute width=80% right=0 top=200}
+
+## Prática 4
+
+**RStudio**
+
+::: {style="font-size: 80%;"}
+- Marque **Enable version control interface...**
+- **Git executable**:
+:::
+
+::: {style="font-size: 65%;"}
+- Windows: `C:/Program Files/Git/bin/git.exe`
+- Ubuntu: `/usr/bin/git`
+- Mac: `/usr/bin/git`
+:::
+
+![](img/rstudio_git_config02.png){.absolute width=50% right=-100 top=180}
+
+## Prática 4
+
+**RStudio**
+
+Chave SSH
+
+::: {style="font-size: 80%;"}
+1. Create SSH key (ED25519) (talvez RSA?)
+1. View public key
+1. Copiar: Ctrl + C
+:::
+
+![](img/rstudio_git_config03.jpg){.absolute width=50% right=-100 top=180}
+![](img/github_brave.jpg){.absolute width=45% right=500 top=400}
+![](img/general_key.png){.absolute width=13% right=800 top=500}
+
+## Prática 4
+
+**GitHub**
+
+::: {style="font-size: 80%;"}
+- **Add chave SSH**: `Perfil > Settings > SSH and GPG keys > New SSH key`
+:::
+
+![](img/github_ssh_key.png){fig-align='center'}
+
+::: footer
+[Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+:::
+
+## Prática 4
+
+**GitHub**
+
+::: {style="font-size: 80%;"}
+- Title: um nome qualquer (eu add por nome de PC ou notebook)
+- Key: colar (`ctrl + v`)
+- Add SSH key
+:::
+
+![](img/github_ssh_key_add.png){.absolute width=85% right=-200 top=230}
+
+::: footer
+[Add ao GitHub](https://docs.github.com/en/authentication/connecting-to-github-with-ssh/adding-a-new-ssh-key-to-your-github-account)
+:::
+
+## Prática 4
+
+**git**
+
+::: {style="font-size: 80%;"}
+- `git config`: definir as configurações de usuário do git
+- Terminal (colar com `ctrl + shift + v`)
+:::
+
+```{r eval=FALSE}
+$ git config --list
+$ git config --global user.name "meu nome"
+$ git config --global user.email "email@dominio.com"
+$ git config --list
+```
+
+![](img/git_config.png){fig-align='center'}
+
+# Controle de versão na prática
+
+## Controle de versão na prática
+
+**Duas formas de trabalhar com o git e GitHub**
+
+::: {style="font-size: 80%;"}
+1. Iniciando um projeto em nosso computador - localmente (git)
+1. Iniciando por um repositório remoto - remotamente (GitHub)
+:::
+
+![](img/github_logo.png){.absolute width=15% right=800 top=300}
+![](img/git_operation.png){.absolute width=52% right=250 top=260}
+![](img/git_logo.png){.absolute width=20% right=70 top=570}
+
+## Controle de versão na prática
+
+![](img/git_github_workflow.png){fig-align='center'}
+![](img/git_folder_project.png){.absolute width=5% right=220 top=630}
+
+## Controle de versão na prática
+
+![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
+
+## Controle de versão na prática
+
+![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
+![](img/github_logo.png){.absolute width=30% right=700 top=150}
+![](img/git_folder_project.png){.absolute width=15% right=780 top=520}
+![](img/git_logo.png){.absolute width=25% right=-50 top=550}
+
+# Prática 5
+
+## Prática 5
+
+**Diretório local**
+
+1. Criem uma pasta chamada: `teste_local` 
+1. Abram o RStudio
+1. Selecionem o caminho desta pasta
+1. Mudem o diretório para esta pasta (`setwd("teste_local")`)
+1. Criem um arquivo dentro desta pasta `script.R`
+
+## Prática 5
+
+**Diretório local**
+
+1. Abram o `Terminal` do RStudio
+
+![](img/rstudio_terminal01.png){fig-align='center'}
+
+## Prática 5
+
+**Diretório local**
+
+1. Abram o `Terminal` do RStudio
+
+![](img/rstudio_terminal02.png){fig-align='center'}
+
+## Prática 5
+
+**Diretório local**
+
+1. Abram o `Terminal` do RStudio
+1. No `Terminal`, rodem: `cd 'caminho/diretorio'`
+1. No `Terminal`, rodem: `git init`
+1. No `Terminal`, rodem: `git add -Av`
+1. No `Terminal`, rodem: `git commit -m 'add script.R'`
+1. Deletem esse script, inclusive da lixeira
+1. No `Terminal`, rodem: `git restore script.R`
+1. Testemunhem o poder do git...
+
+#
+![](img/gif_cat_ohh.gif){fig-align='center'}
+
+# Prática 6
+
+## Prática 6
+
+**Forkar um diretório remoto**
+
+1. Forken o repositório `syllabus-text` da disciplina
+
+![](img/github_fork_site.png){fig-align='center'}
+
+::: footer
+[https://github.com/course-intror/syllabus-text](https://github.com/course-intror/syllabus-text)
+:::
+
+# Prática 7
+
+## Iniciando remotamente
+
+**Clonar**: download de um **repositório remoto** (e.g. GitHub) para o seu **repositório local** (computador)
+
+![](img/git_clone_example.png){.absolute width=80% right=130 top=200}
+
+## Iniciando remotamente
+
+Primeiro, vamos **criar uma pasta** chamada `github`
+
+<br>
+
+```{r eval=FALSE}
+".                               # raiz"
+"    ├── home/                   # home"
+"        ├── data/               # dados" 
+"            ├── github/         # todos os repositorios"
+```
+
+![](img/diretorio.png){.absolute width=100% right=30 top=400}
+
+## Prática 7
+
+Usando o **Projeto do RStudio** para clonar pelo **SSH** (configurado anteriormente)
+
+![](img/git_rstudio.png){.absolute width=50% right=200 top=210}
+
+## Prática 7
+
+Criar um **Projeto R** com controle de versão
+
+`File > New Project > Version Control`
+
+![](img/rstudio_git_create01.png){.absolute width=100% right=20 top=210}
+
+## Prática 7
+
+Escolher **clonar repositório** do GitHub
+
+`Git`
+
+![](img/rstudio_git_create02.png){.absolute width=100% right=20 top=210}
+
+## Prática 7
+
+Preencher com dados do repositório do **GitHub**
+
+`Repository URL` 
+
+![](img/rstudio_git_create03.png){.absolute width=100% right=20 top=210}
+
+## Prática 7
+
+Preencher:
+
+::: {style="font-size: 80%;"}
+- Repository URL: `git@github.com:mauriciovancine/teste.git`
+- Project directory name: `preenchimento automático`
+- Create project as subdirectory of: `/home/mude/data/github`
+- Se uma janela aparecer, basta digitar "yes"
+- Aguardar o download
+:::
+
+![](img/git_clone_rstudio.png){.absolute width=40% right=100 top=380}
+
+# Versionamento
+
+## Versionamento
+
+![](img/git_add_commit.png){.absolute width=90% right=40 top=90}
+
+![](img/github_logo.png){.absolute width=20% right=-180 top=160}
+![](img/github_logo.png){.absolute width=20% right=970 top=160}
+![](img/git_folder_project.png){.absolute width=15% right=990 top=500}
+![](img/git_logo.png){.absolute width=20% right=-180 top=530}
+
+## Versionamento
+
+**Comandos git** para o fluxo de trabalho dos repositórios
+
+![](img/git_workflow.png){.absolute width=100% right=50 top=150}
+![](img/git_folder_project.png){.absolute width=15% right=1070 top=350}
+![](img/github_logo.png){.absolute width=20% right=-180 top=350}
+![](img/git_logo.png){.absolute width=20% right=570 top=610}
+
+## Versionamento
+
+**Fluxo do versionamento**
+
+![](img/git_add_commit_flow.png){.absolute width=70% right=130 top=200}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## Versionamento
+
+**Simplificado**
+
+![](img/git_projet.png){fig-align='center'}
+
+# Prática 8
+
+## Interface Gráfica do RStudio
+
+**Git Panel**
+
+- RStudio tem um **cliente Git** na aba "Git"
+- Esse painel aparece em **projetos** que estejam **versionados com git**
+
+![](img/rstudio_git_pane01.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Staged**
+
+![](img/rstudio_git_pane06.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Staged e File status**
+
+<br>
+
+![](img/rstudio_git_status.png){fig-align='center'}
+![](img/rstudio_git_pane06.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git Panel - Diff - Changes: Revisar mudanças**
+
+![](img/rstudio_git_pane04.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git Panel - Diff - History: Histórico de mudanças**
+
+![](img/rstudio_git_pane05.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Commit**
+
+![](img/rstudio_git_pane07.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Commit**
+
+![](img/rstudio_git_pane08.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Push e Pull**
+
+![](img/rstudio_git_pane09.png){fig-align='center'}
+
+# Ambiente virtual
+
+## Prática 9
+
+**renv**
+
+<br>
+
+:::: {.columns}
+::: {.column width=60%}
+```{r eval=FALSE}
+# Inicializar ambiente renv
+renv::init()
+
+# Verificar o estado atual dos pacotes
+renv::status()
+
+# Instalar pacotes usando o renv
+renv::install("tidyverse")
+
+# Registrar estado atual dos pacotes
+renv::snapshot()
+
+# Restaurar ambiente em outra máquina
+renv::restore()
+```
+:::
+::: {.column width=40%}
+<center>
+<img src="img/package_renv.svg" style="width:100%"/>
+</center>
+:::
+::::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+# Documentação no R
+
+## Prática 10
+
+**Arquivo `Quarto` (.qmd) - Anatomia**
+
+::: columns
+::: {.column width="40%"}
+<br><br><br>
+<img src="img/quarto-anatomia.png" style="width:100%"/>
+:::
+
+::: {.column width="60%"}
+::: {style="font-size: 70%;"}
+<br><br>
+
+- YAML (*Yet Another Markup Language*): cabeçalho (início do `.qmd`) onde são inseridas as configurações do documento (formatação, data, título, autor etc.), delimitado por `---` e `---`
+- Texto: usa markdown como sua sintaxe de documento principal
+- Códigos (*chunks*): blocos de códigos onde se insere códigos em R, Python, Julia e outros, delimitado por ` ```{r} ` e ` ``` `
+:::
+:::
+:::
+
+::: footer
+[E aí, vamos falar de Quarto?](https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Anatomia**
+
+::: columns
+::: {.column width="40%"}
+<br><br><br>
+<img src="img/quarto-anatomia.png" style="width:100%"/>
+:::
+
+::: {.column width="60%"}
+::: {style="font-size: 60%;"}
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|1-6|8-15|17-29|"
+
+---
+title: "Hello, Penguins"
+format: html
+execute:
+  echo: false
+---
+
+## Meet the penguins
+
+The __penguins__ data contains size measurements for 
+penguins from three islands in the Palmer Archipelago, 
+Antarctica.
+
+The _three_ species of penguins have quite distinct 
+distributions of physical dimensions (@fig-penguins).
+
+# ```{r}
+#| label: fig-penguins
+#| fig-cap: "Dimensions of penguins across three species."
+#| warning: false
+library(tidyverse, quietly = TRUE)
+library(palmerpenguins)
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(
+    values = c("darkorange", "purple", "cyan4")) +
+  theme_minimal()
+# ```
+```
+
+:::
+:::
+:::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/), [E aí, vamos falar de Quarto?](https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Anatomia**
+
+<br>
+
+::::: columns
+::: {.column .center width="55%"}
+::: {style="font-size: 55%;"}
+```{r}
+#| eval: false
+#| echo: true
+
+---
+title: "Hello, Penguins"
+format: html
+execute:
+  echo: false
+---
+
+## Meet the penguins
+
+The __penguins__ data contains size measurements for 
+penguins from three islands in the Palmer Archipelago, 
+Antarctica.
+
+The _three_ species of penguins have quite distinct 
+distributions of physical dimensions (@fig-penguins).
+
+#| label: fig-penguins
+#| fig-cap: "Dimensions of penguins across three species."
+#| warning: false
+library(tidyverse, quietly = TRUE)
+library(palmerpenguins)
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(
+    values = c("darkorange", "purple", "cyan4")) +
+  theme_minimal()
+
+```
+:::
+:::
+
+::: {.column .center width="45%"}
+![](img/penguins_render.png)
+:::
+:::::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Muito obrigado!
+
+::: columns
+::: {.column width="50%"}
+**Agradecimentos**:
+
+- [Beatriz Milz](https://beatrizmilz.com/)
+
+![](img/fapesp.png){.absolute width=40% right=650 top=350}
+:::
+
+::: {.column width="50%"}
+**Contato**:
+
+[mauricio.vancine@gmail.com]()
+[mauriciovancine.github.io](https://mauriciovancine.github.io)
+
+![](img/gif_frogs.gif){.absolute width=40% right=90 top=260}
+:::
+:::
+
+:::footer
+Slides por [Maurício Vancine](https://mauriciovancine.github.io), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-git-github-rstudio).
+:::

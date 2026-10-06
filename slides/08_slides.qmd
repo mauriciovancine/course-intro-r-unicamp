@@ -1,0 +1,1651 @@
+---
+title: "Aula 8 – Rmarkdown + Github"
+subtitle: "<br>P_NT265A/NE403 - Análise de dados e apresentação de gráficos usando a linguagem R"
+author: "[Maurício Vancine](https://mauriciovancine.github.io)"
+date: "11/26/2026"
+date-format: long
+format: 
+  revealjs:
+    theme: [custom.scss]
+    slide-number: c/t
+    show-slide-number: all
+    hash-type: number
+    preview-links: false
+    chalkboard: true
+    logo: "https://www.unicamp.br/wp-content/uploads/sites/33/2024/09/uec.svg"
+    execute:
+      echo: true
+      eval: true
+      warning: false
+      message: false
+editor: source
+lang: pt-br
+---
+
+## Conteúdo
+
+<br>
+
+- Reprodutibilidade
+- Controle de versão: git e GitHub
+- Ambiente reprodutível: `renv`
+- Documentos dinâmicos: `Quarto`
+- Aplicações web (apps): `Shiny`
+
+![](img/github_logo.png){.absolute width=30% right=100 top=100}
+![](img/package_renv.svg){.absolute width=30% right=-180 top=250}
+![](img/package_quarto.png){.absolute width=25% right=140 top=400}
+
+## Repositório do GitHub
+
+<br>
+
+[https://github.com/mauriciovancine/course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
+
+<br>
+
+<center>
+<img src="img/github_logo2.png" style="width:60%"/>
+</center>
+
+::: footer
+[course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
+:::
+
+## Reprodutibilidade
+
+Capacidade de **recriar uma análise** e **obter os mesmos resultados** com os mesmos dados e códigos
+
+![](img/reprodutibilidade.png){.absolute width=70% right=150 top=180}
+
+::: footer
+[Mendes-Da-Silva (2023)](https://doi.org/10.1590/S0034-759020230408)
+:::
+
+## Reprodutibilidade
+
+**Por que reprodutibilidade importa?**
+
+<br>
+
+- **Transparência científica**: todos podem verificar e entender o processo  
+- **Reutilização de código e dados**: economiza tempo e reduz erros  
+- **Colaboração eficiente**: equipes trabalham com o mesmo ambiente  
+- **Base sólida**: análises confiáveis, auditáveis e atualizáveis  
+
+## Reprodutibilidade
+
+**Pilares**
+
+::: {style="font-size: 70%;"}
+
+1. **Organização do projeto**  
+   - Diretórios: `/data`, `/R`, `/output`, `/scripts`  
+   
+2. **Controle de versão**  
+   - git + GitHub para rastrear mudanças  
+
+3. **Gerenciamento de dependências**  
+   - `renv`: fixar versões dos pacotes  
+
+4. **Documentação clara**  
+   - Descrever métodos e passos no `README` ou documento `Quarto`  
+
+5. **Automação e repetição**  
+   - Scripts reproduzem todo o fluxo das análises
+   - Web applications (apps) `Shiny` para interação on-line
+:::
+
+# 1. Organização do projeto
+
+## Organização do projeto
+
+**Projeto R (.Rproj)**
+
+::: {style="font-size: 70%;"}
+-   Facilita o trabalho em múltiplos ambientes
+-   Cada projeto possui seu diretório, documentos e workspace
+-   Permite controle de versão (git e GitHub)
+:::
+
+![](img/rproject01.png){.absolute width="450" right="500" top="300"}
+![](img/rproject02.png){.absolute width="450" right="0" top="300"}
+
+::: footer
+[Foundations of data analysis with R](https://thegraphcourses.org/courses/r-foundations-beta/topics/rstudio-projects/)
+:::
+
+## Organização do projeto
+
+**Projeto R (.Rproj)**
+
+<center>
+<img src="img/proj_rmd.gif" style="width:90%"/>
+</center>
+
+## Organização do projeto
+
+**Diretórios e nomes de arquivos**
+
+<center>
+<img src="img/directory_template_general.png" style="width:100%"/>
+</center>
+
+::: footer
+[Boas Práticas e Ferramentas da Ciência Aberta na Ecologia - BIE5798](https://gabrielnakamura.github.io/USP_reproducibility_BIE5798/index.html)
+:::
+
+# 2. Controle de versão
+
+# 
+![](img/git_work.png){fig-align='center'}
+
+## Controle de versão
+
+Quem nunca...
+
+![](img/git_file_version.png){fig-align='center'}
+
+:::footer
+[PhD Comics](https://phdcomics.com/)
+:::
+
+## Controle de versão
+
+Manejar projetos **individualmente**
+
+<br><br>
+![](img/git_one_brantch.png){.absolute width=80% right=100 top=250}
+
+## Controle de versão
+
+Manejar projetos **compartilhados**
+
+![](img/git_multi_brantch.png){.absolute width=90% right=50 top=200}
+
+## Controle de versão
+
+Manejar projetos **no tempo**
+
+![](img/git_time.png){fig-align='center'}
+
+:::footer
+[Creating and Hosting a Personal Site on GitHub](https://jmcglone.com/guides/github-pages/)
+:::
+
+## Controle de versão
+
+Principal **ferramenta** utilizada em grandes projetos
+
+![](img/git_article.png){.absolute width=50% right=520 top=150}
+![](img/git_article_fig.png){.absolute width=60% right=-150 top=150}
+![](img/git_article_table.png){.absolute width=50% right=520 top=400}
+
+:::footer
+[Perez-Riverol et al. (2016)](https://doi.org/10.1371/journal.pcbi.1004947)
+:::
+
+## Controle de versão
+
+Cada vez mais **necessário** em colaborações
+
+![](img/github_article_2022.png){.absolute width=50% right=600 top=150}
+![](img/github_article_2022_fig02.jpg){.absolute width=70% right=-150 top=180}
+![](img/github_article_2022_fig01.jpg){.absolute width=40% right=700 top=330}
+
+:::footer
+[Braga et al. (2022)](https://doi.org/10.1111/2041-210X.14108)
+:::
+
+# git e GitHub
+
+## git e GitHub
+
+**git**
+
+- Software (app) que faz o **controle de versão**
+- Maneja os **repositórios locais** (computador) e **repositório remotos** (e.g. GitHub)
+
+![](img/git_logo.png){.absolute width=60% right=200 top=370}
+
+:::footer
+[git](https://git-scm.com/)
+:::
+
+## git e GitHub
+
+**git**
+
+- Criado por **Linus Torvalds** em 2005 para substituir o BitKeeper no gerenciamento do Kernel Linux
+-  Software livre, distribuído sob a licença GNU GPL v.2
+
+![](img/general_linus.jpg){.absolute width=50% right=480 top=350}
+![](img/general_tux.png){.absolute width=40% right=0 top=320}
+
+:::footer
+[kernel](https://www.kernel.org/), [Começando - Uma Breve História do Git](https://git-scm.com/book/pt-br/v2/Come%C3%A7ando-Uma-Breve-Hist%C3%B3ria-do-Git#:~:text=Desde%20seu%20nascimento%20em%202005,%2Dgit%2Dbranching%5D)
+:::
+
+## git e GitHub
+
+**GitHub**
+
+- Repositórios remotos
+- **Plataformas de hospedagem** e controle de versão de arquivos/códigos
+
+![](img/github_logo2.png){.absolute width=50% right=600 top=350}
+![](img/gitlab_logo.png){.absolute width=28% right=350 top=350}
+![](img/bitbucket.webp){.absolute width=28% right=0 top=350}
+
+:::footer
+[GitHub](https://github.com/), [GitLab](https://gitlab.com/), [Bitbucket](https://bitbucket.org/)
+:::
+
+## git e GitHub
+
+**GitHub**
+
+::: {style="font-size: 80%;"}
+- Plataforma de **hospedagem** de código e arquivos com **controle de versão** usando o git
+- Desenvolvido em **2008** usando Ruby on Rails em São Francisco
+- Em 2018, a Microsoft anunciou a **compra** da plataforma por US$ 7,5 bilhões
+:::
+
+![](img/github_logo2.png){fig-align='center'}
+
+:::footer
+[GitHub](https://github.com)
+:::
+
+## git e GitHub
+
+**ATENÇÃO: dois conceitos!**  
+
+- **git**: software (app) que faz o controle de versão
+- **GitHub**: plataforma para hospedar códigos versionados
+
+![](img/git_github_diff.png){.absolute width=75% right=150 top=300}
+
+:::footer
+[Is Git the Same Thing as Github!?](https://jahya.net/blog/git-vs-github/)
+:::
+
+## git e GitHub
+
+**ATENÇÃO: dois conceitos!**  
+
+- **git**: software (app) que faz o controle de versão
+- **GitHub**: plataforma para hospedar códigos versionados
+
+![](img/git_github_link.png){.absolute width=70% right=160 top=300}
+
+# Detalhes do GitHub
+
+## Detalhes do GitHub
+
+**Perfil**
+
+![](img/github_profile.png){fig-align='center'}
+
+## Detalhes do GitHub
+
+**Perfil**
+
+- **Overview**: suas informações (rede social)
+- **Repositories**: lista todos os repositórios
+- **Projects**: ferramentas de gerenciamento (Kanban e tarefas)
+- **Packages**: pacotes (bibliotecas) ou containers (Docker)
+- **Stars**: respositórios marcados com estrela
+
+:::footer
+[Github](https://github.com/mauriciovancine)
+:::
+
+## Detalhes do GitHub
+
+**Settings**: `superior direito > foto do perfil > Settings`
+
+![](img/github_profile_settings.png){fig-align='center'}
+
+:::footer
+[Github](https://github.com/mauriciovancine/mauriciovancine)
+:::
+
+## Detalhes do GitHub
+
+**Settings**: `superior direito > foto do perfil > Settings`
+
+![](img/github_profile_settings_detalhes.png){fig-align='center'}
+
+:::footer
+[Github](https://github.com/mauriciovancine/mauriciovancine)
+:::
+
+## Detalhes do GitHub
+
+**Settings**
+
+![](img/github_profile_settings_detalhes02.png){fig-align='center'}
+
+:::footer
+[Github](https://github.com/mauriciovancine/mauriciovancine)
+:::
+
+## Detalhes do GitHub
+
+**Repositório**
+
+![](img/github_repository.png){fig-align='center'}
+
+:::footer
+[Github](https://github.com/mauriciovancine/mauriciovancine)
+:::
+
+## Detalhes do GitHub
+
+**Repositório**
+
+::: {style="font-size: 80%;"}
+- **Code**: arquivos, histórico, clone/download e README.md
+- **Issues**: rastrear bugs, sugestões de melhorias ou tarefas
+- **Pull requests**: gerencia propostas de alterações no código
+- **Actions**: gerencia fluxos de trabalho automatizados
+- **Projects**: ferramentas de gerenciamento visual (Kanban)
+- **Wiki**: documentação extensa e detalhada do projeto
+- **Security**: ajuda a gerenciar a segurança do código
+- **Insights**:  fornece análises detalhadas sobre o repositório
+- **Settings**: gerencia as configurações do repositório
+:::
+
+:::footer
+[Github](https://github.com/mauriciovancine/mauriciovancine)
+:::
+
+## Detalhes do GitHub
+
+**README.md**
+
+![](img/github_readme.png){fig-align='center'}
+
+:::footer
+[Github](https://github.com/mauriciovancine/mauriciovancine)
+:::
+
+## Detalhes do GitHub
+
+**README.md**
+
+- Arquivo de documentação principal de um repositório
+- Escrito em Markdown (formatação simples e amigável)
+- Aparece automaticamente na página inicial do repositório
+- Fornece informações essenciais sobre o projeto
+- Apresenta o propósito do projeto
+- Explica o conteúdo dos arquivos de códigos e diretórios
+
+::: footer
+[Markdown](https://daringfireball.net/projects/markdown/), [Markdown Guide](https://www.markdownguide.org/)
+:::
+
+# Criando um repositório
+
+## Criando um repositório
+
+**Criar repositório**: `Perfil > Repositories > New`
+
+![](img/github_criar_repositorio01.png){fig-align='center'}
+
+## Criando um repositório
+
+**Criar um repositório**
+
+1. Nome do repositório
+1. Descrição (opcional)
+1. Público ou privado
+1. Add um README.md
+1. Add .gitignore
+1. Licença
+1. Criar repositório
+
+![](img/github_criar_repositorio02.png){.absolute width=60% right=-30 top=120}
+
+# Controle de versão na prática
+
+## Controle de versão na prática
+
+**Duas formas de trabalhar com o git e GitHub**
+
+::: {style="font-size: 80%;"}
+1. Iniciando um projeto em nosso computador - localmente (git)
+1. Iniciando por um repositório remoto - remotamente (GitHub)
+:::
+
+![](img/github_logo.png){.absolute width=15% right=800 top=300}
+![](img/git_operation.png){.absolute width=52% right=250 top=260}
+![](img/git_logo.png){.absolute width=20% right=70 top=570}
+
+## Controle de versão na prática
+
+![](img/git_github_workflow.png){fig-align='center'}
+![](img/git_folder_project.png){.absolute width=5% right=220 top=630}
+
+## Controle de versão na prática
+
+![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
+
+## Controle de versão na prática
+
+![](img/git_fork_clone_flow.png){.absolute width=45% right=250 top=100}
+![](img/github_logo.png){.absolute width=30% right=700 top=150}
+![](img/git_folder_project.png){.absolute width=15% right=780 top=520}
+![](img/git_logo.png){.absolute width=25% right=-50 top=550}
+
+# Iniciando localmente
+
+## Iniciando localmente
+  
+`git init`: inicia o versionamento de um repositório local
+
+![](img/git_init.png){.absolute width=40% right=550 top=180}
+![](img/git_folder.png){.absolute width=65% right=-50 top=180}
+
+# Iniciando remotamente
+
+## Iniciando remotamente
+
+**Fork**: cópia de um repositório para o seu **repositório (GitHub)**
+
+![](img/git_fork.png){fig-align='center'}
+
+
+## Iniciando remotamente
+
+**Fork**: cópia de um repositório para o seu **repositório (GitHub)**
+
+![](img/gif_fork.gif){fig-align='center'}
+
+## Iniciando remotamente
+
+**Clonar**: download de um **repositório remoto** (e.g. GitHub) para o seu **repositório local** (computador)
+
+![](img/git_clone_example.png){.absolute width=80% right=130 top=200}
+
+## Iniciando remotamente
+
+`git clone`: download de um **repositório remoto** (e.g. GitHub) para o seu **repositório local** (computador) 
+
+![](img/git_clone.png){.absolute width=50% right=260 top=210}
+
+:::footer
+[Git 03: Git Clone - Work Locally On Your Computer](https://www.neonscience.org/resources/learning-hub/tutorials/github-git-clone)
+:::
+
+# Há várias formas de se fazer um clone de um repositório
+
+## Iniciando remotamente
+
+1. **Download diretamente** do repositório no formato **.zip**
+
+![](img/github_clone_zip.png){.absolute width=100% right=30 top=210}
+
+## Iniciando remotamente
+
+2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
+
+![](img/github_clone_git.png){.absolute width=100% right=30 top=210}
+
+## Iniciando remotamente
+
+2. Usando o **terminal** para clonar pelo **SSH** (configurado anteriormente)
+
+```{r eval=FALSE}
+$ git clone git@github.com:mauriciovancine/teste.git
+```
+
+<br>
+
+![](img/git_clone_terminal.png){fig-align='center'}
+
+## Iniciando remotamente
+
+3. Usando o **Projeto do RStudio** para clonar pelo **SSH** (configurado anteriormente)
+
+![](img/git_rstudio.png){.absolute width=50% right=200 top=210}
+
+## Iniciando remotamente
+
+Criar um **Projeto R** com controle de versão
+
+`File > New Project > Version Control`
+
+![](img/rstudio_git_create01.png){.absolute width=100% right=20 top=210}
+
+## Iniciando remotamente
+
+Escolher **clonar repositório** do GitHub
+
+`Git`
+
+![](img/rstudio_git_create02.png){.absolute width=100% right=20 top=210}
+
+# Versionamento
+
+## Versionamento
+
+![](img/git_add_commit.png){.absolute width=90% right=40 top=90}
+
+![](img/github_logo.png){.absolute width=20% right=-180 top=160}
+![](img/github_logo.png){.absolute width=20% right=970 top=160}
+![](img/git_folder_project.png){.absolute width=15% right=990 top=500}
+![](img/git_logo.png){.absolute width=20% right=-180 top=530}
+
+## Versionamento
+
+**Comandos git** para o fluxo de trabalho dos repositórios
+
+![](img/git_workflow.png){.absolute width=100% right=50 top=150}
+![](img/git_folder_project.png){.absolute width=15% right=1070 top=350}
+![](img/github_logo.png){.absolute width=20% right=-180 top=350}
+![](img/git_logo.png){.absolute width=20% right=570 top=610}
+
+## Versionamento
+
+**Fluxo do versionamento**
+
+![](img/git_add_commit_flow.png){.absolute width=70% right=130 top=200}
+
+::: footer
+[pro Git (2014)](https://git-scm.com/book/pt-br/v2/Fundamentos-de-Git-Obtendo-um-Reposit%C3%B3rio-Git)
+:::
+
+## Versionamento
+
+**Fluxo do versionamento**
+
+::: {style="font-size: 70%;"}
+1. **Diretório de trabalho (*working directory*)**: pasta com os arquivos [*working tree*] (.git)
+1. **Preparação (*staging area*)**: arquivos adicionados para serem versionados [*Index*] (.git) 
+1. **Repositório (*repository*)**: versão consolidada dos arquivos [*HEAD*] (.git)
+:::
+
+![](img/git_files_states.png){.absolute width=100% right=30 top=320}
+
+## Versionamento
+
+![](img/git_commit01.png){fig-align='center'}
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
+
+## Versionamento
+
+![](img/git_commit02.png){fig-align='center'}
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
+
+## Versionamento
+
+**ATENÇÃO!**
+
+::: {style="font-size: 80%;"}
+- Mensagens de commit são **fundamentais** 
+- Devem ser curtas e indicar as **mudanças** feitas nos arquivos/repositório 
+:::
+
+![](img/git-commits-messages.jpg){.absolute width=75% right=120 top=250}
+
+::: footer
+[Como escrever mensagens de commits no Git](https://www.lucascaton.com/pt-BR/2017/10/16/como-escrever-mensagens-de-commits-no-git)
+:::
+
+## Versionamento
+
+![](img/git-commits-messages.webp){fig-align='center'}
+
+::: footer
+[3 dicas práticas para um bom commit](https://medium.com/@rafaelnai/3-dicas-pr%C3%A1ticas-para-um-bom-commit-673da001e1d1)
+:::
+
+# 
+![](img/git_branches.png){fig-align='center'}
+
+# Ramificações: git branch, git switch e git merge
+
+## Ramificações
+
+- **Branch** (ou ramo) é uma linha paralela de desenvolvimento
+
+![](img/git_branch.png){fig-align='center'}
+
+## Ramificações
+
+- **Branch** (ou ramo) é uma linha paralela de desenvolvimento
+
+- Funções:
+  - Separar novas funcionalidades
+  - Isolar correções de bugs
+  - Trabalhar em paralelo com segurança
+  - Facilitar a colaboração em equipe
+  - Testes sem arriscar o código principal (`main` ou `master`)
+
+## Ramificações
+
+**Importante!**
+
+::: {style="font-size: 90%;"}
+- Criar uma branch significa criar um **novo ponteiro** que pode evoluir independentemente
+- Os arquivos locais **permanecem os mesmos**; apenas o histórico e o ponteiro mudam
+- Apenas **arquivos versionados** (`git add` e `git commit`) fazem parte da branch
+- Uma branch é como um **marcador de página**: você não copia o livro, apenas marca onde continuar
+:::
+
+## Ramificações
+
+`git merge`: mescla as branches em uma única branch
+
+![](img/git_merge.png){fig-align='center'}
+
+# CUIDADO!
+
+# 
+![](img/gif_git_merge.gif){fig-align='center'}
+
+# 
+![](img/git_merge_warning.png){fig-align='center'}
+
+# 
+![](img/git_merge_hug.png){fig-align='center'}
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
+
+## Remoto
+
+`git push`: envia suas alterações (commits) feitas localmente para o repositório remoto (GitHub)
+
+![](img/git_push.png){fig-align='center'}
+
+
+## Remoto
+
+`git pull`: busca atualizações do **repositório remoto** e as traz para o **repositório local**, **alterando** a branch atual
+
+![](img/git_pull.png){fig-align='center'}
+
+## Pull request
+
+`Pull Request`: solicita que o repositório remoto original (GitHub) aceite (pull - 'puxe') as alterações realizadas do fork
+
+![](img/git_pull_request.png){fig-align='center'}
+
+# Resumindo
+
+## Resumindo
+
+**Simplificado**
+
+![](img/git_projet.png){fig-align='center'}
+
+## Resumindo
+
+**Completo**
+
+![](img/git_fluxo.png){fig-align='center'}
+
+# Interface Gráfica do RStudio
+
+## Agradecimento mais que justo
+
+Agradecimento à [Beatriz Milz](https://beatrizmilz.com/) pelas figuras ~~surrupiadas~~ (eu pedi...)
+
+![](img/bea.jpg){fig-align='center'}
+
+:::footer
+[Beatriz Milz](https://beatrizmilz.com/)
+:::
+
+## Interface Gráfica do RStudio
+
+**Git Panel**
+
+- RStudio tem um **cliente Git** na aba "Git"
+- Esse painel aparece em **projetos** que estejam **versionados com git**
+
+![](img/rstudio_git_pane01.png){fig-align='center'}
+
+
+## Interface Gráfica do RStudio
+
+**Git Panel - Detalhes**
+
+![](img/rstudio_git_pane02.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git Panel - Branches**
+
+![](img/rstudio_git_pane03.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git Panel - Diff - Changes: Revisar mudanças**
+
+![](img/rstudio_git_pane04.png){fig-align='center'}
+
+
+## Interface Gráfica do RStudio
+
+**Git Panel - Diff - History: Histórico de mudanças**
+
+![](img/rstudio_git_pane05.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Staged**
+
+![](img/rstudio_git_pane06.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Staged e File status**
+
+![](img/rstudio_git_status.png){fig-align='center'}
+![](img/rstudio_git_pane06.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Commit**
+
+![](img/rstudio_git_pane07.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Commit**
+
+![](img/rstudio_git_pane08.png){fig-align='center'}
+
+## Interface Gráfica do RStudio
+
+**Git pane - Push e Pull**
+
+![](img/rstudio_git_pane09.png){fig-align='center'}
+
+# Últimas palavras
+
+#
+![](img/general_make_impossible.png){fig-align='center'}
+
+#
+![](img/gif_bugcat_error.gif){fig-align='center'}
+
+#
+![](img/gif_bugcat_sad.gif){fig-align='center'}
+
+#
+![](img/general_superior_recreio.jpeg){fig-align='center'}
+
+# 3. Gerenciamento de dependências
+
+## Pacotes no R
+
+- Os pacotes **mudam com o tempo** (versões)
+- **Quebras de código** entre as principais versões
+- Acessível a partir de **diferentes repositórios** (CRAN, GitHub, R Universe, etc.)
+- Apenas **uma versão** de um pacote pode ser **instalada**
+- Um pacote pode ter **muitas dependências**
+
+>  Temos que especificar os **pacotes** necessários, suas **versões** e os **repositórios** nos quais eles estão acessíveis
+
+## Pacotes no R
+
+**Biblioteca vs pacote**
+
+- *Biblioteca*: diretório onde os pacotes são instalados
+- *Pacote*: coleção de funções, documentação, dados e testes
+
+```{r}
+# bibliotecas
+.libPaths()
+```
+
+```{r}
+# pacotes
+find.package("base")
+find.package("renv")
+```
+
+# 
+
+<center>
+<img src="img/package_renv.svg" style="width:60%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
+
+## renv
+
+**Gerenciamento de pacotes**
+
+- Cria um **ambiente reprodutível** (***r**eproducible **env**ironment*) e **isolado** de pacotes para cada projeto  
+- Armazena versões dos pacotes em `renv.lock`  
+
+```{r eval=FALSE}
+install.packages("renv")
+library(renv)
+```
+
+<center>
+<img src="img/package_renv.svg" style="width:20%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
+
+## renv
+
+**Por que usar `renv`?**
+
+- Evita **conflitos de versão** funções mudam entre versões
+- Reproduz resultados mesmo após **atualizações do R**
+- **Compartilha** ambientes com colegas ou colaboradores  
+- **Documenta** automaticamente os pacotes usados  
+
+<center>
+<img src="img/package_renv.svg" style="width:20%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
+
+## renv
+
+**Funções**
+
+<br>
+
+::: {style="font-size: 70%;"}
+| Função           | Descrição                                                         |
+|:-----------------|:------------------------------------------------------------------|
+| `init()`         | Inicializa `renv` em um projeto                                   |
+| `status()`       | Verifica consistências entre o lockfile e a biblioteca do projeto |
+| `snapshot()`     | Registra o estado atual da biblioteca do projeto no lockfile      |
+| `restore()`      | Restaura a biblioteca do projeto a partir de um lockfile          |
+| `install()`      | Instala pacotes na biblioteca do projeto                          |
+| `remove()`       | Remove pacotes da biblioteca do projeto                           |
+| `deactivate()`   | Desativa temporariamente `renv` para o projeto                    |
+| `activate()`     | (Re)ativa `renv` no projeto                                       |
+:::
+
+## renv
+
+**Workflow**
+
+<center>
+<img src="img/renv.png" style="width:80%"/>
+</center>
+
+::: footer
+[renv](https://rstudio.github.io/renv/index.html)
+:::
+
+## renv
+
+**Sistema de bibliotecas**
+
+<br>
+
+:::: {.columns}
+::: {.column width=50%}
+![Default `R` behaviour](img/library-1.png)
+:::
+::: {.column width=50%}
+![Library system with `renv`](img/library-2b.png)
+:::
+::::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## renv
+
+**Arquivos e diretório**
+
+::: {style="font-size: 70%;"}
+- `.Rprofile`: arquivo de perfil do projeto do RStudio
+- `renv/`: diretório que armazena as versões dos pacotes
+- `renv.lock`: arquivo com as **versões** de cada pacote para **reconstruir o ambiente**
+:::
+
+```
+.
+├── .Rprofile          # Activate renv on project opening
+│
+├── renv/
+│   ├── .gitignore     # Ignore large renv files (e.g. packages)
+│   ├── activate.R     # R script to launch renv
+│   ├── library/       # R packages
+│   └── settings.dcf   # renv settings
+│
+└── renv.lock
+```
+
+## renv
+
+**Fluxo de uso**
+
+<br>
+
+:::: {.columns}
+::: {.column width=60%}
+```{r eval=FALSE}
+# Inicializar ambiente renv
+renv::init()
+
+# Verificar o estado atual dos pacotes
+renv::status()
+
+# Instalar pacotes usando o renv
+renv::install("tidyverse")
+
+# Registrar estado atual dos pacotes
+renv::snapshot()
+
+# Restaurar ambiente em outra máquina
+renv::restore()
+```
+:::
+::: {.column width=40%}
+<center>
+<img src="img/rstudio-renv.png" style="width:100%"/>
+</center>
+:::
+::::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## renv
+
+**Colaborando com `renv`**
+
+- Basta compartilhar o arquivo `renv.lock`
+- Então seu colega terá que inicializar o `renv` no projeto
+- Todos os pacotes no arquivo `renv.lock` serão instalados na biblioteca do projeto
+
+```{r eval=FALSE}
+# Restaurar ambiente em outra máquina
+renv::restore()
+```
+
+## renv
+
+**Recomendações**
+
+- Use `renv` no **final do projeto** para congelar seu ambiente de pacotes e depois compartilhar o `renv.lock`
+- Adicione `renv/` ao `.gitignore`
+- Versionar somento o `renv.lock`
+
+# 4. Documentação clara
+
+## Documentação no R
+
+<center>
+<img src="img/general_data_science_r4ds.png" style="width:100%"/>
+</center>
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
+
+## Documentação no R
+
+**Documentação de pesquisa**
+
+::: {style="font-size: 65%;"}
+- Registro sistemático, claro e organizado das **etapas** de um projeto científico, desde o planejamento até a publicação
+
+- Garante que o trabalho possa ser **entendido, verificado e reproduzido** por outros pesquisadores
+:::
+
+<center>
+<img src="img/research_documentation.avif" style="width:70%"/>
+</center>
+
+::: footer
+[Research documentation](https://www.colabra.ai/course/research-documentation/)
+:::
+
+## Documentação no R
+
+**Escrita científica**
+
+<center>
+<img src="img/scientific_paper.jpg" style="width:100%"/>
+</center>
+
+::: footer
+[10 Simple Steps to Writing a Scientific Paper](https://spie.org/news/photonics-focus/janfeb-2020/how-to-write-a-scientific-paper)
+:::
+
+## Documentação no R
+
+**Programação Literária**
+
+::: {style="font-size: 60%;"}
+> Programação literária é um **paradigma de programação** introduzido em 1984 por **Donald Knuth** (LaTeX), no qual um programa de computador é apresentado como uma explicação de como ele funciona em uma **linguagem natural** (e.g. inglês), **intercalado** (embutido) com **trechos** de macros e código-fonte tradicional, a partir dos quais um código-fonte compilável pode ser gerado.
+:::
+
+::::: columns
+::: {.column .center width="50%"}
+::: {style="font-size: 70%;"}
+**Conceito inicial**
+:::
+![](img/lit-prog-paper_fig1.png){width="80%"}
+:::
+::: {.column .center width="50%"}
+::: {style="font-size: 70%;"}
+**Implementação moderna com `Quarto`**
+:::
+![](img/quarto-process.png)
+:::
+:::::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+# 
+
+<center>
+<img src="img/package_quarto.png" style="width:45%"/>
+</center>
+
+::: footer
+[Quarto](https://quarto-dev.github.io/quarto-r)
+:::
+
+
+## Quarto
+
+**Descrição**
+
+::: {style="font-size: 80%;"}
+- Fornece uma estrutura para ciência de dados, combinando **código, resultados e texto**
+- Documentos são totalmente **reproduzíveis**, automatizando a inclusão das últimas versões dos resultados e análises 
+- `Quarto` é a nova geração do R Markdown
+:::
+
+![](img/r_markdown_output_formats.png){.absolute width="400" height="400" right="0" top="300"} 
+![](img/quarto.png){.absolute width="550" height="130" right="500" top="480"}
+
+::: footer
+[R Markdown](https://rmarkdown.rstudio.com/), [shiny](https://shiny.rstudio.com/), [quarto](https://quarto.org/)
+:::
+
+
+## Quarto
+
+**Software**
+
+::: {style="font-size: 70%;"}
+- Software novo que não depende do R (instalado com o RStudio)
+- Interface de linha de comando - *Command Line Interface (CLI)*
+- Podemos usar o `Quarto` no terminal
+:::
+
+```{r}
+#| eval: false
+quarto help
+```
+
+## Quarto
+
+**Multiplas saídas**
+
+::: {style="font-size: 80%;"}
+- Múltiplos formatos de **saída**: páginas web, PDFs, Word, sites, livros e mais
+:::
+
+<br>
+<center>
+<img src="img/knitr-formats.png" style="width:100%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Usos**
+
+::: {style="font-size: 70%;"}
+1. Comunicação com tomadores de decisão ou público mais amplo, com foco nas **conclusões**, não nos códigos das análises
+
+2. Colaboração com outros cientistas de dados, interessados tanto nas **conclusões quanto nos códigos**
+
+3. Ambiente para fazer ciência de dados, como um **caderno de laboratório moderno**, registro do que foi feito e dos pensamentos
+:::
+
+<center>
+<img src="img/lab_notebook.jpg" style="width:40%"/>
+</center>
+
+::: footer
+[Caderno de laboratório](https://pt.wikipedia.org/wiki/Caderno_de_laborat%C3%B3rio)
+:::
+
+## Quarto
+
+**Funcionamento**
+
+<br>
+
+<center>
+<img src="img/horst_qmd_render_schema.png" style="width:100%"/>
+</center>
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
+
+## Quarto
+
+**Funcionamento**
+
+<br>
+
+<center>
+<img src="img/rmd-knitr.png" style="width:100%"/>
+</center>
+
+::: footer
+Artwork by [@allison_horst](https://x.com/allison_horst)
+:::
+
+## Quarto
+
+**Projeto `Quarto`**
+
+<center>
+<img src="img/quarto_proj.png" style="width:85%"/>
+</center>
+
+::: footer
+[E aí, vamos falar de Quarto?](https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd)**
+
+<center>
+<img src="img/quarto-newfile.png" style="width:90%"/>
+</center>
+
+::: footer
+[Conhecendo o Quarto: a nova geração do RMarkdown](https://beatrizmilz.github.io/202211-quarto-amostra-IME-USP/slide-quarto.html#/title-slide)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd)**
+
+<center>
+<img src="img/quarto-new-doc.png" style="width:55%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Source editor**
+
+<center>
+<img src="img/quarto-source.png" style="width:80%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Visual editor**
+
+<center>
+<img src="img/quarto-visual.png" style="width:80%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Renderizar**
+
+<center>
+<img src="img/quarto-render01.png" style="width:80%"/>
+<img src="img/quarto-render02.png" style="width:55%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/), [E aí, vamos falar de Quarto?](https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Anatomia**
+
+::: columns
+::: {.column width="40%"}
+<br><br><br>
+<img src="img/quarto-anatomia.png" style="width:100%"/>
+:::
+
+::: {.column width="60%"}
+::: {style="font-size: 70%;"}
+<br><br>
+
+- YAML (*Yet Another Markup Language*): cabeçalho (início do `.qmd`) onde são inseridas as configurações do documento (formatação, data, título, autor etc.), delimitado por `---` e `---`
+- Texto: usa markdown como sua sintaxe de documento principal
+- Códigos (*chunks*): blocos de códigos onde se insere códigos em R, Python, Julia e outros, delimitado por ` ```{r} ` e ` ``` `
+:::
+:::
+:::
+
+::: footer
+[E aí, vamos falar de Quarto?](https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Anatomia**
+
+::: columns
+::: {.column width="40%"}
+<br><br><br>
+<img src="img/quarto-anatomia.png" style="width:100%"/>
+:::
+
+::: {.column width="60%"}
+::: {style="font-size: 60%;"}
+```{r}
+#| eval: false
+#| echo: true
+#| code-line-numbers: "|1-6|8-15|17-29|"
+
+---
+title: "Hello, Penguins"
+format: html
+execute:
+  echo: false
+---
+
+## Meet the penguins
+
+The __penguins__ data contains size measurements for 
+penguins from three islands in the Palmer Archipelago, 
+Antarctica.
+
+The _three_ species of penguins have quite distinct 
+distributions of physical dimensions (@fig-penguins).
+
+# ```{r}
+#| label: fig-penguins
+#| fig-cap: "Dimensions of penguins across three species."
+#| warning: false
+library(tidyverse, quietly = TRUE)
+library(palmerpenguins)
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(
+    values = c("darkorange", "purple", "cyan4")) +
+  theme_minimal()
+# ```
+```
+
+:::
+:::
+:::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/), [E aí, vamos falar de Quarto?](https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Anatomia**
+
+<br>
+
+::::: columns
+::: {.column .center width="55%"}
+::: {style="font-size: 55%;"}
+```{r}
+#| eval: false
+#| echo: true
+
+---
+title: "Hello, Penguins"
+format: html
+execute:
+  echo: false
+---
+
+## Meet the penguins
+
+The __penguins__ data contains size measurements for 
+penguins from three islands in the Palmer Archipelago, 
+Antarctica.
+
+The _three_ species of penguins have quite distinct 
+distributions of physical dimensions (@fig-penguins).
+
+#| label: fig-penguins
+#| fig-cap: "Dimensions of penguins across three species."
+#| warning: false
+library(tidyverse, quietly = TRUE)
+library(palmerpenguins)
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(
+    values = c("darkorange", "purple", "cyan4")) +
+  theme_minimal()
+
+```
+:::
+:::
+
+::: {.column .center width="45%"}
+![](img/penguins_render.png)
+:::
+:::::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - YAML - Formato**
+
+::: {style="font-size: 60%;"}
+
+HTML
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: html
+editor: visual
+---
+```
+
+Word
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: docx
+editor: visual
+---
+```
+
+PDF 
+
+> Precisa instalar um pacote LaTeX
+
+```{r eval=FALSE}
+---
+title: "Título"
+format: pdf
+editor: visual
+---
+```
+:::
+
+::: footer
+[Conhecendo o Quarto: a nova geração do RMarkdown](https://beatrizmilz.github.io/202211-quarto-amostra-IME-USP/slide-quarto.html#/title-slide)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Texto - markdown**
+
+::: {style="font-size: 90%;"}
+- `Markdown` é um formato de texto simples projetado para ser fácil de escrever e, ainda mais importante, fácil de ler
+
+- `Quarto` é baseado no `Pandoc` e usa sua variação de `markdown` como sintaxe de documento
+:::
+
+<center>
+<img src="img/markdown-mark.svg" style="width:30%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Texto - markdown**
+
+::::: columns
+::: column
+::: {style="font-size: 70%;"}
+<br>
+```{r}
+#| eval: false
+#| echo: true
+
+### Text formatting
+*italic* **bold** ~~strikeout~~ `code`
+superscript^2^ subscript~2~
+[underline]{.underline} [small caps]{.smallcaps}
+
+### Lists
+-   Bulleted list item 1
+-   Item 2
+    -   Item 2a
+    -   Item 2b
+1.  Numbered list item 1
+2.  Item 2.
+
+### Equations
+inline math: $E = mc^{2}$
+```
+:::
+:::
+
+::: column
+::: {style="font-size: 50%;"}
+
+<br>
+
+### Text formatting
+
+*italic* **bold** ~~strikeout~~ `code`
+
+superscript^2^ subscript~2~
+
+[underline]{.underline} [small caps]{.smallcaps}
+
+### Lists
+
+-   Bulleted list item 1
+-   Item 2
+    -   Item 2a
+    -   Item 2b
+1.  Numbered list item 1
+2.  Item 2.
+
+### Equations
+inline math: $E = mc^{2}$
+:::
+:::::
+:::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Código - chunk**
+
+::::: columns
+::: {.column width="50%"}
+::: {style="font-size: 60%;"}
+<br><br>
+
+```{r}
+#| eval: false
+#| echo: true
+
+The _three_ species of penguins have quite distinct 
+distributions of physical dimensions (@fig-penguins).
+
+````{r}
+#| label: fig-penguins
+#| fig-cap: "Dimensions of penguins across three species."
+#| warning: false
+library(tidyverse, quietly = TRUE)
+library(palmerpenguins)
+penguins |>
+  ggplot(aes(x = flipper_length_mm, y = bill_length_mm)) +
+  geom_point(aes(color = species)) +
+  scale_color_manual(
+    values = c("darkorange", "purple", "cyan4")) +
+  theme_minimal()
+````
+```
+:::
+:::
+
+::: {.column width="50%"}
+![](img/penguins_render.png)
+:::
+:::::
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Arquivo `Quarto` (.qmd) - Código - chunk**
+
+<center>
+<img src="img/rstudio-inline-output.png" style="width:80%"/>
+</center>
+
+::: footer
+[Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
+:::
+
+## Quarto
+
+**Galeria**
+
+<br>
+<center>
+<img src="img/quarto-galeria.png" style="width:100%"/>
+</center>
+
+::: footer
+[Quarto - Gallery](https://quarto.org/docs/gallery/)
+:::
+
+## Quarto
+
+**`Quarto` e GitHub**
+
+::: {style="font-size: 70%;"}
+Podemos hospedar gratuitamente as saídas do `Quarto` de forma on-line no GitHub
+
+> Repositório > Settings > Pages > GitHub Pages
+:::
+
+<center>
+<img src="img/quarto-github.png" style="width:85%"/>
+</center>
+
+::: footer
+[GitHub pages](https://github.com/course-intror/course-intror.github.io/settings/pages)
+:::
+
+# 5. Automação e repetição
+
+## Shiny
+
+**Descrição**
+
+::: {style="font-size: 70%;"}
+- Framework do R para criar **aplicações web interativas**
+- Permite **construir** dashboards, painéis de visualização, e ferramentas analíticas
+- Totalmente **integrado ao R** (sem necessidade de HTML/CSS/JS)
+:::
+
+<center>
+<img src="img/shiny.png" style="width:30%"/>
+</center>
+
+::: footer
+[Shiny](https://shiny.posit.co/)
+:::
+
+## Shiny
+
+**Exemplo**
+
+::: {style="font-size: 80%;"}
+- Disponibilização de **redes de interação planta-dispersor** na Mata Atlântica
+:::
+
+<center>
+<img src="img/afnetworks.png" style="width:40%"/>
+</center>
+
+::: footer
+[afnetworks](https://lddiv.shinyapps.io/shiny-atlantic-forest-networks)
+:::
+
+## Muito obrigado!
+
+::: columns
+::: {.column width="50%"}
+**Agradecimentos**:
+
+- [Beatriz Milz](https://beatrizmilz.com/)
+
+![](img/fapesp.png){.absolute width=40% right=650 top=350}
+:::
+
+::: {.column width="50%"}
+**Contato**:
+
+[mauricio.vancine@gmail.com]()
+[mauriciovancine.github.io](https://mauriciovancine.github.io)
+
+![](img/gif_frogs.gif){.absolute width=40% right=90 top=260}
+:::
+:::
+
+:::footer
+Slides por [Maurício Vancine](https://mauriciovancine.github.io), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-git-github-rstudio).
+:::
