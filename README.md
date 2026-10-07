@@ -4,7 +4,7 @@
 
 ### Aula 2 – Leitura, indexação e manipulação de dados no R
 
-- [slides](https://mauriciovancine.github.io/course-intro-r-unicamp/slides/02_slides.html)
+- [slides](https://mauriciovancine.github.io/course-intro-r-unicamp/slides/02_slides.html#/)
 - [script](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/scripts/02_script.R)
 - [exercicios](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/exercises/02_exercises/NT265-Aula2-Exercicios.R)
 

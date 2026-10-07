@@ -1,5 +1,5 @@
 ---
-title: "Aula 2 – Leitura, indexação e manipulação de dados no R (Base R)"
+title: "Aula 2 – Leitura, indexação e manipulação de dados"
 subtitle: "<br>P_NT265A/NE403 - Análise de dados e apresentação de gráficos usando a linguagem R"
 author: "[Maurício Vancine](https://mauriciovancine.github.io)"
 date: "10/15/2026"
@@ -136,6 +136,52 @@ Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Vic
 [Vancine et al. (2024)](https://doi.org/10.1016/j.biocon.2024.110499)
 :::
 
+## ATLANTIC SPATIAL
+
+500 rasters de paisagem, topografia, hidrologia e antrópicas
+
+<center>
+<img src="img/vancine_etal_2026.png" style="width:90%"/>
+</center>
+
+:::footer
+[Vancine et al. (2026)](https://doi.org/10.1016/j.biocon.2024.110499)
+:::
+
+## ATLANTIC SPATIAL
+
+Pacote no R: [atlanticr](https://mauriciovancine.github.io/atlanticr/)
+
+::: columns
+::: {.column width="60%"}
+<center>
+<img src="img/vancine_etal_2026_fig.png" style="width:60%"/>
+</center>
+:::
+
+::: {.column width="40%"}
+<center>
+<img src="img/vancine_etal_2026_map.png" style="width:90%"/>
+</center>
+:::
+:::
+
+:::footer
+[Vancine et al. (2026)](https://doi.org/10.1016/j.biocon.2024.110499)
+:::
+
+## ATLANTIC SPATIAL
+
+Métricas de paisagem espacializadas para a Mata Atlântica
+
+<center>
+<img src="img/vancine_etal_2026_metrics.png" style="width:100%"/>
+</center>
+
+:::footer
+[Vancine et al. (2026)](https://doi.org/10.1016/j.biocon.2024.110499)
+:::
+
 ## IMPORTANTE!!!
 
 **Estamos num espaço seguro e amigável**
@@ -154,8 +200,7 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 
 ::: panel-tabset
 ## Revisão
--   Revisão dos 11 principais conceitos em R/RStudio
--   Pseudocódigo
+-   Revisão dos 10 principais conceitos em R/RStudio
 
 <center>
 <img src="img/r_logo.svg" style="width:40%"/>
@@ -164,7 +209,7 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 ## Objetos e dados
 
 ::: {style="font-size: 85%;"}
--  Atributos dos objetos
+- Atributos dos objetos
 -  Manejo de dados unidimensionais
 -  Manejo de dados multidimensionais
 -  Valores faltantes e especiais
@@ -184,7 +229,7 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 ![](img/general_comment_gandalf.jpg)
 <center/>
 
-## Revisão dos 11 principais conceitos em R
+## Revisão dos 10 principais conceitos em R
 
 <br>
 
@@ -195,123 +240,16 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 3.  Operadores
 4.  Atribuição/Objetos
 5.  Funções
-6.  Pacotes (*packages*)
 :::
 
 ::: {.column width="50%"}
+6.  Pacotes (*packages*)
 7.  Ajuda (*help*)
 8.  Ambiente (*environment*)
 9.  Diretório
 10. Citações
-11. Projetos no Rstudio
 :::
 :::::
-
-## Projeto R (.Rproj)
-
--   Facilita o trabalho em múltiplos ambientes
--   Cada projeto possui seu diretório, documentos e workspace
--   Permite controle de versão (git e GitHub)
-
-![](img/rproject01.png){.absolute width="450" right="500" top="300"}
-![](img/rproject02.png){.absolute width="450" right="0" top="300"}
-
-::: footer
-[Foundations of data analysis with R](https://thegraphcourses.org/courses/r-foundations-beta/topics/rstudio-projects/)
-:::
-
-## Projeto R (.Rproj)
-
-Criar um projeto no RStudio
-
-<center>
-<img src="img/proj_rmd.gif" style="width:90%"/>
-</center>
-
-## Pseudocódigo
-
-::: incremental
--   Forma de **representar** algoritmos, funções ou outros processos de forma simplificada e intuitiva
-
--   Escrito em **linguagem natural** e com elementos que se **assemelham** a uma linguagem de programação, mas não é realmente **executável**
-
--   Ferramenta para a **comunicação de ideias de programação**, permitindo que programadores de diferentes níveis de habilidade compreendam e colaborem de maneira eficiente
-:::
-
-## Pseudocódigo
-
-::::: columns
-::: {.column width="40%\""}
-```{r eval=FALSE}
-# pseudocodigo
-0. pacotes
-1. importar dados
-2. limpar e ajustar dados
-3. analises estatisticas
-4. graficos
-5. exportar resultados
-```
-:::
-
-::: {.column width="70%\""}
-```{r eval=FALSE}
-# codigo
-
-# 0. pacotes ----
-library(tidyverse)
-library(palmerpenguins)
-
-# 1. importar dados ----
-penguins <- penguins_raw
-penguins
-
-# 2. limpar e ajustar dados ----
-penguins_clean <- na.omit(penguins)
-penguins_clean
-
-# 3. analises estatisticas ----
-cor.test(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm)
-
-# 4. graficos ----
-plot(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm, pch = 20)
-
-# 5. exportar resultados ----
-png("grafico_penguins.png")
-plot(penguins_clean$bill_length_mm, penguins_clean$bill_depth_mm, pch = 20)
-dev.off()
-```
-:::
-:::::
-
-## Principais artigos de R e Ecologia
-
-::: {style="font-size: 40%;"}
-
-**Base R**
-
-- [Ihaka, R., & Gentleman, R. (1996). R: A Language for Data Analysis and Graphics. Journal of Computational and Graphical Statistics, 5(3), 299.](https://doi.org/10.2307/1390807)
-- [Wickham, H. (2011). R and S. Computational Statistics, 26(3), 395–404.](https://doi.org/10.1007/s00180-010-0205-5) 
-
-**tidyverse**
-
-- [Wickham, H. (2014). Tidy Data. Journal of Statistical Software, 59(10).](https://doi.org/10.18637/jss.v059.i10)
-- [Wickham, H., … Yutani, H. (2019). Welcome to the Tidyverse. Journal of Open Source Software, 4(43), 1686.](https://doi.org/10.21105/joss.01686)
-
-**R e Ecologia**
-
-- [Gao, M., Ye, Y., Zheng, Y., & Lai, J. (2025). A comprehensive analysis of R’s application in ecological research from 2008 to 2023. Journal of Plant Ecology, 18(1), rtaf010.](https://doi.org/10.1093/jpe/rtaf010) 
-- [Giorgi, F. M., Ceraolo, C., & Mercatelli, D. (2022). The R Language: An Engine for Bioinformatics and Data Science. Life, 12(5), Article 5.](https://doi.org/10.3390/life12050648)
-- [Lai, J., Cui, D., Zhu, W., & Mao, L. (2023). The Use of R and R Packages in Biodiversity Conservation Research. Diversity, 15(12), Article 12.](https://doi.org/10.3390/d15121202)
-- [Lai, J., Lortie, C. J., Muenchen, R. A., Yang, J., & Ma, K. (2019). Evaluating the popularity of R in ecology. Ecosphere, 10(1), e02567.](https://doi.org/10.1002/ecs2.2567)
-- [Lortie, C. J., Braun, J., Filazzola, A., & Miguel, F. (2020). A checklist for choosing between R packages in ecology and evolution. Ecology and Evolution, 10(3), 1098–1105.](https://doi.org/10.1002/ece3.5970) 
-- [Tippmann, S. (2015). Programming tools: Adventures with R. Nature, 517(7532), Article 7532.](https://doi.org/10.1038/517109a)
-
-**Comunidade de usuários**
-
-- [Bollmann, S. S., ... Debelak, R. (2017). A First Survey on the Diversity of the R Community. The R Journal, 9(2), Article 2.](https://doi.org/10.5167/uzh-233651)
-- [Fox, J. (2009). Aspects of the Social Organization and Trajectory of the R Project. The R Journal, 1(2), 5–13.](https://doi.org/10.32614/RJ-2009-014)
-- [Mair, P., ... Hornik, K. (2015). Motivation, values, and work design as drivers of participation in the R open source project for statistical computing. Proceedings of the National Academy of Sciences, 112(48), 14788–14792.](https://doi.org/10.1073/pnas.1506047112)
-:::
 
 # Dúvidas?
 
@@ -398,6 +336,8 @@ character
 :::
 :::::
 
+# Atributos dos objetos
+
 ## Modo dos objetos (*mode*)
 
 Verificar e mudar a natureza dos modos dos objetos
@@ -431,178 +371,6 @@ as.character()
 Organização dos elementos dos objetos
 
 <center><img src="img/r_data_structures_general.png" style="width:70%"/></center>
-
-## Estrutura dos objetos (*class*) {.smaller}
-
-**Vector**
-
-Sequência de valores que representam uma variável contínua ou descrição textual
-
-::::: columns
-::: {.column width="50%"}
-<br><br> ![](img/r_data_structures_general.png)
-:::
-
-::: {.column width="50%"}
-```{r}
-# concatenar
-c(1, 2, 3)
-c("amostra1", "amostra2", "amostra3")
-
-# sequencia
-seq(1, 10, 2)
-
-# repetir
-rep(c(23, 42), times = 2)
-rep(c(23, 42), each = 2)
-
-# combinar
-paste("amostra", 1:3)
-
-# amostrar
-sample(1:60, 6)
-```
-:::
-:::::
-
-## Estrutura dos objetos (*class*) {.smaller}
-
-**Factor**
-
-Sequência de valores que representam uma variável categórica (níveis)
-
-::::: columns
-::: {.column width="50%"}
-<br><br> ![](img/r_data_structures_general.png)
-:::
-
-::: {.column width="50%"}
-```{r}
-# factor nominal
-ftc_nom <- factor(
-  x = sample(c("f", "p"), size = 20, rep = TRUE),
-  levels = c("f", "p"))
-ftc_nom
-levels(ftc_nom)
-
-# factor ordinal
-ftc_ord <- factor(
-  x = sample(c("b", "a"), size = 20, rep = TRUE),
-  levels = c("b", "a"), ordered = TRUE)
-ftc_ord
-levels(ftc_ord)
-```
-:::
-:::::
-
-## Estrutura dos objetos (*class*) {.smaller}
-
-**Matrix**
-
-Representa os dados no formato de tabela, com linhas (locais) e colunas (variáveis)
-
-::::: columns
-::: {.column width="50%"}
-<br><br> ![](img/r_data_structures_general.png)
-:::
-
-::: {.column width="50%"}
-```{r}
-# dispor uma sequencia
-ve <- 1:9
-ma_col <- matrix(data = ve, nrow = 3, 
-                 ncol = 3, byrow = FALSE)
-ma_col
-
-# combinar vetores
-vec_1 <- c(1, 2, 3)
-vec_2 <- c(4, 5, 6)
-
-ma_rbind <- rbind(vec_1, vec_2)
-ma_rbind
-
-ma_cbind <- cbind(vec_1, vec_2)
-ma_cbind
-```
-:::
-:::::
-
-## Estrutura dos objetos (*class*) {.smaller}
-
-**Array**
-
-Combinação de tabelas, com linhas (locais), colunas (variáveis) e dimensões (tempo)
-
-::::: columns
-::: {.column width="50%"}
-<br><br> ![](img/r_data_structures_general.png)
-:::
-
-::: {.column width="50%"}
-```{r}
-# dispor uma sequencia
-ve <- sample(c(0, 1), 27, rep = TRUE)
-ar <- array(data = ve, dim = c(3, 3, 3))
-ar
-```
-:::
-:::::
-
-## Estrutura dos objetos (*class*) {.smaller}
-
-**List**
-
-Tipo especial de vetor que aceita objetos como elementos
-
-::::: columns
-::: {.column width="50%"}
-<br><br> ![](img/r_data_structures_general.png)
-:::
-
-::: {.column width="50%"}
-```{r}
-# concatenar objetos
-li <- list(ve, # vector
-           ma_rbind, # matrix
-           ma_cbind) # outra matrix
-li
-```
-:::
-:::::
-
-## Estrutura dos objetos (*class*) {.smaller}
-
-**Data frame**
-
-Representa os dados no formato de tabela, com linhas e colunas, mas misturando modos
-
-::::: columns
-::: {.column width="50%"}
-<br><br> ![](img/r_data_structures_general.png)
-:::
-
-::: {.column width="50%"}
-```{r}
-# combinando vetores horizontalmente
-sp <- c("sp1", "sp2", "sp3")
-ab <- c(12, 8, 9)
-ha <- c("flo", "cer", "past")
-
-df <- data.frame(sp, ab, ha)
-df
-```
-
-```{r}
-# combinando vetores horizontalmente com nomes
-df <- data.frame(
-  especies = paste0("sp", 1:3), 
-  abundancia = sample(5:10, 3), 
-  vegetacao = c("flo", "cer", "past")
-)
-df
-```
-:::
-:::::
 
 # Manejo de dados (1D)
 
@@ -1339,6 +1107,8 @@ nulo <- NULL
 nulo
 ```
 
+# Tabelas
+
 ## Tabelas
 
 ### Matrizes e planilhas eletrônicas
@@ -1451,7 +1221,7 @@ Já notaram a relação entre matrizes (escola) e planilhas eletrônicas (Excel�
 - Pacotes específicos para importação no R (`readODS`)
 
 <center>
-<img src="img/libreoffice.png" style="width:50%"/>
+<img src="img/libreoffice.png" style="width:45%"/>
 </center>
 
 ::: footer
@@ -1627,6 +1397,7 @@ Conjunto de funções para conferir os dados
 **Funções de conferência**
 
 ::: {style="font-size: 80%;"}
+`View()`: abre a tabela de dados em outra aba<br>
 `head()`: primeiras 6 linhas<br>
 `tail()`: últimas 6 linhas<br>
 `nrow()`: número de linhas<br>
@@ -1640,17 +1411,29 @@ Conjunto de funções para conferir os dados
 
 ## Conferência de dados importados
 
-`head()`: mostra as primeiras 6 linhas
+`View()`: abre a tabela de dados em outra aba
 
 ```{r include=FALSE}
 # ler e atribuir uma planilha eletronica (.csv) a um objeto
 da <- read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
 ```
 
-<br>
+```{r eval=FALSE}
+# abre a tabela de dados em outra aba
+View(da)
+```
 
 ```{r}
-# primeiras linhas
+#| echo: false
+da
+```
+
+## Conferência de dados importados
+
+`head()`: mostra as primeiras 6 linhas
+
+```{r}
+# primeiras as 6 primeiras linhas
 head(da)
 ```
 
@@ -1659,7 +1442,7 @@ head(da)
 `head()`: mostra as primeiras 10 linhas
 
 ```{r}
-# primeiras linhas
+# primeiras 10 primeiras linhas
 head(da, 10)
 ```
 
@@ -1668,7 +1451,7 @@ head(da, 10)
 `tail()`: mostra as últimas 6 linhas
 
 ```{r}
-# ultimas linhas
+# ultimas 6 linhas
 tail(da)
 ```
 
@@ -1852,7 +1635,6 @@ Agradecimentos:
 
 - [Prof. Tadeu Siqueira](https://tsiqueiralab.weebly.com/)
 - [Prof. Miltinho](https://leec.eco.br/)
-- [Cleber Chaves]()
 
 ![](img/fapesp.png){.absolute width=40% right=650 top=450}
 :::
