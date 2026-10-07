@@ -1,5 +1,5 @@
 #' ----
-#' title: manipulacao de dados em r - tidyverse
+#' title: aula 05 - manipulacao de dados em r - tidyverse
 #' author: mauricio vancine
 #' date: 2025-11-29
 #' ----

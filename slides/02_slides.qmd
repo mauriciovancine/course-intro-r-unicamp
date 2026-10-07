@@ -1518,9 +1518,9 @@ ATLANTIC AMPHIBIANS: a dataset of amphibian communities from the Atlantic Forest
 
 **1. sep**
 ```{r eval=FALSE}
-read.table(sep = ",") # tabulacao - espaco maior do TAB
+read.table(sep = "\t") # tabulacao - espaco maior do TAB
+read.table(sep = ",") # virgula
 read.table(sep = ";") # ponto e virgula
-read.table(sep = "\t") # virgula
 ```
 
 **2. dec**
@@ -1826,6 +1826,21 @@ Recomendo explorar outros pacotes
 - [DBI](https://dbi.r-dbi.org/): banco de dados
 - [haven](https://haven.tidyverse.org/): formatos de outros softwares (SPSS, SAS, Stata)
 - [foreign](https://cran.r-project.org/package=foreign): formatos de outros softwares (SPSS, SAS, Stata)
+
+## Leitura
+
+**Big Data no R**
+
+- Dados são alocados na memória RAM
+- Como importar uma tabela maior que a memória RAM?
+
+<center>
+<img src="img/read_ram.jpg" style="width:45%"/>
+</center>
+
+::: footer
+[Big Data no R: como ler um conjunto de dados maior que a RAM](https://mauriciovancine.github.io/blog/r-big-data)
+:::
 
 # Dúvidas?
 
