@@ -120,6 +120,8 @@ Maurício Humberto Vancine, Pavel Dodonov, Bruno Vilela, Luisa Diele-Viegas, Vic
 - Dificuldades com conceitos abstratos e interpretação de resultados
 - Impactos da COVID-19 e da IA no ensino
 - Formação de profissionais com fortes habilidades analíticas
+
+![](img/cover_oa.jpg){.absolute width=20% right=-50 top=360}
 :::
 
 ::: footer
@@ -208,17 +210,27 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 
 ## Objetos e dados
 
+::::: columns
+::: {.column width="50%"}
 ::: {style="font-size: 85%;"}
 - Atributos dos objetos
 -  Manejo de dados unidimensionais
 -  Manejo de dados multidimensionais
 -  Valores faltantes e especiais
+:::
+:::
+
+::: {.column width="50%"}
+::: {style="font-size: 85%;"}
 -  Tabelas
 -  Diretório de trabalho
 -  Importar dados
 -  Conferência de dados importados
 -  Exportar dados
 :::
+:::
+:::::
+
 :::
 
 # Revisão
@@ -281,22 +293,6 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 [Vancine et al. (2026)](https://revistas.ufrj.br/index.php/oa/article/view/64848)
 :::
 
-## Repositório do GitHub
-
-<br>
-
-[https://github.com/mauriciovancine/course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
-
-<br>
-
-<center>
-<img src="img/github_logo2.png" style="width:60%"/>
-</center>
-
-::: footer
-[course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
-:::
-
 ## Script
 
 Abram o script:
@@ -307,7 +303,7 @@ Abram o script:
 
 # Atributos de objetos
 
-## Modo dos objetos (*mode*)
+## Modo ou tipo dos objetos (*mode*/*type*)
 
 A natureza dos elementos definirá os modos dos objetos
 
@@ -336,9 +332,7 @@ character
 :::
 :::::
 
-# Atributos dos objetos
-
-## Modo dos objetos (*mode*)
+## Modo ou tipo dos objetos (*mode*/*type*)
 
 Verificar e mudar a natureza dos modos dos objetos
 
@@ -929,9 +923,8 @@ df[df$flo == "floresta", ]
 
 **6. Funções de conferência e manejo**
 
-<br>
-
 ::: {style="font-size: 70%;"}
+`View()`: abre a tabela de dados em outra aba<br>
 `head()`: primeiras 6 linhas\
 `tail()`: últimas 6 linhas\
 `nrow()`: número de linhas\
@@ -1315,11 +1308,11 @@ Ler uma planilha eletrônica (.csv)
 
 ```{r eval=FALSE}
 # ler uma planilha eletronica (.csv)
-read.csv("ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+read.csv("ATLANTIC_AMPHIBIANS_sites.csv", encoding = "utf8")
 ```
 
 ```{r echo=FALSE}
-read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "utf8")
 ```
 
 ## Importar dados
@@ -1327,12 +1320,12 @@ read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
 Ler e atribuir uma planilha eletrônica (.csv) a um objeto
 
 ```{r echo=FALSE}
-da <- read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+da <- read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "utf8")
 ```
 
 ```{r eval=FALSE}
 # ler e atribuir uma planilha eletronica (.csv) a um objeto
-da <- read.csv("ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+da <- read.csv("ATLANTIC_AMPHIBIANS_sites.csv", encoding = "utf8")
 ```
 
 ```{r eval=FALSE}
@@ -1378,7 +1371,7 @@ library(openxlsx)
 
 ```{r eval=FALSE}
 # ler e atribuir uma planilha eletrônica (.xlsx) a um objeto
-da <- openxlsx::read.xlsx("ATLANTIC_AMPHIBIANS_sites.xlsx", sheet = 1, encoding = "latin1")
+da <- openxlsx::read.xlsx("ATLANTIC_AMPHIBIANS_sites.xlsx", sheet = 1, encoding = "utf8")
 da
 ```
 
@@ -1415,7 +1408,7 @@ Conjunto de funções para conferir os dados
 
 ```{r include=FALSE}
 # ler e atribuir uma planilha eletronica (.csv) a um objeto
-da <- read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "latin1")
+da <- read.csv("data/ATLANTIC_AMPHIBIANS_sites.csv", encoding = "utf8")
 ```
 
 ```{r eval=FALSE}
