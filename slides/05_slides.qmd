@@ -230,22 +230,6 @@ Projeto IARAA (Inteligência Artificial para Reconhecimento Ambiental da Amazôn
 [Projeto IARAA](https://www.instagram.com/projetoiaraa/)
 :::
 
-## Repositório do GitHub
-
-<br>
-
-[https://github.com/mauriciovancine/course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
-
-<br>
-
-<center>
-<img src="img/github_logo2.png" style="width:60%"/>
-</center>
-
-::: footer
-[course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
-:::
-
 ## Script
 
 Abram o script
@@ -1996,9 +1980,6 @@ parallel::detectCores()
 ::: footer
 [Quick Intro to Parallel Computing in R](https://nceas.github.io/oss-lessons/parallel-computing-in-r/parallel-computing-in-r.html)
 :::
-
-
-# Dúvidas?
 
 # Dúvidas?
 

@@ -36,22 +36,6 @@ lang: pt-br
 ![](img/package_renv.svg){.absolute width=30% right=-180 top=250}
 ![](img/package_quarto.png){.absolute width=25% right=140 top=400}
 
-## Repositório do GitHub
-
-<br>
-
-[https://github.com/mauriciovancine/course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
-
-<br>
-
-<center>
-<img src="img/github_logo2.png" style="width:60%"/>
-</center>
-
-::: footer
-[course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
-:::
-
 ## Reprodutibilidade
 
 Capacidade de **recriar uma análise** e **obter os mesmos resultados** com os mesmos dados e códigos
@@ -1624,6 +1608,8 @@ Podemos hospedar gratuitamente as saídas do `Quarto` de forma on-line no GitHub
 ::: footer
 [afnetworks](https://lddiv.shinyapps.io/shiny-atlantic-forest-networks)
 :::
+
+# Dúvidas?
 
 ## Muito obrigado!
 
