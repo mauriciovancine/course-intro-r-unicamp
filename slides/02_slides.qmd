@@ -198,6 +198,23 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 [\@allison_horst](https://twitter.com/allison_horst)
 :::
 
+## IMPORTANTE 2!!!
+
+**Discussão**
+
+Em tempos de IA, por que ainda há tanta gente querendo aprender R?
+
+![](img/r_ia.jpeg){fig-align='left'}
+
+```{r echo=FALSE}
+countdown::countdown(minutes = 10, seconds = 00, color_background = "gray30",
+                     font_size = "2em", play_sound = TRUE)
+```
+
+::: footer
+[Gemini](https://gemini.google.com/app/9ec5c2067fd98451)
+:::
+
 ## Conteúdo
 
 ::: panel-tabset
@@ -265,7 +282,7 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 
 # Dúvidas?
 
-## IMPORTANTE 2!!!
+## IMPORTANTE 3!!!
 
 **Duas formas de ensino de R**
 
@@ -279,7 +296,7 @@ Sintam-se à vontade para me interromper e tirar dúvidas
 [Vancine et al. (2026)](https://revistas.ufrj.br/index.php/oa/article/view/64848)
 :::
 
-## IMPORTANTE 2!!!
+## IMPORTANTE 3!!!
 
 **Duas formas de ensino de R**
 
