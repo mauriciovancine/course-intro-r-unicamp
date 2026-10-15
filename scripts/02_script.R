@@ -61,8 +61,14 @@ character
 # fixar a amostragem
 set.seed(42)
 
+# fixar a amostragem - a amostragem apos isso sera igual
+set.seed(42)
+
 # amostrar 10 elementos de uma sequencia
-ve <- sample(x = seq(0, 2, .05), size = 10)
+seq <- seq(from = 0, to = 10, by = 0.5)
+seq
+
+ve <- sample(x = seq, size = 10)
 ve
 
 # seleciona o quinto elemento

@@ -27,7 +27,7 @@
 
 
 # Você verificou um problema no sensor de temperatura e o registro errôneo de 
-# temperaturas maiores que 50 graus no ecossistema A. Substitua estes valores por NA, 
+# temperaturas maiores que 20 graus no ecossistema A. Substitua estes valores por NA, 
 # pois não serão confiáveis para análise
 # dica: [] e <-
 
