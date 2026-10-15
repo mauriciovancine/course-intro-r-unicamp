@@ -395,8 +395,12 @@ Organização dos elementos dos objetos
 # fixar a amostragem - a amostragem apos isso sera igual
 set.seed(42)
 
+# criar uma sequencia
+seq <- seq(0, 2, .05)
+seq
+
 # amostrar 10 elementos de uma sequencia
-ve <- sample(x = seq(0, 2, .05), size = 10)
+ve <- sample(x = seq, size = 10)
 ve
 ```
 
@@ -1123,7 +1127,7 @@ nulo
 
 ### Matrizes e planilhas eletrônicas
 
-Já notaram a relação entre matrizes (escola) e planilhas eletrônicas (Excel®)?
+Já notaram a relação entre matrizes (ensino médio) e planilhas eletrônicas (e.g., Excel®)?
 
 <center>
 <img src="img/gemini_matrix_spreadsheet.jpeg" style="width:65%"/>

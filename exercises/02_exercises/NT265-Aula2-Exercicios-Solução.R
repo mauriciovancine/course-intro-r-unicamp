@@ -88,7 +88,7 @@ dim(dados)
 mean(dados$comprimento_1)
 
 # Você conseguiu calcular a média? Por quê?
-# nao, pois possia um NA
+# nao, pois possui um NA
 
 # Tente resolver isso usando indexação e which(). Usando essas funções, 
 # substitua NA pelo valor 1.37
@@ -163,7 +163,7 @@ write.table(penguins, "exercises/02_exercises/penguins.txt", sep = "\t",
 
 # Crie um novo objeto chamado "grandes" selecionando apenas as linhas em que o 
 # termo "grande" aparece na coluna "tamanho". Dica: Use a função subset()
-grandes <- subset(dados, tamanho == "grande")
+grandes <- subset(penguins, tamanho == "grande")
 grandes
 
 # exercicio extra 01 ------------------------------------------------------------
