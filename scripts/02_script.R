@@ -155,7 +155,7 @@ ifelse(ve > 1, 1, 0)
 
 # indexacao []
 # lista
-li <- list(elem1 = 1, elem2 = 2, elem3 = 3)
+li <- list(elem1 = 1, elem2 = "2", elem3 = TRUE)
 li
 
 # acessar o primeiro elemento

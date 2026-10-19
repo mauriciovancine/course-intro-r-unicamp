@@ -27,7 +27,7 @@
 
 
 # Você verificou um problema no sensor de temperatura e o registro errôneo de 
-# temperaturas maiores que 20 graus no ecossistema A. Substitua estes valores por NA, 
+# temperaturas maiores que 22 graus no ecossistema A. Substitua estes valores por NA, 
 # pois não serão confiáveis para análise
 # dica: [] e <-
 
@@ -45,8 +45,9 @@
 # exercicio 02 ------------------------------------------------------------
 
 # Abra o arquivo "aula2_dados_exercicios.xlsx" no excel e salve-o como txt 
-# separado por tabulação. Importe o arquivo txt em um objeto chamado dados
-# dica: funcao read.table() e sep = "\t" 
+# separado por tabulação. Importe o arquivo txt em um objeto chamado "dados"
+# dica: funcao read.table(), sep="\t", header=TRUE e dec=","
+
 
 # Use head() e tail() para verificar se sua tabela foi lida corretamente
 
@@ -68,55 +69,58 @@
 
 # Tente resolver isso usando indexação e which(). Usando essas funções, 
 # substitua NA pelo valor 1.37
+# dica: is.na()
 
 
 # Tente calcular a média agora
 
 
-
 # exercicio 03 ------------------------------------------------------------
 
-# usando o data frame iris, que já vem no R
-iris
+# usando o data frame penguins, que já vem no R
+
 
 # Cheque o data frame usando as funções head() e tail()
 
 
-# Qual a classe da coluna Sepal.length?
+# Qual a classe da coluna bill_len?
 # dica: class()
 
 
-# Qual a classe da coluna Species?
+# Qual a classe da coluna species?
 # dica: class()
 
 
-# Calcule a média a coluna Petal.length
-# dica: mean()
-
-# Descubra o valor máximo e o valor mínimo da coluna Sepal.Width
-# dica: range()
+# Calcule a média a coluna bill_dep
+# dica: mean() e 
 
 
-# Faça um boxplot de Sepal.Length por espécie. Mude a cor do boxplot de acordo 
+# Descubra o valor máximo e o valor mínimo da coluna flipper_len
+# dica: range() e na.rm = TRUE
+
+
+# Faça um boxplot de body_mass por espécie. Mude a cor do boxplot de acordo 
 # com a espécie (busque os argumentos da função usando ?boxplot). 
 # dica: use a função unique() em espécies para conseguir colorir 
 
 
-# Exclua todas as linhas que tiverem os dados da espécie versicolor (use which())
+# Exclua todas as linhas que tiverem os dados da espécie Adelie (use which())
+# dica: use o menos "-"
 
 
-# Crie uma nova coluna no data frame iris com os valores de Sepal.Length 
-# divididos pelos valores de Petal.Length. Coloque o nome SL_PL na sua nova coluna.
+# Crie uma nova coluna no penguins com os valores de bill_len 
+# divididos pelos valores de bill_dep Coloque o nome BL_BD na sua nova coluna.
 
 
-# Crie uma coluna chamada "tamanho" e baseada em Sepal.Width. Para cada linha, 
-# se Sepal.Width for maior ou igual a 4, nessa nova coluna temos o termo "grande" 
-# e, se Sepal.Width for menor que 4 e maior ou igual a 2, temos o termo "medio", 
-# se Sepal.Width for menor que 2, temos o termo "pequeno". 
+# Crie uma coluna chamada "tamanho" e baseada em body_mass.
+# Para cada linha: 
+# se body_mass for maior ou igual a 5000, nessa nova coluna temos o termo "grande" 
+# se body_mass for menor que 5000 e maior ou igual a 3000, temos o termo "medio", 
+# se body_mass for menor que 3000, temos o termo "pequeno". 
 # dica: use ifelse() dentro de ifelse(). 
 
 
-# Salve o objeto iris com a nova coluna no formato txt separado por tabulação.
+# Salve o objeto penguins com a nova coluna no formato txt separado por tabulação.
 
 
 # Crie um novo objeto chamado "grandes" selecionando apenas as linhas em que o 
@@ -130,29 +134,29 @@ iris
 
 
 # Crie uma matriz com 5 linhas e 4 colunas a partir do vetor "numeros" e 
-# salve ela em um objeto chamado minha.matriz. 
-# dica: use a função matrix(x ,nrow, ncol). 
-# Mais uma dica: o vetor "numeros" entra no lugar de "x" na função!
+# salve ela em um objeto chamado minha_matriz. 
+# dica: use a função matrix(data, nrow, ncol). 
+# Mais uma dica: o vetor "numeros" entra no lugar de "data" na função!
 
 
 # Renomeie as colunas para C1, C2, C3 e C4 e as linhas como L1, L2, L3... 
-# dica: use a função paste()
+# dica: use as funçoes paste0(), rownames() e colnames()
 
 
 # exercicio extra 02 ------------------------------------------------------------
 
-# Crie uma lista com os objetos: dados, iris, numeros e minha.matriz 
+# Crie uma lista com os objetos: dados, dados, iris, numeros e minha.matriz
 # dica: use a função list() e concatenacao c()
 
 
 # desafio ------------------------------------------------------------
 
-# Crie um grafico de pontos a partir dos dados iris. Coloque Petal.length 
-# no eixo Y e Sepal.Length no eixo X.
+# Crie um grafico de pontos a partir dos dados penguins. Coloque bill_dep 
+# no eixo Y e bill_len no eixo X.
 # dica: plot()
 
 
-# Mude o nome dos eixos para "Pétala" e "Sépala"
+# Mude o nome dos eixos para "Bill depth" e "Bill length"
 # dica: xlab e ylab
 
 
@@ -165,7 +169,8 @@ iris
 
 
 # Pinte o fundo do gráfico com a sua cor favorita
-# dica:
+# dica: par(bg = "sua_cor") 
+
 
 # Coloque uma linha tendência no gráfico 
 # dica: use lm() para fazer a regressão e abline() para desenhar a linha. 

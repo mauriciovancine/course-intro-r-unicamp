@@ -383,6 +383,48 @@ Organização dos elementos dos objetos
 
 <center><img src="img/r_data_structures_general.png" style="width:70%"/></center>
 
+## Fator
+
+Representa variável categórica e possui níveis
+
+**Criar vetor character**
+
+```{r}
+# vetor
+cat <- c("alto", "alto", "medio", "medio", "baixo", "baixo")
+cat
+```
+
+**Coerção**
+
+```{r}
+# fator
+fct <- as.factor(x = cat)
+fct
+```
+
+## Fator
+
+Representa variável categórica e possui níveis
+
+**Nominal**
+
+```{r}
+# definir niveis nominais
+fct_level <- factor(x = cat, levels = c("baixo", "medio", "alto"))
+fct_level
+```
+
+**Ordinal**
+
+```{r}
+# definir niveis ordinais
+fct_leve_ord <- factor(x = cat, levels = c("baixo", "medio", "alto"),
+                       ordered = TRUE)
+fct_leve_ord
+```
+
+
 # Manejo de dados (1D)
 
 ## Vetor e Fator
@@ -612,19 +654,19 @@ ifelse(ve > 1, 1, 0)
 
 ## Listas
 
-**1. Indexação []**: acessa elementos de listas
+**1. Indexação []**: acessa elementos de listas e retorna lista
 
 ```{r}
 ## indexacao []
 # lista
-li <- list(elem1 = 1, elem2 = 2, elem3 = 3)
+li <- list(elem1 = 1, elem2 = "2", elem3 = TRUE)
 li
 ```
 
 ## Listas
 
-**1. Indexação []**: acessa elementos de listas
-
+**1. Indexação []**: acessa elementos de listas e retorna lista
+ 
 Selecionar elementos
 ```{r}
 # acessar o primeiro elemento
@@ -641,7 +683,7 @@ li2
 
 ## Listas
 
-**1. Indexação []**: acessa elementos de listas
+**1. Indexação []**: acessa elementos de listas e retorna lista
 
 Retirar elementos
 
@@ -660,7 +702,7 @@ li_13
 
 ## Listas
 
-**2. Indexação [[]]**: acessa valores dos elementos de listas
+**2. Indexação [[]]**: acessa valores dos elementos de listas e retorna valores
 
 Retirar elementos
 ```{r}
@@ -678,7 +720,7 @@ li2_val
 
 ## Listas
 
-**3. Indexação $**: acessa elementos pelo nome
+**3. Indexação $**: acessa elementos pelo nome e retorna valores
 
 Selecionar elementos pelo nome
 
@@ -1286,7 +1328,27 @@ dir()
 <img src="img/general_real_data.jpg" style="width:60%"/>
 </center>
 
-## Importar dados
+## Dados exemplos do R
+
+**iris**
+
+```{r}
+head(iris, 2)
+```
+
+**mtcars**
+
+```{r}
+head(mtcars, 2)
+```
+
+**penguins**
+
+```{r}
+head(penguins, 2)
+```
+
+## Dados reais
 
 ATLANTIC AMPHIBIANS: a dataset of amphibian communities from the Atlantic Forests of South America
 

@@ -46,6 +46,11 @@ dados$temperatura_fix <- dados$temperatura
 dados[dados$ecossistema == "ecossistema_A" & dados$temperatura > 22, ]$temperatura_fix <- NA
 dados
 
+dados[dados$ecossistema == "ecossistema_A" & dados$temperatura > 22, ]$temperatura_fix <- NA
+dados
+
+dados$temperatura <- ifelse(dados$ecossistema == "ecossistema_A" & dados$temperatura > 20, NA, dados$temperatura)
+
 # Selecione os meses com precipitação maior que >60mm em cada ecossistema e 
 # analise as diferenças descrevendo-as
 # dica: [] e >
