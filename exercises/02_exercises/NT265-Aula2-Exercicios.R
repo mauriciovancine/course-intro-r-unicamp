@@ -146,7 +146,7 @@
 # exercicio extra 02 ------------------------------------------------------------
 
 # Crie uma lista com os objetos: dados, dados, iris, numeros e minha.matriz
-# dica: use a função list() e concatenacao c()
+# dica: use a função list()
 
 
 # desafio ------------------------------------------------------------
