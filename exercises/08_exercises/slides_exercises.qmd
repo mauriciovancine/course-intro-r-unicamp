@@ -35,17 +35,17 @@ lang: pt-br
 ## Conferindo os computadores
 
 <br>
-**R (>4.5.x)**  
+**R (>4.6.x)**  
 [https://www.r-project.org](https://www.r-project.org/)
 
 <br>
 
-**RStudio (>2025.9.x)**  
+**RStudio (>2026.10.x)**  
 [https://www.rstudio.com](https://www.rstudio.com/)
 
 <br>
 
-**git (>2.34.x)**  
+**git (>2.43.x)**  
 [https://git-scm.com](https://git-scm.com/)
 
 ![](img/r_logo.svg){.absolute width=20% right=150 top=100}
@@ -222,6 +222,19 @@ Chave SSH
 
 ## Prática 4
 
+**RStudio**
+
+Terminal
+
+::: {style="font-size: 80%;"}
+1. Mudar o terminal: `Tools > Global Options > Terminal`
+1. New terminals opens with: `Git Bash`
+:::
+
+![](img/rstudio_terminal.png){.absolute width=35% height=60% right=50 top=270}
+
+## Prática 4
+
 **git**
 
 ::: {style="font-size: 80%;"}
@@ -236,7 +249,7 @@ $ git config --global user.email "email@dominio.com"
 $ git config --list
 ```
 
-![](img/git_config.png){fig-align='center'}
+![](img/rstudio_terminal02.png){fig-align='center'}
 
 # Controle de versão na prática
 

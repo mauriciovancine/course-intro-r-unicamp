@@ -33,7 +33,7 @@ table(penguins$island)
 
 ## exercicio 05 ----
 # Em qual ilha a espécie Gentoo é mais abundante?
-# E onde Adelie tem a maior concentração?
+# E onde Adelie tem a maior abundância?
 # dica: table()
 table(penguins$species, penguins$island)
 
@@ -54,8 +54,8 @@ library(janitor)
 janitor::tabyl(penguins, species, sex)
 
 ## exercicio 09 ----
-# Usando o pacote janitor e a função tabyl, crie uma tabela de frequência de 
-# espécie, sexo e por ilhas
+# Usando o pacote janitor e a função tabyl(), crie uma tabela de frequências 
+# cruzando espécie, sexo e ilha.
 janitor::tabyl(penguins, species, sex, island)
 
 ## exercicio 10 ----
@@ -95,8 +95,8 @@ apply(penguins_na[, c(3:6)], 2, min)
 tapply(penguins_na$body_mass_g, penguins_na$species, mean)
 
 ## exercicio 15 ----
-# 'summary' para fazer a descricao da massa corporal para cada 
-# espécie de pinguim 
+# Use 'summary' para fazer a resumo estatístico descritivo da massa corporal 
+# para cada espécie de pinguim 
 # dica: tapply
 tapply(penguins_na$body_mass_g, penguins_na$species, summary)
 
@@ -126,7 +126,7 @@ penguins_na[, c("bill_length_mm", "bill_length_class")]
 
 ## exercicio 17 ----
 # Use um loop while para emagrecer um pinguim. Comece com um pinguim pesando 10 kg 
-# e retire 100 g a cada iteração do loop ate 3.5 kg. Conte quantas retiradas aconteceram
+# e retire 100 g a cada iteração do loop ate 3.5 kg. Conte quantas retiradas aconteceram?
 
 massa_pinguim <- 10000
 i <- 0

@@ -192,6 +192,8 @@
       margin-right: 0; 
     }
   </style>
+  <link href="04_slides_files/libs/countdown-0.6.0/countdown.css" rel="stylesheet">
+  <script src="04_slides_files/libs/countdown-0.6.0/countdown.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -345,6 +347,16 @@
 10 Adelie  Torgersen           34.6          21.1               198        4400
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Observações e variáveis</h2>
+<br>
+<center>
+<img src="img/observacoes_variaveis.png" style="width:100%">
+</center>
+<div class="footer">
+<p><a href="">chatGPT</a></p>
 </div>
 </section>
 <section class="slide level2 smaller">
@@ -1118,9 +1130,9 @@ $c$e
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb84"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb84-1"><a href=""></a><span class="co"># teste</span></span>
 <span id="cb84-2"><a href=""></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
-<span id="cb84-3"><a href=""></a>    </span>
-<span id="cb84-4"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x é maior que 5"</span>)</span>
-<span id="cb84-5"><a href=""></a>    </span>
+<span id="cb84-3"><a href=""></a>  </span>
+<span id="cb84-4"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é maior que 5"</span>)</span>
+<span id="cb84-5"><a href=""></a>  </span>
 <span id="cb84-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "x é maior que 5"</code></pre>
@@ -1145,9 +1157,9 @@ $c$e
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb88-1"><a href=""></a><span class="co"># teste</span></span>
 <span id="cb88-2"><a href=""></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">&amp;</span> y <span class="sc">&gt;</span> <span class="dv">8</span>){</span>
-<span id="cb88-3"><a href=""></a>    </span>
-<span id="cb88-4"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x e y são maiores que 5"</span>)</span>
-<span id="cb88-5"><a href=""></a>    </span>
+<span id="cb88-3"><a href=""></a>  </span>
+<span id="cb88-4"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x e y são maiores que 5"</span>)</span>
+<span id="cb88-5"><a href=""></a>  </span>
 <span id="cb88-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "x e y são maiores que 5"</code></pre>
@@ -1172,9 +1184,9 @@ $c$e
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb92-1"><a href=""></a><span class="co"># teste</span></span>
 <span id="cb92-2"><a href=""></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">5</span> <span class="sc">|</span> y <span class="sc">&gt;</span> <span class="dv">8</span>){</span>
-<span id="cb92-3"><a href=""></a>    </span>
-<span id="cb92-4"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x ou y é maior que 5"</span>)</span>
-<span id="cb92-5"><a href=""></a>    </span>
+<span id="cb92-3"><a href=""></a>  </span>
+<span id="cb92-4"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x ou y é maior que 5"</span>)</span>
+<span id="cb92-5"><a href=""></a>  </span>
 <span id="cb92-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "x ou y é maior que 5"</code></pre>
@@ -1199,9 +1211,9 @@ $c$e
 </div>
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb96-1"><a href=""></a><span class="co"># teste</span></span>
 <span id="cb96-2"><a href=""></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
-<span id="cb96-3"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x é maior que 5"</span>)</span>
+<span id="cb96-3"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é maior que 5"</span>)</span>
 <span id="cb96-4"><a href=""></a>} <span class="cf">else</span>{</span>
-<span id="cb96-5"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x é menor ou igual a 5"</span>)</span>
+<span id="cb96-5"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é menor ou igual a 5"</span>)</span>
 <span id="cb96-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "x é menor ou igual a 5"</code></pre>
@@ -1219,11 +1231,11 @@ $c$e
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb98-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">7</span></span>
 <span id="cb98-2"><a href=""></a><span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">10</span>){</span>
-<span id="cb98-3"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x é maior que 10"</span>)</span>
+<span id="cb98-3"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é maior que 10"</span>)</span>
 <span id="cb98-4"><a href=""></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
-<span id="cb98-5"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x está entre 6 e 10"</span>)</span>
+<span id="cb98-5"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x está entre 6 e 10"</span>)</span>
 <span id="cb98-6"><a href=""></a>} <span class="cf">else</span>{</span>
-<span id="cb98-7"><a href=""></a>    <span class="fu">print</span>(<span class="st">"x é 5 ou menor"</span>)</span>
+<span id="cb98-7"><a href=""></a>  <span class="fu">print</span>(<span class="st">"x é 5 ou menor"</span>)</span>
 <span id="cb98-8"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "x está entre 6 e 10"</code></pre>
@@ -1235,6 +1247,42 @@ $c$e
 <section class="title-slide slide level1 center">
 <h1>Dúvidas?</h1>
 
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<ul>
+<li><p>Crie um vetor com as idades: 23, 35, 18, 17, 42, 55, 60, 13, 81, 72</p></li>
+<li><p>Faça uma estrutura de <code>if</code> e <code>else</code> para testar <code>jovens</code> (&lt;18), <code>meia-idade</code> (&gt;18 e &lt;65) e <code>véios</code> (&gt;65)</p></li>
+<li><p>Crie uma variável intermediária (<code>x</code>) para atribuir as idades usando indexação <code>[]</code></p></li>
+</ul>
+<div class="cell">
+<div class="cell-output-display">
+<countdown-timer class="countdown" id="timer_fa73883c" minutes="5" seconds="0" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;--countdown-color-background:gray30;"></countdown-timer>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<p><strong>Solução</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href=""></a><span class="co"># vetor</span></span>
+<span id="cb100-2"><a href=""></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">35</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">42</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">13</span>, <span class="dv">81</span>, <span class="dv">72</span>)</span>
+<span id="cb100-3"><a href=""></a></span>
+<span id="cb100-4"><a href=""></a><span class="co"># selecao</span></span>
+<span id="cb100-5"><a href=""></a>x <span class="ot">&lt;-</span> idades[<span class="dv">1</span>]</span>
+<span id="cb100-6"><a href=""></a></span>
+<span id="cb100-7"><a href=""></a><span class="co"># teste</span></span>
+<span id="cb100-8"><a href=""></a><span class="cf">if</span>(x <span class="sc">&lt;</span> <span class="dv">18</span>){</span>
+<span id="cb100-9"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Jovem"</span>)</span>
+<span id="cb100-10"><a href=""></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">65</span>){</span>
+<span id="cb100-11"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Meia-idade"</span>)</span>
+<span id="cb100-12"><a href=""></a>} <span class="cf">else</span>{</span>
+<span id="cb100-13"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Véio"</span>)</span>
+<span id="cb100-14"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Meia-idade"</code></pre>
+</div>
+</div>
 </section>
 <section class="slide level2">
 <h2>Estruturas de repetição</h2>
@@ -1254,10 +1302,10 @@ $c$e
 </ul>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb100-1"><a href=""></a><span class="co"># for</span></span>
-<span id="cb100-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb100-3"><a href=""></a>    <span class="fu">print</span>(i)</span>
-<span id="cb100-4"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a><span class="co"># for</span></span>
+<span id="cb102-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb102-3"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb102-4"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -1280,11 +1328,11 @@ $c$e
 </ul>
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb102-1"><a href=""></a><span class="co"># for</span></span>
-<span id="cb102-2"><a href=""></a>prog <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"python"</span>, <span class="st">"julia"</span>, <span class="st">"Fortran"</span>)</span>
-<span id="cb102-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> prog){</span>
-<span id="cb102-4"><a href=""></a>    <span class="fu">print</span>(i)</span>
-<span id="cb102-5"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a><span class="co"># for</span></span>
+<span id="cb104-2"><a href=""></a>prog <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"python"</span>, <span class="st">"julia"</span>, <span class="st">"Fortran"</span>)</span>
+<span id="cb104-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> prog){</span>
+<span id="cb104-4"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb104-5"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "R"
 [1] "python"
@@ -1300,12 +1348,12 @@ $c$e
 <li><strong>Executa</strong> um bloco de código <strong><code>enquanto</code></strong> uma condição é <strong>verdadeira</strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb104-1"><a href=""></a><span class="co"># while</span></span>
-<span id="cb104-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb104-3"><a href=""></a><span class="cf">while</span>(x <span class="sc">&lt;=</span> <span class="dv">5</span>){</span>
-<span id="cb104-4"><a href=""></a>    <span class="fu">print</span>(x)</span>
-<span id="cb104-5"><a href=""></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span>  <span class="co"># atualiza o x</span></span>
-<span id="cb104-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href=""></a><span class="co"># while</span></span>
+<span id="cb106-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb106-3"><a href=""></a><span class="cf">while</span>(x <span class="sc">&lt;=</span> <span class="dv">5</span>){</span>
+<span id="cb106-4"><a href=""></a>  <span class="fu">print</span>(x)</span>
+<span id="cb106-5"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span>  <span class="co"># atualiza o x</span></span>
+<span id="cb106-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -1322,15 +1370,15 @@ $c$e
 <li><strong>Executa</strong> um bloco de código <strong><code>repetidamente</code></strong> até que uma condição de parada (<code>break</code>) seja <strong>atendida</strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb106-1"><a href=""></a><span class="co"># repeat</span></span>
-<span id="cb106-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb106-3"><a href=""></a><span class="cf">repeat</span>{</span>
-<span id="cb106-4"><a href=""></a>    <span class="fu">print</span>(x)</span>
-<span id="cb106-5"><a href=""></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb106-6"><a href=""></a>    <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
-<span id="cb106-7"><a href=""></a>        <span class="cf">break</span>  <span class="co"># para o loop para x &gt; 5</span></span>
-<span id="cb106-8"><a href=""></a>    }</span>
-<span id="cb106-9"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href=""></a><span class="co"># repeat</span></span>
+<span id="cb108-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb108-3"><a href=""></a><span class="cf">repeat</span>{</span>
+<span id="cb108-4"><a href=""></a>  <span class="fu">print</span>(x)</span>
+<span id="cb108-5"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb108-6"><a href=""></a>  <span class="cf">if</span>(x <span class="sc">&gt;</span> <span class="dv">5</span>){</span>
+<span id="cb108-7"><a href=""></a>    <span class="cf">break</span>  <span class="co"># para o loop para x &gt; 5</span></span>
+<span id="cb108-8"><a href=""></a>  }</span>
+<span id="cb108-9"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -1347,13 +1395,13 @@ $c$e
 <li>Usado para <strong>sair</strong> de um laço antes que ele complete todas as iterações</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb108-1"><a href=""></a><span class="co"># break</span></span>
-<span id="cb108-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb108-3"><a href=""></a>    <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">6</span>){</span>
-<span id="cb108-4"><a href=""></a>        <span class="cf">break</span>  <span class="co"># sai do laco quando i for igual a 6</span></span>
-<span id="cb108-5"><a href=""></a>    }</span>
-<span id="cb108-6"><a href=""></a>    <span class="fu">print</span>(i)</span>
-<span id="cb108-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href=""></a><span class="co"># break</span></span>
+<span id="cb110-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb110-3"><a href=""></a>  <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">6</span>){</span>
+<span id="cb110-4"><a href=""></a>    <span class="cf">break</span>  <span class="co"># sai do laco quando i for igual a 6</span></span>
+<span id="cb110-5"><a href=""></a>  }</span>
+<span id="cb110-6"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb110-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -1369,13 +1417,13 @@ $c$e
 <li>Usado para fazer o laço <strong>pular</strong> a próxima iteração sem executar o código que vem após ele</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb110-1"><a href=""></a><span class="co"># next</span></span>
-<span id="cb110-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
-<span id="cb110-3"><a href=""></a>    <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">3</span>){</span>
-<span id="cb110-4"><a href=""></a>        <span class="cf">next</span>  <span class="co"># pula o numero 3</span></span>
-<span id="cb110-5"><a href=""></a>    }</span>
-<span id="cb110-6"><a href=""></a>    <span class="fu">print</span>(i)</span>
-<span id="cb110-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href=""></a><span class="co"># next</span></span>
+<span id="cb112-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb112-3"><a href=""></a>  <span class="cf">if</span>(i <span class="sc">==</span> <span class="dv">3</span>){</span>
+<span id="cb112-4"><a href=""></a>    <span class="cf">next</span>  <span class="co"># pula o numero 3</span></span>
+<span id="cb112-5"><a href=""></a>  }</span>
+<span id="cb112-6"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb112-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] 2
@@ -1388,15 +1436,15 @@ $c$e
 <h2>Controle de fluxo e repetição</h2>
 <h3>for</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb112-1"><a href=""></a><span class="co"># for e if/else</span></span>
-<span id="cb112-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb112-3"><a href=""></a>    </span>
-<span id="cb112-4"><a href=""></a>    <span class="cf">if</span>(i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb112-5"><a href=""></a>        <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é par"</span>))</span>
-<span id="cb112-6"><a href=""></a>    } <span class="cf">else</span>{</span>
-<span id="cb112-7"><a href=""></a>        <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é ímpar"</span>))</span>
-<span id="cb112-8"><a href=""></a>    }</span>
-<span id="cb112-9"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href=""></a><span class="co"># for e if/else</span></span>
+<span id="cb114-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb114-3"><a href=""></a>  </span>
+<span id="cb114-4"><a href=""></a>  <span class="cf">if</span>(i <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb114-5"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é par"</span>))</span>
+<span id="cb114-6"><a href=""></a>  } <span class="cf">else</span>{</span>
+<span id="cb114-7"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é ímpar"</span>))</span>
+<span id="cb114-8"><a href=""></a>  }</span>
+<span id="cb114-9"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1 é ímpar"
 [1] "2 é par"
@@ -1415,17 +1463,17 @@ $c$e
 <h2>Controle de fluxo e repetição</h2>
 <h3>while</h3>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href=""></a><span class="co"># while e if/else</span></span>
-<span id="cb114-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
-<span id="cb114-3"><a href=""></a><span class="cf">while</span>(x <span class="sc">&lt;=</span> <span class="dv">10</span>){</span>
-<span id="cb114-4"><a href=""></a>    </span>
-<span id="cb114-5"><a href=""></a>    <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb114-6"><a href=""></a>        <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">"é par"</span>))</span>
-<span id="cb114-7"><a href=""></a>    } <span class="cf">else</span>{</span>
-<span id="cb114-8"><a href=""></a>        <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">"é ímpar"</span>))</span>
-<span id="cb114-9"><a href=""></a>    }</span>
-<span id="cb114-10"><a href=""></a>    x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
-<span id="cb114-11"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href=""></a><span class="co"># while e if/else</span></span>
+<span id="cb116-2"><a href=""></a>x <span class="ot">&lt;-</span> <span class="dv">1</span></span>
+<span id="cb116-3"><a href=""></a><span class="cf">while</span>(x <span class="sc">&lt;=</span> <span class="dv">10</span>){</span>
+<span id="cb116-4"><a href=""></a>  </span>
+<span id="cb116-5"><a href=""></a>  <span class="cf">if</span>(x <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb116-6"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">"é par"</span>))</span>
+<span id="cb116-7"><a href=""></a>  } <span class="cf">else</span>{</span>
+<span id="cb116-8"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(x, <span class="st">"é ímpar"</span>))</span>
+<span id="cb116-9"><a href=""></a>  }</span>
+<span id="cb116-10"><a href=""></a>  x <span class="ot">&lt;-</span> x <span class="sc">+</span> <span class="dv">1</span></span>
+<span id="cb116-11"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "1 é ímpar"
 [1] "2 é par"
@@ -1446,13 +1494,13 @@ $c$e
 <li>Exportar ou criar <strong>arquivos</strong> ‘colando’ o iterador</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href=""></a>arquivo <span class="ot">&lt;-</span> <span class="st">"arquivo"</span></span>
-<span id="cb116-2"><a href=""></a></span>
-<span id="cb116-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb116-4"><a href=""></a>    </span>
-<span id="cb116-5"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(arquivo, i, <span class="at">sep =</span> <span class="st">"_"</span>))</span>
-<span id="cb116-6"><a href=""></a>    </span>
-<span id="cb116-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href=""></a>arquivo <span class="ot">&lt;-</span> <span class="st">"arquivo"</span></span>
+<span id="cb118-2"><a href=""></a></span>
+<span id="cb118-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb118-4"><a href=""></a>  </span>
+<span id="cb118-5"><a href=""></a>  <span class="fu">print</span>(<span class="fu">paste</span>(arquivo, i, <span class="at">sep =</span> <span class="st">"_"</span>))</span>
+<span id="cb118-6"><a href=""></a>  </span>
+<span id="cb118-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "arquivo_1"
 [1] "arquivo_2"
@@ -1473,13 +1521,13 @@ $c$e
 <li>Exportar ou criar <strong>arquivos</strong> ‘colando’ o iterador</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href=""></a>arquivo <span class="ot">&lt;-</span> <span class="st">"arquivo"</span></span>
-<span id="cb118-2"><a href=""></a></span>
-<span id="cb118-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
-<span id="cb118-4"><a href=""></a>    </span>
-<span id="cb118-5"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste0</span>(arquivo, i))</span>
-<span id="cb118-6"><a href=""></a>    </span>
-<span id="cb118-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href=""></a>arquivo <span class="ot">&lt;-</span> <span class="st">"arquivo"</span></span>
+<span id="cb120-2"><a href=""></a></span>
+<span id="cb120-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>){</span>
+<span id="cb120-4"><a href=""></a>  </span>
+<span id="cb120-5"><a href=""></a>  <span class="fu">print</span>(<span class="fu">paste0</span>(arquivo, i))</span>
+<span id="cb120-6"><a href=""></a>  </span>
+<span id="cb120-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "arquivo1"
 [1] "arquivo2"
@@ -1501,12 +1549,12 @@ $c$e
 <li><code>i</code> assume o <strong>valor</strong> dos elementos</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href=""></a>prog <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"python"</span>, <span class="st">"julia"</span>, <span class="st">"Fortran"</span>)</span>
-<span id="cb120-2"><a href=""></a></span>
-<span id="cb120-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> prog){</span>
-<span id="cb120-4"><a href=""></a>    <span class="fu">print</span>(i)</span>
-<span id="cb120-5"><a href=""></a>    </span>
-<span id="cb120-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href=""></a>prog <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"python"</span>, <span class="st">"julia"</span>, <span class="st">"Fortran"</span>)</span>
+<span id="cb122-2"><a href=""></a></span>
+<span id="cb122-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> prog){</span>
+<span id="cb122-4"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb122-5"><a href=""></a>  </span>
+<span id="cb122-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "R"
 [1] "python"
@@ -1522,14 +1570,14 @@ $c$e
 <li><code>i</code> assume a <strong>posição</strong> dos elementos</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb122-1"><a href=""></a>prog <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"python"</span>, <span class="st">"julia"</span>, <span class="st">"Fortran"</span>)</span>
-<span id="cb122-2"><a href=""></a></span>
-<span id="cb122-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(prog)){</span>
-<span id="cb122-4"><a href=""></a>    </span>
-<span id="cb122-5"><a href=""></a>    <span class="fu">print</span>(i)</span>
-<span id="cb122-6"><a href=""></a>    <span class="fu">print</span>(prog[i])</span>
-<span id="cb122-7"><a href=""></a>    </span>
-<span id="cb122-8"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href=""></a>prog <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"R"</span>, <span class="st">"python"</span>, <span class="st">"julia"</span>, <span class="st">"Fortran"</span>)</span>
+<span id="cb124-2"><a href=""></a></span>
+<span id="cb124-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(prog)){</span>
+<span id="cb124-4"><a href=""></a>  </span>
+<span id="cb124-5"><a href=""></a>  <span class="fu">print</span>(i)</span>
+<span id="cb124-6"><a href=""></a>  <span class="fu">print</span>(prog[i])</span>
+<span id="cb124-7"><a href=""></a>  </span>
+<span id="cb124-8"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1
 [1] "R"
@@ -1548,16 +1596,16 @@ $c$e
 <li>Combinando resultados em um <strong>objeto vazio</strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb124-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>)</span>
-<span id="cb124-2"><a href=""></a></span>
-<span id="cb124-3"><a href=""></a>obj <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb124-4"><a href=""></a></span>
-<span id="cb124-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> x){</span>
-<span id="cb124-6"><a href=""></a>    </span>
-<span id="cb124-7"><a href=""></a>    raiz <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(i)</span>
-<span id="cb124-8"><a href=""></a>    obj <span class="ot">&lt;-</span> <span class="fu">c</span>(obj, raiz)</span>
-<span id="cb124-9"><a href=""></a>}</span>
-<span id="cb124-10"><a href=""></a>obj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">9</span>, <span class="dv">16</span>)</span>
+<span id="cb126-2"><a href=""></a></span>
+<span id="cb126-3"><a href=""></a>obj <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb126-4"><a href=""></a></span>
+<span id="cb126-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> x){</span>
+<span id="cb126-6"><a href=""></a>  </span>
+<span id="cb126-7"><a href=""></a>  raiz <span class="ot">&lt;-</span> <span class="fu">sqrt</span>(i)</span>
+<span id="cb126-8"><a href=""></a>  obj <span class="ot">&lt;-</span> <span class="fu">c</span>(obj, raiz)</span>
+<span id="cb126-9"><a href=""></a>}</span>
+<span id="cb126-10"><a href=""></a>obj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1 2 3 4</code></pre>
 </div>
@@ -1569,15 +1617,15 @@ $c$e
 <li>Combinando resultados em um objeto vazio pela <strong>posição</strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb126"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb126-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>)</span>
-<span id="cb126-2"><a href=""></a></span>
-<span id="cb126-3"><a href=""></a>obj <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
-<span id="cb126-4"><a href=""></a></span>
-<span id="cb126-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
-<span id="cb126-6"><a href=""></a>    </span>
-<span id="cb126-7"><a href=""></a>    obj[i] <span class="ot">&lt;-</span> <span class="fu">log10</span>(x[i])</span>
-<span id="cb126-8"><a href=""></a>}</span>
-<span id="cb126-9"><a href=""></a>obj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href=""></a>x <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">10</span>, <span class="dv">100</span>, <span class="dv">1000</span>)</span>
+<span id="cb128-2"><a href=""></a></span>
+<span id="cb128-3"><a href=""></a>obj <span class="ot">&lt;-</span> <span class="cn">NULL</span></span>
+<span id="cb128-4"><a href=""></a></span>
+<span id="cb128-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="fu">length</span>(x)){</span>
+<span id="cb128-6"><a href=""></a>  </span>
+<span id="cb128-7"><a href=""></a>  obj[i] <span class="ot">&lt;-</span> <span class="fu">log10</span>(x[i])</span>
+<span id="cb128-8"><a href=""></a>}</span>
+<span id="cb128-9"><a href=""></a>obj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 0 1 2 3</code></pre>
 </div>
@@ -1589,16 +1637,16 @@ $c$e
 <li>Combinando resultados em um objeto vazio por <strong>linhas</strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb128"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb128-1"><a href=""></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
-<span id="cb128-2"><a href=""></a></span>
-<span id="cb128-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
-<span id="cb128-4"><a href=""></a>    </span>
-<span id="cb128-5"><a href=""></a>    q <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">2</span></span>
-<span id="cb128-6"><a href=""></a>    c <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">3</span></span>
-<span id="cb128-7"><a href=""></a>    res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">numero =</span> i, <span class="at">quadrado =</span> q, <span class="at">cubo =</span> c)</span>
-<span id="cb128-8"><a href=""></a>    df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df, res)</span>
-<span id="cb128-9"><a href=""></a>}</span>
-<span id="cb128-10"><a href=""></a>df</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href=""></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>()</span>
+<span id="cb130-2"><a href=""></a></span>
+<span id="cb130-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb130-4"><a href=""></a>  </span>
+<span id="cb130-5"><a href=""></a>  q <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">2</span></span>
+<span id="cb130-6"><a href=""></a>  c <span class="ot">&lt;-</span> i<span class="sc">^</span><span class="dv">3</span></span>
+<span id="cb130-7"><a href=""></a>  res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">numero =</span> i, <span class="at">quadrado =</span> q, <span class="at">cubo =</span> c)</span>
+<span id="cb130-8"><a href=""></a>  df <span class="ot">&lt;-</span> <span class="fu">rbind</span>(df, res)</span>
+<span id="cb130-9"><a href=""></a>}</span>
+<span id="cb130-10"><a href=""></a>df</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  numero quadrado cubo
 1      1        1    1
@@ -1615,16 +1663,16 @@ $c$e
 <li>Combinando resultados em um objeto vazio por <strong>colunas</strong></li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb130"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb130-1"><a href=""></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">numero =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
-<span id="cb130-2"><a href=""></a></span>
-<span id="cb130-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
-<span id="cb130-4"><a href=""></a>    </span>
-<span id="cb130-5"><a href=""></a>    res <span class="ot">&lt;-</span> i <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
-<span id="cb130-6"><a href=""></a>    df_res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(res)</span>
-<span id="cb130-7"><a href=""></a>    <span class="fu">colnames</span>(df_res) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"mult"</span>, i)</span>
-<span id="cb130-8"><a href=""></a>    df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df, df_res)</span>
-<span id="cb130-9"><a href=""></a>}</span>
-<span id="cb130-10"><a href=""></a>df</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href=""></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">numero =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)</span>
+<span id="cb132-2"><a href=""></a></span>
+<span id="cb132-3"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>){</span>
+<span id="cb132-4"><a href=""></a>  </span>
+<span id="cb132-5"><a href=""></a>  res <span class="ot">&lt;-</span> i <span class="sc">*</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">5</span></span>
+<span id="cb132-6"><a href=""></a>  df_res <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(res)</span>
+<span id="cb132-7"><a href=""></a>  <span class="fu">colnames</span>(df_res) <span class="ot">&lt;-</span> <span class="fu">paste0</span>(<span class="st">"mult"</span>, i)</span>
+<span id="cb132-8"><a href=""></a>  df <span class="ot">&lt;-</span> <span class="fu">cbind</span>(df, df_res)</span>
+<span id="cb132-9"><a href=""></a>}</span>
+<span id="cb132-10"><a href=""></a>df</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>  numero mult1 mult2 mult3 mult4 mult5
 1      1     1     2     3     4     5
@@ -1632,6 +1680,107 @@ $c$e
 3      3     3     6     9    12    15
 4      4     4     8    12    16    20
 5      5     5    10    15    20    25</code></pre>
+</div>
+</div>
+</section></section>
+<section>
+<section class="title-slide slide level1 center">
+<h1>Dúvidas?</h1>
+
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<ul>
+<li>Use o exercício anterior para testar para todas as idades usando o <code>for</code> e <code>paste</code> para imprimir com uma mensagem da idade e o valor</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb134"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb134-1"><a href=""></a><span class="co"># vetor</span></span>
+<span id="cb134-2"><a href=""></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">35</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">42</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">13</span>, <span class="dv">81</span>, <span class="dv">72</span>)</span>
+<span id="cb134-3"><a href=""></a></span>
+<span id="cb134-4"><a href=""></a><span class="co"># selecao</span></span>
+<span id="cb134-5"><a href=""></a>x <span class="ot">&lt;-</span> idades[<span class="dv">1</span>]</span>
+<span id="cb134-6"><a href=""></a></span>
+<span id="cb134-7"><a href=""></a><span class="co"># teste</span></span>
+<span id="cb134-8"><a href=""></a><span class="cf">if</span>(x <span class="sc">&lt;</span> <span class="dv">18</span>){</span>
+<span id="cb134-9"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Jovem"</span>)</span>
+<span id="cb134-10"><a href=""></a>} <span class="cf">else</span> <span class="cf">if</span>(x <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> x <span class="sc">&lt;</span> <span class="dv">65</span>){</span>
+<span id="cb134-11"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Meia-idade"</span>)</span>
+<span id="cb134-12"><a href=""></a>} <span class="cf">else</span>{</span>
+<span id="cb134-13"><a href=""></a>  <span class="fu">print</span>(<span class="st">"Véio"</span>)</span>
+<span id="cb134-14"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Meia-idade"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<countdown-timer class="countdown" id="timer_c99b237b" minutes="5" seconds="0" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;--countdown-color-background:gray30;"></countdown-timer>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<p><strong>Solução</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb136"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb136-1"><a href=""></a><span class="co"># vetor</span></span>
+<span id="cb136-2"><a href=""></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">35</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">42</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">13</span>, <span class="dv">81</span>, <span class="dv">72</span>)</span>
+<span id="cb136-3"><a href=""></a></span>
+<span id="cb136-4"><a href=""></a><span class="co"># for e teste</span></span>
+<span id="cb136-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> idades){</span>
+<span id="cb136-6"><a href=""></a>  </span>
+<span id="cb136-7"><a href=""></a>  <span class="cf">if</span>(i <span class="sc">&lt;</span> <span class="dv">18</span>){</span>
+<span id="cb136-8"><a href=""></a>    <span class="fu">print</span>(<span class="st">"Jovem"</span>)</span>
+<span id="cb136-9"><a href=""></a>  } <span class="cf">else</span> <span class="cf">if</span>(i <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> i <span class="sc">&lt;</span> <span class="dv">65</span>){</span>
+<span id="cb136-10"><a href=""></a>    <span class="fu">print</span>(<span class="st">"Meia-idade"</span>)</span>
+<span id="cb136-11"><a href=""></a>  } <span class="cf">else</span>{</span>
+<span id="cb136-12"><a href=""></a>    <span class="fu">print</span>(<span class="st">"Véio"</span>)</span>
+<span id="cb136-13"><a href=""></a>  }</span>
+<span id="cb136-14"><a href=""></a>  </span>
+<span id="cb136-15"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "Meia-idade"
+[1] "Meia-idade"
+[1] "Meia-idade"
+[1] "Jovem"
+[1] "Meia-idade"
+[1] "Meia-idade"
+[1] "Meia-idade"
+[1] "Jovem"
+[1] "Véio"
+[1] "Véio"</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<p><strong>Solução</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb138"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb138-1"><a href=""></a><span class="co"># vetor</span></span>
+<span id="cb138-2"><a href=""></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">35</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">42</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">13</span>, <span class="dv">81</span>, <span class="dv">72</span>)</span>
+<span id="cb138-3"><a href=""></a></span>
+<span id="cb138-4"><a href=""></a><span class="co"># for e teste</span></span>
+<span id="cb138-5"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> idades){</span>
+<span id="cb138-6"><a href=""></a>  </span>
+<span id="cb138-7"><a href=""></a>  <span class="cf">if</span>(i <span class="sc">&lt;</span> <span class="dv">18</span>){</span>
+<span id="cb138-8"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Jovem"</span>))</span>
+<span id="cb138-9"><a href=""></a>  } <span class="cf">else</span> <span class="cf">if</span>(i <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> i <span class="sc">&lt;</span> <span class="dv">65</span>){</span>
+<span id="cb138-10"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Meia-idade"</span>))</span>
+<span id="cb138-11"><a href=""></a>  } <span class="cf">else</span>{</span>
+<span id="cb138-12"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Véio"</span>))</span>
+<span id="cb138-13"><a href=""></a>  }</span>
+<span id="cb138-14"><a href=""></a>  </span>
+<span id="cb138-15"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "23 é Meia-idade"
+[1] "35 é Meia-idade"
+[1] "18 é Meia-idade"
+[1] "17 é Jovem"
+[1] "42 é Meia-idade"
+[1] "55 é Meia-idade"
+[1] "60 é Meia-idade"
+[1] "13 é Jovem"
+[1] "81 é Véio"
+[1] "72 é Véio"</code></pre>
 </div>
 </div>
 </section>
@@ -1652,12 +1801,12 @@ $c$e
 <li><strong>retorno</strong>: especifica o que a função devolve (<code>return()</code>)</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb132"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb132-1"><a href=""></a><span class="co"># estrutura</span></span>
-<span id="cb132-2"><a href=""></a>nome_da_funcao <span class="ot">&lt;-</span> <span class="cf">function</span>(argumentos){</span>
-<span id="cb132-3"><a href=""></a>    <span class="co"># corpo da funcao</span></span>
-<span id="cb132-4"><a href=""></a>    <span class="co"># calculos, operacoes ou processos</span></span>
-<span id="cb132-5"><a href=""></a>    <span class="fu">return</span>(resultado)</span>
-<span id="cb132-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb140"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb140-1"><a href=""></a><span class="co"># estrutura</span></span>
+<span id="cb140-2"><a href=""></a>nome_da_funcao <span class="ot">&lt;-</span> <span class="cf">function</span>(argumentos){</span>
+<span id="cb140-3"><a href=""></a>  <span class="co"># corpo da funcao</span></span>
+<span id="cb140-4"><a href=""></a>  <span class="co"># calculos, operacoes ou processos</span></span>
+<span id="cb140-5"><a href=""></a>  <span class="fu">return</span>(resultado)</span>
+<span id="cb140-6"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1667,13 +1816,13 @@ $c$e
 <li>Elevar um número ao quadrado</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb133-1"><a href=""></a><span class="co"># definicao</span></span>
-<span id="cb133-2"><a href=""></a>quadrado <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb133-3"><a href=""></a>    <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
-<span id="cb133-4"><a href=""></a>}</span>
-<span id="cb133-5"><a href=""></a></span>
-<span id="cb133-6"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb133-7"><a href=""></a><span class="fu">quadrado</span>(<span class="dv">2</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href=""></a><span class="co"># definicao</span></span>
+<span id="cb141-2"><a href=""></a>quadrado <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb141-3"><a href=""></a>  <span class="fu">return</span>(x<span class="sc">^</span><span class="dv">2</span>)</span>
+<span id="cb141-4"><a href=""></a>}</span>
+<span id="cb141-5"><a href=""></a></span>
+<span id="cb141-6"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb141-7"><a href=""></a><span class="fu">quadrado</span>(<span class="dv">2</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 4</code></pre>
 </div>
@@ -1686,13 +1835,13 @@ $c$e
 <li>Raiz quadrada de um número</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb135"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb135-1"><a href=""></a><span class="co"># definicao</span></span>
-<span id="cb135-2"><a href=""></a>raiz <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
-<span id="cb135-3"><a href=""></a>    <span class="fu">return</span>(x<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
-<span id="cb135-4"><a href=""></a>}</span>
-<span id="cb135-5"><a href=""></a></span>
-<span id="cb135-6"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb135-7"><a href=""></a><span class="fu">raiz</span>(<span class="dv">4</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb143"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href=""></a><span class="co"># definicao</span></span>
+<span id="cb143-2"><a href=""></a>raiz <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb143-3"><a href=""></a>  <span class="fu">return</span>(x<span class="sc">^</span>(<span class="dv">1</span><span class="sc">/</span><span class="dv">2</span>))</span>
+<span id="cb143-4"><a href=""></a>}</span>
+<span id="cb143-5"><a href=""></a></span>
+<span id="cb143-6"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb143-7"><a href=""></a><span class="fu">raiz</span>(<span class="dv">4</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 2</code></pre>
 </div>
@@ -1705,13 +1854,13 @@ $c$e
 <li>Soma dois números</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb137"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb137-1"><a href=""></a><span class="co"># definicao</span></span>
-<span id="cb137-2"><a href=""></a>soma <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b){</span>
-<span id="cb137-3"><a href=""></a>    <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
-<span id="cb137-4"><a href=""></a>}</span>
-<span id="cb137-5"><a href=""></a></span>
-<span id="cb137-6"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb137-7"><a href=""></a><span class="fu">soma</span>(<span class="dv">40</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href=""></a><span class="co"># definicao</span></span>
+<span id="cb145-2"><a href=""></a>soma <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b){</span>
+<span id="cb145-3"><a href=""></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
+<span id="cb145-4"><a href=""></a>}</span>
+<span id="cb145-5"><a href=""></a></span>
+<span id="cb145-6"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb145-7"><a href=""></a><span class="fu">soma</span>(<span class="dv">40</span>, <span class="dv">2</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 42</code></pre>
 </div>
@@ -1723,17 +1872,17 @@ $c$e
 <li>Argumentos com valores padrão</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb139"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb139-1"><a href=""></a><span class="co"># definicao</span></span>
-<span id="cb139-2"><a href=""></a>saudacao <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">nome =</span> <span class="st">"Amigo"</span>){</span>
-<span id="cb139-3"><a href=""></a>    <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">"Olá,"</span>, nome))</span>
-<span id="cb139-4"><a href=""></a>}</span>
-<span id="cb139-5"><a href=""></a></span>
-<span id="cb139-6"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb139-7"><a href=""></a><span class="fu">saudacao</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href=""></a><span class="co"># definicao</span></span>
+<span id="cb147-2"><a href=""></a>saudacao <span class="ot">&lt;-</span> <span class="cf">function</span>(<span class="at">nome =</span> <span class="st">"Amigo"</span>){</span>
+<span id="cb147-3"><a href=""></a>  <span class="fu">return</span>(<span class="fu">paste</span>(<span class="st">"Olá,"</span>, nome))</span>
+<span id="cb147-4"><a href=""></a>}</span>
+<span id="cb147-5"><a href=""></a></span>
+<span id="cb147-6"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb147-7"><a href=""></a><span class="fu">saudacao</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Olá, Amigo"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb141"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb141-1"><a href=""></a><span class="fu">saudacao</span>(<span class="st">"Maurício"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href=""></a><span class="fu">saudacao</span>(<span class="st">"Maurício"</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Olá, Maurício"</code></pre>
 </div>
@@ -1746,21 +1895,21 @@ $c$e
 <li>Verificar se um número é par ou ímpar</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb143"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb143-1"><a href=""></a><span class="co"># definicao</span></span>
-<span id="cb143-2"><a href=""></a>par_ou_impar <span class="ot">&lt;-</span> <span class="cf">function</span>(num){</span>
-<span id="cb143-3"><a href=""></a>    <span class="cf">if</span>(num <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
-<span id="cb143-4"><a href=""></a>        <span class="fu">return</span>(<span class="st">"Par"</span>)</span>
-<span id="cb143-5"><a href=""></a>    } <span class="cf">else</span>{</span>
-<span id="cb143-6"><a href=""></a>        <span class="fu">return</span>(<span class="st">"Ímpar"</span>)</span>
-<span id="cb143-7"><a href=""></a>    }</span>
-<span id="cb143-8"><a href=""></a>}</span>
-<span id="cb143-9"><a href=""></a></span>
-<span id="cb143-10"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb143-11"><a href=""></a><span class="fu">par_ou_impar</span>(<span class="dv">42</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href=""></a><span class="co"># definicao</span></span>
+<span id="cb151-2"><a href=""></a>par_ou_impar <span class="ot">&lt;-</span> <span class="cf">function</span>(num){</span>
+<span id="cb151-3"><a href=""></a>  <span class="cf">if</span>(num <span class="sc">%%</span> <span class="dv">2</span> <span class="sc">==</span> <span class="dv">0</span>){</span>
+<span id="cb151-4"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Par"</span>)</span>
+<span id="cb151-5"><a href=""></a>  } <span class="cf">else</span>{</span>
+<span id="cb151-6"><a href=""></a>    <span class="fu">return</span>(<span class="st">"Ímpar"</span>)</span>
+<span id="cb151-7"><a href=""></a>  }</span>
+<span id="cb151-8"><a href=""></a>}</span>
+<span id="cb151-9"><a href=""></a></span>
+<span id="cb151-10"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb151-11"><a href=""></a><span class="fu">par_ou_impar</span>(<span class="dv">42</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Par"</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb145"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb145-1"><a href=""></a><span class="fu">par_ou_impar</span>(<span class="dv">23</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href=""></a><span class="fu">par_ou_impar</span>(<span class="dv">23</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Ímpar"</code></pre>
 </div>
@@ -1773,17 +1922,17 @@ $c$e
 <li>Soma sequência de valores</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb147"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb147-1"><a href=""></a><span class="co"># definicao</span></span>
-<span id="cb147-2"><a href=""></a>soma_sequencia <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
-<span id="cb147-3"><a href=""></a>    total <span class="ot">&lt;-</span> <span class="dv">0</span></span>
-<span id="cb147-4"><a href=""></a>    <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
-<span id="cb147-5"><a href=""></a>        total <span class="ot">&lt;-</span> total <span class="sc">+</span> i</span>
-<span id="cb147-6"><a href=""></a>    }</span>
-<span id="cb147-7"><a href=""></a>    <span class="fu">return</span>(total)</span>
-<span id="cb147-8"><a href=""></a>}</span>
-<span id="cb147-9"><a href=""></a></span>
-<span id="cb147-10"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb147-11"><a href=""></a><span class="fu">soma_sequencia</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb155"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb155-1"><a href=""></a><span class="co"># definicao</span></span>
+<span id="cb155-2"><a href=""></a>soma_sequencia <span class="ot">&lt;-</span> <span class="cf">function</span>(n){</span>
+<span id="cb155-3"><a href=""></a>  total <span class="ot">&lt;-</span> <span class="dv">0</span></span>
+<span id="cb155-4"><a href=""></a>  <span class="cf">for</span>(i <span class="cf">in</span> <span class="dv">1</span><span class="sc">:</span>n){</span>
+<span id="cb155-5"><a href=""></a>    total <span class="ot">&lt;-</span> total <span class="sc">+</span> i</span>
+<span id="cb155-6"><a href=""></a>  }</span>
+<span id="cb155-7"><a href=""></a>  <span class="fu">return</span>(total)</span>
+<span id="cb155-8"><a href=""></a>}</span>
+<span id="cb155-9"><a href=""></a></span>
+<span id="cb155-10"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb155-11"><a href=""></a><span class="fu">soma_sequencia</span>(<span class="dv">3</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 6</code></pre>
 </div>
@@ -1795,18 +1944,18 @@ $c$e
 <li>O <code>...</code> permite passar um número indefinido de argumentos para a função</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb149"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb149-1"><a href=""></a><span class="co"># definicao</span></span>
-<span id="cb149-2"><a href=""></a>soma_variavel <span class="ot">&lt;-</span> <span class="cf">function</span>(...){</span>
-<span id="cb149-3"><a href=""></a>    <span class="fu">return</span>(<span class="fu">sum</span>(...))</span>
-<span id="cb149-4"><a href=""></a>}</span>
-<span id="cb149-5"><a href=""></a></span>
-<span id="cb149-6"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb149-7"><a href=""></a><span class="fu">soma_variavel</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb157"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb157-1"><a href=""></a><span class="co"># definicao</span></span>
+<span id="cb157-2"><a href=""></a>soma_variavel <span class="ot">&lt;-</span> <span class="cf">function</span>(...){</span>
+<span id="cb157-3"><a href=""></a>  <span class="fu">return</span>(<span class="fu">sum</span>(...))</span>
+<span id="cb157-4"><a href=""></a>}</span>
+<span id="cb157-5"><a href=""></a></span>
+<span id="cb157-6"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb157-7"><a href=""></a><span class="fu">soma_variavel</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 10</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb151"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb151-1"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb151-2"><a href=""></a><span class="fu">soma_variavel</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb159"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb159-1"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb159-2"><a href=""></a><span class="fu">soma_variavel</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 5050</code></pre>
 </div>
@@ -1819,14 +1968,14 @@ $c$e
 <li>Carrega e executa código salvo em um arquivo de script externo</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb153"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb153-1"><a href=""></a><span class="co"># arquivo: funcoes_util.R</span></span>
-<span id="cb153-2"><a href=""></a>soma <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb153-3"><a href=""></a>    <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
-<span id="cb153-4"><a href=""></a>}</span>
-<span id="cb153-5"><a href=""></a></span>
-<span id="cb153-6"><a href=""></a>multiplicacao <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
-<span id="cb153-7"><a href=""></a>    <span class="fu">return</span>(a <span class="sc">*</span> b)</span>
-<span id="cb153-8"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb161"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb161-1"><a href=""></a><span class="co"># arquivo: funcoes_util.R</span></span>
+<span id="cb161-2"><a href=""></a>soma <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb161-3"><a href=""></a>  <span class="fu">return</span>(a <span class="sc">+</span> b)</span>
+<span id="cb161-4"><a href=""></a>}</span>
+<span id="cb161-5"><a href=""></a></span>
+<span id="cb161-6"><a href=""></a>multiplicacao <span class="ot">&lt;-</span> <span class="cf">function</span>(a, b) {</span>
+<span id="cb161-7"><a href=""></a>  <span class="fu">return</span>(a <span class="sc">*</span> b)</span>
+<span id="cb161-8"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section class="slide level2">
@@ -1836,19 +1985,101 @@ $c$e
 <li>Carrega e executa código salvo em um arquivo de script externo</li>
 </ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb154"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb154-1"><a href=""></a><span class="co"># carrega as funcoes</span></span>
-<span id="cb154-2"><a href=""></a><span class="fu">source</span>(<span class="st">"funcoes_util.R"</span>)</span>
-<span id="cb154-3"><a href=""></a></span>
-<span id="cb154-4"><a href=""></a><span class="co"># uso</span></span>
-<span id="cb154-5"><a href=""></a>res_soma <span class="ot">&lt;-</span> <span class="fu">soma</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb154-6"><a href=""></a>res_soma</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb162"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb162-1"><a href=""></a><span class="co"># carrega as funcoes</span></span>
+<span id="cb162-2"><a href=""></a><span class="fu">source</span>(<span class="st">"funcoes_util.R"</span>)</span>
+<span id="cb162-3"><a href=""></a></span>
+<span id="cb162-4"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb162-5"><a href=""></a>res_soma <span class="ot">&lt;-</span> <span class="fu">soma</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb162-6"><a href=""></a>res_soma</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 8</code></pre>
 </div>
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb156"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb156-1"><a href=""></a>res_multi <span class="ot">&lt;-</span> <span class="fu">multiplicacao</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
-<span id="cb156-2"><a href=""></a>res_multi</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb164"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb164-1"><a href=""></a>res_multi <span class="ot">&lt;-</span> <span class="fu">multiplicacao</span>(<span class="dv">3</span>, <span class="dv">5</span>)</span>
+<span id="cb164-2"><a href=""></a>res_multi</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 15</code></pre>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<ul>
+<li>Transforme o exercício anterior numa função chamada <code>sua_idade</code></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb166"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb166-1"><a href=""></a><span class="co"># for e teste</span></span>
+<span id="cb166-2"><a href=""></a><span class="cf">for</span>(i <span class="cf">in</span> idades){</span>
+<span id="cb166-3"><a href=""></a>  </span>
+<span id="cb166-4"><a href=""></a>  <span class="cf">if</span>(i <span class="sc">&lt;</span> <span class="dv">18</span>){</span>
+<span id="cb166-5"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Jovem"</span>))</span>
+<span id="cb166-6"><a href=""></a>  } <span class="cf">else</span> <span class="cf">if</span>(i <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> i <span class="sc">&lt;</span> <span class="dv">65</span>){</span>
+<span id="cb166-7"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Meia-idade"</span>))</span>
+<span id="cb166-8"><a href=""></a>  } <span class="cf">else</span>{</span>
+<span id="cb166-9"><a href=""></a>    <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Véio"</span>))</span>
+<span id="cb166-10"><a href=""></a>  }</span>
+<span id="cb166-11"><a href=""></a>  </span>
+<span id="cb166-12"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "23 é Meia-idade"
+[1] "35 é Meia-idade"
+[1] "18 é Meia-idade"
+[1] "17 é Jovem"
+[1] "42 é Meia-idade"
+[1] "55 é Meia-idade"
+[1] "60 é Meia-idade"
+[1] "13 é Jovem"
+[1] "81 é Véio"
+[1] "72 é Véio"</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="cell-output-display">
+<countdown-timer class="countdown" id="timer_d4d70ebe" minutes="5" seconds="0" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;--countdown-color-background:gray30;"></countdown-timer>
+</div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<p><strong>Solução</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb168"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb168-1"><a href=""></a><span class="co"># function</span></span>
+<span id="cb168-2"><a href=""></a>sua_idade <span class="ot">&lt;-</span> <span class="cf">function</span>(x){</span>
+<span id="cb168-3"><a href=""></a>  </span>
+<span id="cb168-4"><a href=""></a>  <span class="cf">for</span>(i <span class="cf">in</span> x){</span>
+<span id="cb168-5"><a href=""></a>    </span>
+<span id="cb168-6"><a href=""></a>    <span class="cf">if</span>(i <span class="sc">&lt;</span> <span class="dv">18</span>){</span>
+<span id="cb168-7"><a href=""></a>      <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Jovem"</span>))</span>
+<span id="cb168-8"><a href=""></a>    } <span class="cf">else</span> <span class="cf">if</span>(i <span class="sc">&gt;=</span> <span class="dv">18</span> <span class="sc">&amp;</span> i <span class="sc">&lt;</span> <span class="dv">65</span>){</span>
+<span id="cb168-9"><a href=""></a>      <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Meia-idade"</span>))</span>
+<span id="cb168-10"><a href=""></a>    } <span class="cf">else</span>{</span>
+<span id="cb168-11"><a href=""></a>      <span class="fu">print</span>(<span class="fu">paste</span>(i, <span class="st">"é Véio"</span>))</span>
+<span id="cb168-12"><a href=""></a>    }</span>
+<span id="cb168-13"><a href=""></a>    </span>
+<span id="cb168-14"><a href=""></a>  }</span>
+<span id="cb168-15"><a href=""></a>  </span>
+<span id="cb168-16"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section class="slide level2">
+<h2>Exercício</h2>
+<p><strong>Solução</strong></p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb169"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb169-1"><a href=""></a><span class="co"># vetor</span></span>
+<span id="cb169-2"><a href=""></a>idades <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">35</span>, <span class="dv">18</span>, <span class="dv">17</span>, <span class="dv">42</span>, <span class="dv">55</span>, <span class="dv">60</span>, <span class="dv">13</span>, <span class="dv">81</span>, <span class="dv">72</span>)</span>
+<span id="cb169-3"><a href=""></a></span>
+<span id="cb169-4"><a href=""></a><span class="co"># uso</span></span>
+<span id="cb169-5"><a href=""></a><span class="fu">sua_idade</span>(idades)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "23 é Meia-idade"
+[1] "35 é Meia-idade"
+[1] "18 é Meia-idade"
+[1] "17 é Jovem"
+[1] "42 é Meia-idade"
+[1] "55 é Meia-idade"
+[1] "60 é Meia-idade"
+[1] "13 é Jovem"
+[1] "81 é Véio"
+[1] "72 é Véio"</code></pre>
 </div>
 </div>
 </section></section>
@@ -1863,6 +2094,11 @@ $c$e
 <center>
 <img src="img/dice.jpeg" style="width:35%">
 </center>
+<div class="cell">
+<div class="cell-output-display">
+<countdown-timer class="countdown" id="timer_88049522" minutes="5" seconds="0" update-every="1" play-sound="true" tabindex="0" style="right:0;bottom:0;--countdown-font-size:2em;--countdown-color-background:gray30;"></countdown-timer>
+</div>
+</div>
 <div class="footer">
 <p><a href="https://memebase.cheezburger.com/tag/dice">memebase</a></p>
 </div>
@@ -1871,13 +2107,28 @@ $c$e
 <h2>Desafio</h2>
 <p><strong>Solução</strong></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb158"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb158-1"><a href=""></a>jogar_dados <span class="ot">&lt;-</span> <span class="cf">function</span>(jogadas, lados){</span>
-<span id="cb158-2"><a href=""></a>    </span>
-<span id="cb158-3"><a href=""></a>    dice_resul <span class="ot">&lt;-</span> <span class="fu">sample</span>(lados, jogadas, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb158-4"><a href=""></a>    </span>
-<span id="cb158-5"><a href=""></a>    <span class="fu">return</span>(dice_resul)</span>
-<span id="cb158-6"><a href=""></a>        </span>
-<span id="cb158-7"><a href=""></a>}</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb171"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb171-1"><a href=""></a><span class="co"># function</span></span>
+<span id="cb171-2"><a href=""></a>jogar_dados <span class="ot">&lt;-</span> <span class="cf">function</span>(jogadas, lados){</span>
+<span id="cb171-3"><a href=""></a>  </span>
+<span id="cb171-4"><a href=""></a>  dice_resul <span class="ot">&lt;-</span> <span class="fu">sample</span>(lados, jogadas, <span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb171-5"><a href=""></a>  </span>
+<span id="cb171-6"><a href=""></a>  <span class="fu">return</span>(dice_resul)</span>
+<span id="cb171-7"><a href=""></a>  </span>
+<span id="cb171-8"><a href=""></a>}</span>
+<span id="cb171-9"><a href=""></a></span>
+<span id="cb171-10"><a href=""></a><span class="co"># work</span></span>
+<span id="cb171-11"><a href=""></a><span class="fu">jogar_dados</span>(<span class="dv">5</span>, <span class="dv">6</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 4 3 1 4 4</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb173"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb173-1"><a href=""></a><span class="fu">jogar_dados</span>(<span class="dv">6</span>, <span class="dv">12</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1]  3  1  1  7 12  1</code></pre>
+</div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb175"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb175-1"><a href=""></a><span class="fu">jogar_dados</span>(<span class="dv">3</span>, <span class="dv">24</span>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 14 23 15</code></pre>
+</div>
 </div>
 </section></section>
 <section>

@@ -26,7 +26,7 @@
 
 ## exercicio 05 ----
 # Em qual ilha a espécie Gentoo é mais abundante?
-# E onde Adelie tem a maior concentração?
+# E onde Adelie tem a maior abundância?
 # dica: table()
 
 ## exercicio 06 ----
@@ -42,8 +42,8 @@
 # espécie e sexo 
 
 ## exercicio 09 ----
-# Usando o pacote janitor e a função tabyl, crie uma tabela de frequência de 
-# espécie, sexo e por ilhas
+# Usando o pacote janitor e a função tabyl(), crie uma tabela de frequências 
+# cruzando espécie, sexo e ilha.
 
 ## exercicio 10 ----
 # Usando a tabela do exercicio 8 e pacote janitor, e as funções adorn_totals(), 
@@ -71,8 +71,8 @@
 # dica: tapply
 
 ## exercicio 15 ----
-# 'summary' para fazer a descricao da massa corporal para cada 
-# espécie de pinguim 
+# Use 'summary' para fazer a resumo estatístico descritivo da massa corporal 
+# para cada espécie de pinguim 
 # dica: tapply
 
 # programacao -------------------------------------------------------------

@@ -23,7 +23,7 @@
 # exporte os dados 'penguins' no formato .xlsx e depois importe novamente
 
 ## exercicio 03 ----
-# # exporte os dados 'penguins' no formato .csv, selecionando apenas as colunas species, island e body_mass_g
+# exporte os dados 'penguins' no formato .csv, selecionando apenas as colunas species, island e body_mass_g
 
 ## exercicio 04 ----
 # crie um tibble usando a função tibble::tibble() com uma coluna sendo o nome das espécies e 
@@ -39,6 +39,7 @@
 ## exercicio 07 ----
 # reorganize as colunas de especies, comprimento de asa e comprimento do bico 
 # para o formato de dados longo (long)
+# dica use: select para selecionar apenas as colunas de interesse
 
 ## exercicio 08 ----
 # filtre as linhas de 'penguins' da ilha Dream e ordene pela massa
@@ -57,15 +58,15 @@
 
 ## exercicio 12 ---- 
 # padronize o nome das ilhas para minúsculas
-# dica: stringr::str_subset()
+# dica: stringr::str_to_lower()
 
 ## exercicio 13 ----
 # quais colunas possuem nome com "_mm". 
-# Dica: stringr::str_subset()
+# dica: stringr::str_subset()
 
 ## exercicio 14 ----
 # mude a ordem dos fatores das especies: Chinstrap, Adelie e Gentoo.
-# Dica: dplyr::mutate() e forcats::fct_relevel()
+# Dica: dplyr::mutate e forcats::fct_relevel
 
 ## exercicio 15 ---- 
 # agrupe a classe de ilha menos abundante em "Outras". 
