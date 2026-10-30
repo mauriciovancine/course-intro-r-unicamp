@@ -22,7 +22,6 @@ editor: source
 lang: pt-br
 ---
 
-
 # Conferindo os computadores
 
 # 
