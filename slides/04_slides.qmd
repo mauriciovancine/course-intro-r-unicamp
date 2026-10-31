@@ -315,6 +315,67 @@ round(prop.table(table(penguins_sem_na$species, penguins_sem_na$island)), 4) * 1
 [Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
 :::
 
+## Medidas-resumo
+
+**Desvio padrão e erro padrão**
+
+<center>
+<img src="img/gemini_desvio_padrao_erro_padrao.jpeg" style="width:90%"/>
+</center>
+
+::: footer
+[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
+:::
+
+## Medidas-resumo
+
+**População, amostra, parâmetro e inferência**
+
+<center>
+<img src="img/pop_amos01.png" style="width:90%"/>
+</center>
+
+::: footer
+[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
+:::
+
+## Medidas-resumo
+
+**População, amostra, parâmetro e inferência**
+
+<center>
+<img src="img/pop_amos02.png" style="width:75%"/>
+</center>
+
+::: footer
+[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
+:::
+
+## Medidas-resumo
+
+**População, amostra, parâmetro e inferência**
+
+<center>
+<img src="img/pop_amos03.png" style="width:80%"/>
+</center>
+
+::: footer
+[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
+:::
+
+## Medidas-resumo
+
+**Erro padrão e intervalo de confiança**
+
+<center>
+<img src="img/gemini_erro_padra_intervalo_confianca.jpeg" style="width:90%"/>
+</center>
+
+::: footer
+[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
+:::
+
+
 ## apply {.smaller}
 
 - Função nativa no R que aplica uma função sobre as margens de um array ou matriz
@@ -370,9 +431,9 @@ rapply(object, f, classes = "ANY", how = "replace")
 
 ## lapply
 
-- Aplica uma função a cada elemento de uma lista ou vetor, retornando sempre uma lista
+- Aplica uma **função** em uma lista e retorna uma lista
 
-- **Exemplos**
+- **Exemplo**
 
 ```{r}
 # lista
@@ -382,106 +443,26 @@ x
 lapply(x, mean)  # media de cada lista - retorna lista
 ```
 
-## sapply
-
-- Similar a `lapply`, retornando matriz, vetor ou lista (ele escolhe...)
-- **Exemplos**
-
-```{r}
-# lista
-x <- list(a = 1:5, b = 6:10)
-x
-
-sapply(x, mean)  # media de cada lista - retorna o que quiser...
-```
-
-## vapply
-
-- Similar a sapply, mas permite definir o tipo de retorno
-- **Exemplos**
-
-```{r}
-# lista
-x <- list(a = 1:5, b = 6:10)
-x
-
-vapply(x, mean, numeric(1))  # media de cada lista - retorna escolha
-```
-
 ## tapply
 
-- Aplica função sobre subconjuntos definido por fatores
-- **Exemplos**
+- Aplica uma função sobre subconjuntos definido por **fatores**
+- **Exemplo**
 
 ```{r}
 # data frame
 df <- data.frame(x = c(rep(1, 3), rep(2, 3)), 
-                 f = factor(rep(1:2, each = 3)))
+                 f = factor(rep(c("A", "B"), each = 3)))
 df
 
 tapply(df$x, df$f, sum)  # soma por grupo
 ```
 
-## mapply
+## Outros applys
 
-- Aplica função a múltiplos vetores ou listas de forma paralela 
-- **Exemplos**
-
-```{r}
-# dois vetores
-x <- c(1, 2, 3)
-y <- c(4, 5, 6)
-
-mapply(sum, x, y) # soma de cada elemento
-```
-
-<br>
-
-```{r}
-# dois vetores
-x <- c(1, 2, 3)
-y <- c(4, 5, 6)
-
-mapply(paste0, x, y) # combinacao de cada elemento
-```
-
-## rapply
-
-- Função recursiva usada para aplicar uma função a todos os elementos de uma lista (ou estrutura aninhada de listas)
-- **Exemplos**
-
-```{r}
-# lista
-l <- list(a = 4, b = "texto", c = list(d = 25, e = 36))
-l
-```
-
-## rapply
-
-- Função recursiva usada para aplicar uma função a todos os elementos de uma lista (ou estrutura aninhada de listas)
-- **Exemplos**
-
-```{r}
-# aplica sqrt() apenas aos elementos numericos
-rapply(l, sqrt, classes = "numeric", how = "replace")
-```
-
-## rapply
-
-- Função recursiva usada para aplicar uma função a todos os elementos de uma lista (ou estrutura aninhada de listas)
-- **Exemplos**
-
-```{r}
-# aplica sqrt() e retornando um vetor achatado
-rapply(l, sqrt, classes = "numeric", how = "unlist")
-```
-
-<br>
-
-```{r}
-# usando deflt para retornar NA para elementos nao numericos
-rapply(l, sqrt, classes = "numeric", deflt = NA)
-```
+- `sapply`: similar ao `lapply`, retornando matriz, vetor ou lista (ele escolhe...)
+- `vapply`: similar ao `sapply`, mas permite definir o tipo de retorno
+- `mapply`: aplica função a múltiplos vetores ou listas de forma paralela 
+- `rapply`: função recursiva usada para aplicar uma função a todos os elementos de uma lista
 
 ## Medidas-resumo
 
@@ -644,7 +625,7 @@ if(x > 5){
 }
 ```
 
-![](img/if.png){.absolute right="-85" top="325"}
+![](img/if.png){.absolute right="100" top="200"}
 
 ## if
 
@@ -666,7 +647,7 @@ if(x > 5 & y > 8){
 }
 ```
 
-![](img/if.png){.absolute right="-85" top="325"}
+![](img/if.png){.absolute right="100" top="200"}
 
 ## if
 
@@ -688,7 +669,7 @@ if(x > 5 | y > 8){
 }
 ```
 
-![](img/if.png){.absolute right="-85" top="325"}
+![](img/if.png){.absolute right="100" top="200"}
 
 ## if e else
 
@@ -710,7 +691,7 @@ if(x > 5){
 }
 ```
 
-![](img/if_else.png){.absolute right="-185" top="300"}
+![](img/if_else.png){.absolute right="0" top="200"}
 
 ## else if
 
@@ -729,17 +710,17 @@ if(x > 10){
 }
 ```
 
-![](img/if_else_if.png){.absolute width="600" height="500" right="-200" top="200"}
+![](img/if_else_if.png){.absolute width="500" height="450" right="50" top="250"}
 
 # Dúvidas?
 
 ## Exercício
 
-- Crie um vetor com as idades: 23, 35, 18, 17, 42, 55, 60, 13, 81, 72
+- Crie um vetor com as alturas: 1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83
 
-- Faça uma estrutura de `if` e `else` para testar `jovens` (<18), `meia-idade` (>18 e <65) e `véios` (>65)
+- Faça uma estrutura de `if` e `else` para testar `baixinho` (<1.5), `média` (>1.5 e <1.8) e `altão` (>1.8)
 
-- Crie uma variável intermediária (`x`) para atribuir as idades usando indexação `[]`
+- Crie uma variável intermediária (`x`) para atribuir as alturas usando indexação `[]`
 
 ```{r echo=FALSE}
 countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
@@ -752,18 +733,18 @@ countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
 
 ```{r}
 # vetor
-idades <- c(23, 35, 18, 17, 42, 55, 60, 13, 81, 72)
+altura <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
 
 # selecao
-x <- idades[1]
+x <- altura[1]
 
 # teste
-if(x < 18){
-  print("Jovem")
-} else if(x >= 18 & x < 65){
-  print("Meia-idade")
+if(x < 1.5){
+  print("Baixinho")
+} else if(x >= 1.5 & x < 1.8){
+  print("Média")
 } else{
-  print("Véio")
+  print("Altão")
 }
 ```
 
@@ -781,7 +762,6 @@ if(x < 18){
 
 - **Executa** um bloco de código **`para`** uma **sequência de valores** (vetores ou listas) [*iteração*]
 
-<br> 
 ```{r}
 # for
 for(i in 1:10){
@@ -789,22 +769,23 @@ for(i in 1:10){
 }
 ```
 
-![](img/for.png){.absolute right="-200" top="180"}
+![](img/for.png){.absolute right="100" top="200"}
 
 ## for
 
 - **Executa** um bloco de código **`para`** uma **sequência de valores** (vetores ou listas) [*iteração*]
 
-<br> 
 ```{r}
 # for
-prog <- c("R", "python", "julia", "Fortran")
+prog <- c("R", "python", 
+          "julia", "Fortran")
+
 for(i in prog){
   print(i)
 }
 ```
 
-![](img/for.png){.absolute right="-200" top="180"}
+![](img/for.png){.absolute right="100" top="200"}
 
 ## while
 
@@ -813,13 +794,14 @@ for(i in prog){
 ```{r}
 # while
 x <- 1
+
 while(x <= 5){
   print(x)
   x <- x + 1  # atualiza o x
 }
 ```
 
-![](img/while.png){.absolute right="-200" top="200"}
+![](img/while.png){.absolute right="80" top="200"}
 
 ## repeat
 
@@ -832,12 +814,12 @@ repeat{
   print(x)
   x <- x + 1
   if(x > 5){
-    break  # para o loop para x > 5
+    break  # para o loop
   }
 }
 ```
 
-![](img/repeat.png){.absolute right="-200" top="200"}
+![](img/repeat.png){.absolute right="50" top="200"}
 
 ## break
 
@@ -1035,18 +1017,18 @@ df
 
 ```{r}
 # vetor
-idades <- c(23, 35, 18, 17, 42, 55, 60, 13, 81, 72)
+altura <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
 
 # selecao
-x <- idades[1]
+x <- altura[1]
 
 # teste
-if(x < 18){
-  print("Jovem")
-} else if(x >= 18 & x < 65){
-  print("Meia-idade")
+if(x < 1.5){
+  print("Baixinho")
+} else if(x >= 1.5 & x < 1.8){
+  print("Média")
 } else{
-  print("Véio")
+  print("Altão")
 }
 ```
 
@@ -1061,39 +1043,17 @@ countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
 
 ```{r}
 # vetor
-idades <- c(23, 35, 18, 17, 42, 55, 60, 13, 81, 72)
+alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
 
 # for e teste
-for(i in idades){
+for(i in altura){
   
-  if(i < 18){
-    print("Jovem")
-  } else if(i >= 18 & i < 65){
-    print("Meia-idade")
+  if(x < 1.5){
+    print("Baixinho")
+  } else if(x >= 1.5 & x < 1.8){
+    print("Média")
   } else{
-    print("Véio")
-  }
-  
-}
-```
-
-## Exercício
-
-**Solução**
-
-```{r}
-# vetor
-idades <- c(23, 35, 18, 17, 42, 55, 60, 13, 81, 72)
-
-# for e teste
-for(i in idades){
-  
-  if(i < 18){
-    print(paste(i, "é Jovem"))
-  } else if(i >= 18 & i < 65){
-    print(paste(i, "é Meia-idade"))
-  } else{
-    print(paste(i, "é Véio"))
+    print("Altão")
   }
   
 }
@@ -1107,7 +1067,7 @@ for(i in idades){
 
 - Utilizada para evitar **repetição de código**, tornando-o mais **organizado** e **reutilizável**
 
-![](img/code_function.png){.absolute width="400" height="400" right="0" top="340"}
+![](img/code_function.png){.absolute width="400" height="400" right="150" top="340"}
 
 ## Estrutura de uma função
 
@@ -1139,6 +1099,8 @@ quadrado <- function(x){
 quadrado(2)
 ```
 
+![](img/code_function.png){.absolute width="400" height="400" right="150" top="340"}
+
 ## Exemplo de funções
 
 - Funções com um argumento
@@ -1154,6 +1116,8 @@ raiz <- function(x){
 raiz(4)
 ```
 
+![](img/code_function.png){.absolute width="400" height="400" right="150" top="340"}
+
 ## Exemplo de funções
 
 - Funções com múltiplos argumentos
@@ -1168,6 +1132,8 @@ soma <- function(a, b){
 # uso
 soma(40, 2)
 ```
+
+![](img/code_function.png){.absolute width="400" height="400" right="150" top="340"}
 
 ## Exemplo de funções
 
@@ -1279,14 +1245,14 @@ res_multi
 
 ```{r}
 # for e teste
-for(i in idades){
+for(i in altura){
   
-  if(i < 18){
-    print(paste(i, "é Jovem"))
-  } else if(i >= 18 & i < 65){
-    print(paste(i, "é Meia-idade"))
+  if(x < 1.5){
+    print("Baixinho")
+  } else if(x >= 1.5 & x < 1.8){
+    print("Média")
   } else{
-    print(paste(i, "é Véio"))
+    print("Altão")
   }
   
 }
@@ -1303,16 +1269,16 @@ countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
 
 ```{r}
 # function
-sua_idade <- function(x){
+sua_altura <- function(altura){
   
-  for(i in x){
+  for(x in altura){
     
-    if(i < 18){
-      print(paste(i, "é Jovem"))
-    } else if(i >= 18 & i < 65){
-      print(paste(i, "é Meia-idade"))
+    if(x < 1.5){
+      print("Baixinho")
+    } else if(x >= 1.5 & x < 1.8){
+      print("Média")
     } else{
-      print(paste(i, "é Véio"))
+      print("Altão")
     }
     
   }
@@ -1326,49 +1292,10 @@ sua_idade <- function(x){
 
 ```{r}
 # vetor
-idades <- c(23, 35, 18, 17, 42, 55, 60, 13, 81, 72)
+alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
 
 # uso
-sua_idade(idades)
-```
-
-# Desafio
-
-## Desafio
-
-Criar uma função para jogar um dado múltiplas vezes com número de lados definíveis
-
-<center>
-<img src="img/dice.jpeg" style="width:35%"/>
-</center>
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
-                     font_size = "2em", play_sound = TRUE)
-```
-
-::: footer
-[memebase](https://memebase.cheezburger.com/tag/dice)
-:::
-
-## Desafio
-
-**Solução**
-
-```{r}
-# function
-jogar_dados <- function(jogadas, lados){
-  
-  dice_resul <- sample(lados, jogadas, replace = TRUE)
-  
-  return(dice_resul)
-  
-}
-
-# work
-jogar_dados(5, 6)
-jogar_dados(6, 12)
-jogar_dados(3, 24)
+sua_altura(alturas)
 ```
 
 # Dúvidas?
