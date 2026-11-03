@@ -73,8 +73,6 @@ apply(m, 1, sd)
 
 apply(m, 2, sd)
 
-
-
 # familia apply
 # apply(X, MARGIN, FUN, ...)
 # lapply(X, FUN, ...)
@@ -91,49 +89,13 @@ x
 
 lapply(x, mean)  # media de cada lista - retorna lista
 
-# sapply
-# lista
-x <- list(a = 1:5, b = 6:10)
-x
-
-sapply(x, mean)  # media de cada lista - retorna o que quiser...
-
-# vapply
-# lista
-x <- list(a = 1:5, b = 6:10)
-x
-
-vapply(x, mean, numeric(1))  # media de cada lista - retorna escolha
-
 # tapply
 # data frame
 df <- data.frame(x = c(rep(1, 3), rep(2, 3)), 
-                 f = factor(rep(1:2, each = 3)))
+                 f = factor(rep(c("A", "B"), each = 3)))
 df
 
 tapply(df$x, df$f, sum)  # soma por grupo
-
-# mapply
-# dois vetores
-x <- c(1, 2, 3)
-y <- c(4, 5, 6)
-
-mapply(sum, x, y) # soma de cada elemento
-mapply(paste0, x, y) # combinacao de cada elemento
-
-# rapply
-# lista
-l <- list(a = 4, b = "texto", c = list(d = 25, e = 36))
-l
-
-# aplica sqrt() apenas aos elementos numericos
-rapply(l, sqrt, classes = "numeric", how = "replace")
-
-# aplica sqrt() e retornando um vetor achatado
-rapply(l, sqrt, classes = "numeric", how = "unlist")
-
-# usando deflt para retornar NA para elementos nao numericos
-rapply(l, sqrt, classes = "numeric", deflt = NA)
 
 # medidas resumo
 # media por linhas
@@ -225,6 +187,15 @@ if(x > 10){
     print("x é 5 ou menor")
 }
 
+## exercicio ----
+
+alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
+alturas
+
+x <- alturas[1]
+
+
+
 ## estruturas de repeticao ----
 
 ### for ----
@@ -293,6 +264,12 @@ while(x <= 10){
     }
     x <- x + 1
 }
+
+
+## exercicio ----
+
+
+
 
 ### usos avancados do for ----
 
@@ -473,5 +450,11 @@ res_soma
 
 res_multi <- multiplicacao(3, 5)
 res_multi
+
+## exercicios ---
+
+
+
+
 
 # end ---------------------------------------------------------------------

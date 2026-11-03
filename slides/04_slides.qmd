@@ -290,92 +290,6 @@ round(prop.table(table(penguins_sem_na$species, penguins_sem_na$island)), 4) * 1
 
 # Dúvidas?
 
-
-## Medidas-resumo
-
-**Medidas de posição**
-
-<center>
-<img src="img/gemini_medidas_posicao.jpeg" style="width:90%"/>
-</center>
-
-::: footer
-[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
-:::
-
-## Medidas-resumo
-
-**Medidas de dispersão**
-
-<center>
-<img src="img/gemini_medidas_dispersao.jpeg" style="width:90%"/>
-</center>
-
-::: footer
-[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
-:::
-
-## Medidas-resumo
-
-**Desvio padrão e erro padrão**
-
-<center>
-<img src="img/gemini_desvio_padrao_erro_padrao.jpeg" style="width:90%"/>
-</center>
-
-::: footer
-[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
-:::
-
-## Medidas-resumo
-
-**População, amostra, parâmetro e inferência**
-
-<center>
-<img src="img/pop_amos01.png" style="width:90%"/>
-</center>
-
-::: footer
-[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
-:::
-
-## Medidas-resumo
-
-**População, amostra, parâmetro e inferência**
-
-<center>
-<img src="img/pop_amos02.png" style="width:75%"/>
-</center>
-
-::: footer
-[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
-:::
-
-## Medidas-resumo
-
-**População, amostra, parâmetro e inferência**
-
-<center>
-<img src="img/pop_amos03.png" style="width:80%"/>
-</center>
-
-::: footer
-[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
-:::
-
-## Medidas-resumo
-
-**Erro padrão e intervalo de confiança**
-
-<center>
-<img src="img/gemini_erro_padra_intervalo_confianca.jpeg" style="width:90%"/>
-</center>
-
-::: footer
-[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
-:::
-
-
 ## apply {.smaller}
 
 - Função nativa no R que aplica uma função sobre as margens de um array ou matriz
@@ -733,10 +647,10 @@ countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
 
 ```{r}
 # vetor
-altura <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
+alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
 
 # selecao
-x <- altura[1]
+x <- alturas[1]
 
 # teste
 if(x < 1.5){
@@ -884,6 +798,54 @@ while(x <= 10){
 }
 ```
 
+## Exercício
+
+- Use o exercício anterior para testar para todas as idades usando o `for` e `paste` para imprimir com uma mensagem da idade e o valor 
+
+```{r}
+# vetor
+alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
+
+# selecao
+x <- alturas[1]
+
+# teste
+if(x < 1.5){
+  print("Baixinho")
+} else if(x >= 1.5 & x < 1.8){
+  print("Média")
+} else{
+  print("Altão")
+}
+```
+
+```{r echo=FALSE}
+countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
+                     font_size = "2em", play_sound = TRUE)
+```
+
+## Exercício
+
+**Solução**
+
+```{r}
+# vetor
+alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
+
+# for e teste
+for(x in alturas){
+  
+  if(x < 1.5){
+    print("Baixinho")
+  } else if(x >= 1.5 & x < 1.8){
+    print("Média")
+  } else{
+    print("Altão")
+  }
+  
+}
+```
+
 ## Usos avançados do for
 
 - Exportar ou criar **arquivos** 'colando' o iterador
@@ -1010,54 +972,6 @@ df
 ```
 
 # Dúvidas?
-
-## Exercício
-
-- Use o exercício anterior para testar para todas as idades usando o `for` e `paste` para imprimir com uma mensagem da idade e o valor 
-
-```{r}
-# vetor
-altura <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
-
-# selecao
-x <- altura[1]
-
-# teste
-if(x < 1.5){
-  print("Baixinho")
-} else if(x >= 1.5 & x < 1.8){
-  print("Média")
-} else{
-  print("Altão")
-}
-```
-
-```{r echo=FALSE}
-countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
-                     font_size = "2em", play_sound = TRUE)
-```
-
-## Exercício
-
-**Solução**
-
-```{r}
-# vetor
-alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
-
-# for e teste
-for(i in altura){
-  
-  if(x < 1.5){
-    print("Baixinho")
-  } else if(x >= 1.5 & x < 1.8){
-    print("Média")
-  } else{
-    print("Altão")
-  }
-  
-}
-```
 
 ## Funções
 
@@ -1242,10 +1156,11 @@ res_multi
 ## Exercício
 
 - Transforme o exercício anterior numa função chamada `sua_idade`
+- Aqui não precisa do `return()`
 
 ```{r}
 # for e teste
-for(i in altura){
+for(x in alturas){
   
   if(x < 1.5){
     print("Baixinho")
@@ -1269,9 +1184,9 @@ countdown::countdown(minutes = 5, seconds = 00, color_background = "gray30",
 
 ```{r}
 # function
-sua_altura <- function(altura){
+sua_alturas <- function(alturas){
   
-  for(x in altura){
+  for(x in alturas){
     
     if(x < 1.5){
       print("Baixinho")
@@ -1295,7 +1210,7 @@ sua_altura <- function(altura){
 alturas <- c(1.5, 1.55, 1.65, 1.75, 1.80, 1.70, 1.63, 1.98, 1.45, 1.83)
 
 # uso
-sua_altura(alturas)
+sua_alturas(alturas)
 ```
 
 # Dúvidas?
@@ -1325,4 +1240,89 @@ Contato:
 
 ::: footer
 Slides por [Maurício Vancine](https://mauriciovancine.github.io/), feitos com [Quarto](https://quarto.org/). Código disponível no [GitHub](https://github.com/mauriciovancine/workshop-r-introduction/blob/master/01_slides/slides.qmd).
+:::
+
+
+## Medidas-resumo
+
+**Medidas de posição**
+
+<center>
+<img src="img/gemini_medidas_posicao.jpeg" style="width:90%"/>
+</center>
+
+::: footer
+[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
+:::
+
+## Medidas-resumo
+
+**Medidas de dispersão**
+
+<center>
+<img src="img/gemini_medidas_dispersao.jpeg" style="width:90%"/>
+</center>
+
+::: footer
+[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
+:::
+
+## Medidas-resumo
+
+**Desvio padrão e erro padrão**
+
+<center>
+<img src="img/gemini_desvio_padrao_erro_padrao.jpeg" style="width:90%"/>
+</center>
+
+::: footer
+[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
+:::
+
+## Medidas-resumo
+
+**População, amostra, parâmetro e inferência**
+
+<center>
+<img src="img/pop_amos01.png" style="width:90%"/>
+</center>
+
+::: footer
+[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
+:::
+
+## Medidas-resumo
+
+**População, amostra, parâmetro e inferência**
+
+<center>
+<img src="img/pop_amos02.png" style="width:75%"/>
+</center>
+
+::: footer
+[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
+:::
+
+## Medidas-resumo
+
+**População, amostra, parâmetro e inferência**
+
+<center>
+<img src="img/pop_amos03.png" style="width:80%"/>
+</center>
+
+::: footer
+[Como interpretar o intervalo de confiança?](https://fernandafperes.com.br/blog/intervalo-de-confianca/)
+:::
+
+## Medidas-resumo
+
+**Erro padrão e intervalo de confiança**
+
+<center>
+<img src="img/gemini_erro_padra_intervalo_confianca.jpeg" style="width:90%"/>
+</center>
+
+::: footer
+[Gemini](https://gemini.google.com/app/2db1fc6567b495ee)
 :::
