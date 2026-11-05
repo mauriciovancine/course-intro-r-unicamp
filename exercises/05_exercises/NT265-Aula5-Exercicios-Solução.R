@@ -129,8 +129,8 @@ penguins_relevel <- penguins %>%
 penguins_relevel$species
 
 ## exercicio 15 ---- 
-# mude a ordem dos fatores das especies: Chinstrap, Adelie e Gentoo.
-# Dica: dplyr::mutate e forcats::fct_relevel
+# agrupe a classe de ilha menos abundante em "Outras". 
+# Dica: dplyr::mutate() e forcats::fct_lump_lowfreq()
 penguins %>%
     dplyr::mutate(island_fact = forcats::fct_lump_lowfreq(island, other_level = "Outras")) %>% 
     dplyr::count(island_fact)
@@ -138,14 +138,15 @@ penguins %>%
 # lubridate ---------------------------------------------------------------
 
 ## exercicio 16 ---- 
-# mude a ordem dos fatores das especies: Chinstrap, Adelie e Gentoo.
-# Dica: dplyr::mutate e forcats::fct_relevel
+# extraia o mês e o ano das datas da coluna `Date Egg` do dado 'penguins_raw'
+# dica: lubridate::month() e lubridate::year()
 lubridate::month(penguins_raw$`Date Egg`, label = TRUE)
 lubridate::year(penguins_raw$`Date Egg`)
 
 ## exercicio 17 ---- 
-# mude a ordem dos fatores das especies: Chinstrap, Adelie e Gentoo.
-# Dica: dplyr::mutate e forcats::fct_relevel
+# crie uma coluna com datas a partir de hoje somando dias aleatórios de 0 a 100
+# dica: dplyr::mutate(), lubridate::today() e sample(0:100, nrow(penguins), replace = TRUE)
+# dica2: as dados podem ser somadas com '+'
 set.seed(123)
 penguins_datas <- penguins %>%
     dplyr::mutate(data_random = today() + days(sample(0:100, nrow(penguins), replace = TRUE)))
@@ -154,21 +155,20 @@ penguins_datas$data_random
 # purrr -------------------------------------------------------------------
 
 ## exercicio 18 ----
-# mude a ordem dos fatores das especies: Chinstrap, Adelie e Gentoo.
-# Dica: dplyr::mutate e forcats::fct_relevel
+# crie uma lista com as massas por espécie e calcule médias
+# dica: split(var, group) e purrr::map()
 listas_massa <- split(penguins$body_mass_g, penguins$species)
 purrr::map(listas_massa, mean, na.rm = TRUE)
 
 ## exercicio 19 ----
-# mude a ordem dos fatores das especies: Chinstrap, Adelie e Gentoo.
-# Dica: dplyr::mutate e forcats::fct_relevel
+# crie um tibble com o desvio padrao das massas por espécie
+# use o resultado do split do ex. 18 e purrr::map_df()
 purrr::map_df(listas_massa, sd, na.rm = TRUE)
 
 # desafio -----------------------------------------------------------------
 
 ## exercicio 20 ---- 
-# mude a ordem dos fatores das especies: Chinstrap, Adelie e Gentoo.
-# Dica: dplyr::mutate e forcats::fct_relevel
+# calcule massa média por ilha, exporte para Excel e depois importe
 penguins %>%
     dplyr::group_by(island) %>%
     dplyr::summarise(media_massa = mean(body_mass_g, na.rm = TRUE)) %>%

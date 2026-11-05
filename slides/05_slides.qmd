@@ -271,14 +271,24 @@ Abram o script
 [Wickham & Grolemund (2017)](https://r4ds.had.co.nz/)
 :::
 
-## Pacotes
+## Fluxo de trabalho
 
 <center>
-<img src="img/tidyverse_flowchart.png" style="width:90%"/>
+<img src="img/tidyverse_flow.png" style="width:100%"/>
 </center>
 
 ::: footer
-[R Markdown + R + RStudio](https://ohi-science.org/globalfellows/why_rmarkdown.html)
+[Uma jornada pelo tidyverse](https://rpubs.com/RicardoJ/minicurso_tidyverse)
+:::
+
+## Pacotes
+
+<center>
+<img src="img/tidyverse_packages.png" style="width:80%"/>
+</center>
+
+::: footer
+[R Crash Course](https://bookdown.org/michela_cameletti/notescrashcourser/)
 :::
 
 ## Artigos {.smaller}
