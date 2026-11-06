@@ -627,7 +627,9 @@ tibble::glimpse(si)
 
 # 
 
-<center><img src="img/package_magrittr.png" style="width:50%"/></center>
+<center>
+<img src="img/package_magrittr.png" style="width:50%"/>
+</center>
 
 ::: footer
 [magrittr](https://magrittr.tidyverse.org/)
@@ -668,6 +670,39 @@ obj <- dados %>%
   funcao1() %>% 
   funcao2()
 ```
+
+## Como funciona
+
+```{r eval=FALSE}
+data %>% 
+  filter() %>% 
+  mutate() %>% 
+  group_by() %>% 
+  summarise()
+```
+
+<br>
+<center>
+<img src="img/pipe.png" style="width:50%"/>
+</center>
+
+::: footer
+[R for Ecology](https://www.rforecology.com/post/how-to-use-pipes)
+:::
+
+## pipe nativo
+
+- Mudar a configuração de uso: 
+
+`Tools > Global Options ... > Code > Use native pipe operator, |> (requires R 4.1+)`
+
+<center>
+<img src="img/pipe_nativo.png" style="width:100%"/>
+</center>
+
+::: footer
+[chatGPT](https://chatgpt.com/c/6aecb1c5-1ca8-83e9-9b85-9ee940068bbc)
+:::
 
 # Se preparem para uma revisão de funções compostas
 
@@ -1615,22 +1650,29 @@ penguins_raw_multi_factor <- penguins_raw %>%
 Artwork by [@allison_horst](https://x.com/allison_horst)
 :::
 
-## lubridate
-
-- Pacote à parte do tidyverse
-- Carregar sempre que for utilizar
-
-```{r}
-# carregar
-library(lubridate)
-```
-
 ## Descrição
 
 - Conjunto de funções para a manipulação de dados de **data** e **horário**
 - A manipulação desses dados **não é intuitiva** e muda dependendo do tipo de objeto de data e horário
 - O formato desses dados deve levar em consideração **fusos horários**, **anos bissextos**, **horários de verão**, etc.
 - **Exemplos**: transformações de data/horário, componentes, arredondamentos, durações, períodos, intervalos, etc.
+
+## Formato de datas no R
+
+- O R entende as datas sempre como **ano-mês-dia**
+
+```{r}
+lubridate::dmy("05/11/2026")
+```
+
+<br>
+<center>
+<img src="img/data_r.png" style="width:100%"/>
+</center>
+
+::: footer
+[chatGPT](https://chatgpt.com/c/6aecb1c5-1ca8-83e9-9b85-9ee940068bbc)
+:::
 
 ## lubridate
 
