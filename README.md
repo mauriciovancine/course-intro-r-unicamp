@@ -2,6 +2,12 @@
 
 ## Aulas
 
+###  Aula 1 – Introdução à linguagem R e ao RStudio
+
+- [slides](https://mauriciovancine.github.io/course-intro-r-unicamp/slides/01_slides.html#/)
+- [script](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/scripts/01_script.R)
+- [exercicios](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/exercises/01_exercises/NT265-Aula2-Exercicios.R)
+
 ### Aula 2 – Leitura, indexação e manipulação de dados no R
 
 - [slides](https://mauriciovancine.github.io/course-intro-r-unicamp/slides/02_slides.html#/)
@@ -19,6 +25,12 @@
 - [slides](https://mauriciovancine.github.io/course-intro-r-unicamp/slides/05_slides.html)
 - [script](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/scripts/05_script.R)
 - [exercicios](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/exercises/02_exercises/NT265-Aula5-Exercicios.R)
+
+### Aula 6 – Gráficos com ggplot2 (gráficos complexos com poucos comandos)
+
+- [slides](https://mauriciovancine.github.io/course-intro-r-unicamp/slides/06_slides.html)
+- [script](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/scripts/06_script.R)
+- [exercicios](https://github.com/mauriciovancine/course-intro-r-unicamp/blob/main/exercises/02_exercises/NT265-Aula6-Exercicios.R)
 
 ### Aula 8 – Rmarkdown + Github
 
