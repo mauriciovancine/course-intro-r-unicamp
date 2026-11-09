@@ -34,7 +34,7 @@ lang: pt-br
 [r-project](https://www.r-project.org/)
 :::
 
-## Conteúdo {.smaller}
+## Conteúdo
 
 ### Linguagem R
 
@@ -48,24 +48,17 @@ lang: pt-br
 -  Operadores
 -  Objetos
 -  Funções
--  Pacotes
--  Ajuda
--  Ambiente
--  Citações
--  Principais erros
 :::
 ::::
 
 :::: {.column width="50%"}
 ::: nonincremental
+-  Pacotes
+-  Ajuda
+-  Ambiente
+-  Citações
+-  Principais erros
 -  Atributos dos objetos
--  Manejo de dados unidimensionais
--  Manejo de dados multidimensionais
--  Valores faltantes e especiais
--  Diretório de trabalho
--  Importar dados
--  Conferência de dados importados
--  Exportar dados
 :::
 ::::
 :::::::
@@ -100,7 +93,7 @@ lang: pt-br
 - 2021: Minicurso de R na SEE
 - 2022: Minicurso de R na SEE
 - 2024: Minicurso de padrões espaciais da biodiversidade no R na São Paulo School of Advanced Science (SPSAS)
-- 2024: Minicurso métricas de paisagem no R no Simpósio Brasileirao de Síntese Ecológica
+- 2024: Minicurso métricas de paisagem no R no Simpósio Brasileiro de Síntese Ecológica
 Maria (UFSM)
 
 ## Disciplinas {.smaller}
@@ -116,6 +109,7 @@ Maria (UFSM)
 - 2023: Ecologia Quantitativa (Unesp) (Professor convidado)
 - 2024-2025: NT265_NE441_2025 - Disciplina de R (Unicamp)
 - 2025: introR (UFPB)
+- 2026: NT265_NE441_2025 - Disciplina de R (Unicamp)
 
 ## Análises Ecológicas no R (2022)
 
@@ -145,7 +139,7 @@ Maria (UFSM)
 [Da Silva et al. (2022)](https://analises-ecologicas.com/)
 :::
 
-## Ensino de R no Brazil (2025-2026)
+## Ensino de R no Brazil (2026)
 
 ::: {style="font-size: 70%;"}
 **Oecologia Australis - Special Issue**\
@@ -292,6 +286,70 @@ O R é uma **linguagem de programação livre** (*open source*), direcionada à 
 
 ::: footer
 [Giorgi et al. (2022)](https://doi.org/10.3390/life12050648)
+:::
+
+## Linguagem R na Ecologia {.smaller}
+
+- Mais de 125 mil artigos analisados em 40 periódicos de ecologia
+- 42% utilizaram R como principal ferramenta de análise
+- Uso do R aumentou de 10,3% (2008) para 66,9% (2023)
+- Tendência de crescimento linear e consolidação do R na pesquisa ecológica
+
+::::::: columns
+:::: {.column width="50%"}
+::: nonincremental
+<center>
+<img src="img/rtaf010_fig1.jpeg" style="width:100%"/>
+</center>
+:::
+::::
+
+:::: {.column width="50%"}
+::: nonincremental
+<center>
+<img src="img/rtaf010_fig4.jpeg" style="width:100%"/>
+</center>
+:::
+::::
+:::::::
+
+::: footer
+[Lai et al. (2019)](https://doi.org/10.1002/ecs2.2567), [Gao et al. (2025)](https://doi.org/10.1093/jpe/rtaf010)
+:::
+
+## Linguagem R na Ecologia {.smaller}
+
+<center>
+<img src="img/rtaf010_fig3.jpeg" style="width:85%"/>
+</center>
+
+::: footer
+[Lai et al. (2019)](https://doi.org/10.1002/ecs2.2567), [Gao et al. (2025)](https://doi.org/10.1093/jpe/rtaf010)
+:::
+
+## Linguagem R na Ecologia
+
+::::::: columns
+:::: {.column width="60%"}
+::: nonincremental
+::: {style="font-size: 55%;"}
+<br>
+
+Animal Conservation(AC), Agriculture Ecosystems & Environment (AEE), American Naturalist (AN), Basic and Applied Ecology (BSE), Behavioral Ecology (BE), Biodiversity and Conservation (BAC), Biogeosciences (Biogeosciences), Biological Conservation (BC), Biology Letters (BL), Conservation Biology (CB), Diversity and Distributions (DD), Ecography (Ecography), Ecological Applications (EA), Ecological Informatics (EI), Ecological Modelling (EMol), Ecological Monographs (EM), Ecology (Ecology), Ecology Letters (EL), Ecosystems (Ecosystems), Evolution (Evolution), Frontiers in Ecology and the Environment (FEE), Functional Ecology (FE), Fungal Ecology (FGE), Global Change Biology (GCB), Global Ecology and Biogeography (GEB), ISME Journal (ISME), Journal of Animal Ecology (JANE), Journal of Applied Ecology (JAE), Journal of Biogeography (JB), Journal of Ecology (JE), Journal of Vegetation Science (JVS), Landscape Ecology (LE), Methods in Ecology and Evolution (MEE), Microbial Ecology (MIE), Molecular Ecology (MOE), Molecular Ecology Resources (MOER), Oecologia (Oecologia), Oikos (Oikos), P ROY SOC B-BIOL SCI (PRSBBS) and Restoration Ecology (ResE).
+:::
+:::
+::::
+
+:::: {.column width="40%"}
+::: nonincremental
+![](img/rtaf010_fig2.jpeg){.absolute width="450" height="600" right="-100" top="100"}
+
+:::
+::::
+:::::::
+
+::: footer
+[Lai et al. (2019)](https://doi.org/10.1002/ecs2.2567), [Gao et al. (2025)](https://doi.org/10.1093/jpe/rtaf010)
 :::
 
 ## Aplicações {.smaller}
