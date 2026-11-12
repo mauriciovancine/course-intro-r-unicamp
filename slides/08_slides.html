@@ -1258,6 +1258,15 @@
 <div class="footer">
 <p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a></p>
 </div>
+</section>
+<section class="slide level2">
+<h2>RMarkdown e Quarto</h2>
+<center>
+<img src="img/rmarkdown_quarto.png" style="width:80%">
+</center>
+<div class="footer">
+<p><a href="https://www.jumpingrivers.com/blog/quarto-rmarkdown-comparison/">I’m an R user: Quarto or R Markdown?</a></p>
+</div>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">
@@ -1295,7 +1304,47 @@
 </ul>
 </div>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href=""></a>quarto help</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href=""></a><span class="ex">quarto</span> help</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+Usage:   quarto
+Version: 1.9.35
+
+Description:
+
+  Quarto CLI
+
+Options:
+
+  -h, --help     - Show this help.                            
+  -V, --version  - Show the version number for this program.  
+
+Commands:
+
+  render     [input] [args...]     - Render files or projects to various document types.                          
+  preview    [file] [args...]      - Render and preview a document or website project.                            
+  serve      [input]               - Serve a Shiny interactive document.                                          
+  create     [type] [commands...]  - Create a Quarto project or extension                                         
+  use        &lt;type&gt; [target]       - Automate document or project setup tasks.                                    
+  add        &lt;extension&gt;           - Add an extension to this folder or project                                   
+  update     [target...]           - Updates an extension or global dependency (TinyTeX, Chromium, Chrome Headless
+                                     Shell, VeraPDF).                                                             
+  remove     [target...]           - Removes an extension.                                                        
+  convert    &lt;input&gt;               - Convert documents to alternate representations.                              
+  pandoc     [args...]             - Run the version of Pandoc embedded within Quarto.                            
+  typst      [args...]             - Run the version of Typst embedded within Quarto.                             
+  run        [script] [args...]    - Run a TypeScript, R, Python, or Lua script.                                  
+  list       &lt;type&gt;                - Lists an extension or global dependency.                                     
+  install    [target...]           - Installs a global dependency (TinyTeX, Chromium, Chrome Headless Shell,      
+                                     VeraPDF).                                                                    
+  uninstall  [tool]                - Uninstalls a global dependency (TinyTeX, Chromium, Chrome Headless Shell,    
+                                     VeraPDF).                                                                    
+  tools                            - Display the status of Quarto installed dependencies                          
+  publish    [provider] [path]     - Publish a document or project to a provider.                                 
+  check      [target]              - Verify correct functioning of Quarto installation.                           
+  call                             - Access functions of Quarto subsystems such as its rendering engines.         
+  help       [command]             - Show this help or the help of a sub-command.                                 </code></pre>
+</div>
 </div>
 </section>
 <section class="slide level2">
@@ -1442,51 +1491,7 @@
 </div><div class="column" style="width:60%;">
 <div style="font-size: 60%;">
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13" data-code-line-numbers="|1-6|8-15|17-29|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href=""></a><span class="sc">---</span></span>
-<span id="cb13-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Hello, Penguins"</span></span>
-<span id="cb13-3"><a href=""></a>format<span class="sc">:</span> html</span>
-<span id="cb13-4"><a href=""></a>execute<span class="sc">:</span></span>
-<span id="cb13-5"><a href=""></a>  echo<span class="sc">:</span> false</span>
-<span id="cb13-6"><a href=""></a><span class="sc">---</span></span>
-<span id="cb13-7"><a href=""></a></span>
-<span id="cb13-8"><a href=""></a><span class="do">## Meet the penguins</span></span>
-<span id="cb13-9"><a href=""></a></span>
-<span id="cb13-10"><a href=""></a>The __penguins__ data contains size measurements <span class="cf">for</span> </span>
-<span id="cb13-11"><a href=""></a>penguins from three islands <span class="cf">in</span> the Palmer Archipelago, </span>
-<span id="cb13-12"><a href=""></a>Antarctica.</span>
-<span id="cb13-13"><a href=""></a></span>
-<span id="cb13-14"><a href=""></a>The _three_ species of penguins have quite distinct </span>
-<span id="cb13-15"><a href=""></a>distributions of physical <span class="fu">dimensions</span> (<span class="sc">@</span>fig<span class="sc">-</span>penguins).</span>
-<span id="cb13-16"><a href=""></a></span>
-<span id="cb13-17"><a href=""></a><span class="co"># ```{r}</span></span>
-<span id="cb13-18"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
-<span id="cb13-19"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
-<span id="cb13-20"><a href=""></a><span class="co">#| warning: false</span></span>
-<span id="cb13-21"><a href=""></a><span class="fu">library</span>(tidyverse, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb13-22"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb13-23"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb13-24"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb13-25"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb13-26"><a href=""></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb13-27"><a href=""></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb13-28"><a href=""></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb13-29"><a href=""></a><span class="co"># ```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div></div>
-<div class="footer">
-<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a>, <a href="https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo">E aí, vamos falar de Quarto?</a></p>
-</div>
-</section>
-<section class="slide level2">
-<h2>Quarto</h2>
-<p><strong>Arquivo <code>Quarto</code> (.qmd) - Anatomia</strong></p>
-<p><br></p>
-<div class="columns">
-<div class="column center" style="width:55%;">
-<div style="font-size: 55%;">
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="sc">---</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14" data-code-line-numbers="|1-6|8-15|17-29|"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href=""></a><span class="sc">---</span></span>
 <span id="cb14-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Hello, Penguins"</span></span>
 <span id="cb14-3"><a href=""></a>format<span class="sc">:</span> html</span>
 <span id="cb14-4"><a href=""></a>execute<span class="sc">:</span></span>
@@ -1502,17 +1507,61 @@
 <span id="cb14-14"><a href=""></a>The _three_ species of penguins have quite distinct </span>
 <span id="cb14-15"><a href=""></a>distributions of physical <span class="fu">dimensions</span> (<span class="sc">@</span>fig<span class="sc">-</span>penguins).</span>
 <span id="cb14-16"><a href=""></a></span>
-<span id="cb14-17"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
-<span id="cb14-18"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
-<span id="cb14-19"><a href=""></a><span class="co">#| warning: false</span></span>
-<span id="cb14-20"><a href=""></a><span class="fu">library</span>(tidyverse, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb14-21"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb14-22"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb14-23"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb14-24"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb14-25"><a href=""></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb14-26"><a href=""></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb14-27"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb14-17"><a href=""></a><span class="co"># ```{r}</span></span>
+<span id="cb14-18"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
+<span id="cb14-19"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
+<span id="cb14-20"><a href=""></a><span class="co">#| warning: false</span></span>
+<span id="cb14-21"><a href=""></a><span class="fu">library</span>(tidyverse, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb14-22"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb14-23"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb14-24"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb14-25"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb14-26"><a href=""></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb14-27"><a href=""></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb14-28"><a href=""></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb14-29"><a href=""></a><span class="co"># ```</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div></div>
+<div class="footer">
+<p><a href="https://rdatatoolbox.github.io/">Reproducible Research in Computational Ecology</a>, <a href="https://rladies-sp.org/posts/2023-02-tutorial-quarto/#o-primeiro-passo">E aí, vamos falar de Quarto?</a></p>
+</div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Arquivo <code>Quarto</code> (.qmd) - Anatomia</strong></p>
+<p><br></p>
+<div class="columns">
+<div class="column center" style="width:55%;">
+<div style="font-size: 55%;">
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb15-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Hello, Penguins"</span></span>
+<span id="cb15-3"><a href=""></a>format<span class="sc">:</span> html</span>
+<span id="cb15-4"><a href=""></a>execute<span class="sc">:</span></span>
+<span id="cb15-5"><a href=""></a>  echo<span class="sc">:</span> false</span>
+<span id="cb15-6"><a href=""></a><span class="sc">---</span></span>
+<span id="cb15-7"><a href=""></a></span>
+<span id="cb15-8"><a href=""></a><span class="do">## Meet the penguins</span></span>
+<span id="cb15-9"><a href=""></a></span>
+<span id="cb15-10"><a href=""></a>The __penguins__ data contains size measurements <span class="cf">for</span> </span>
+<span id="cb15-11"><a href=""></a>penguins from three islands <span class="cf">in</span> the Palmer Archipelago, </span>
+<span id="cb15-12"><a href=""></a>Antarctica.</span>
+<span id="cb15-13"><a href=""></a></span>
+<span id="cb15-14"><a href=""></a>The _three_ species of penguins have quite distinct </span>
+<span id="cb15-15"><a href=""></a>distributions of physical <span class="fu">dimensions</span> (<span class="sc">@</span>fig<span class="sc">-</span>penguins).</span>
+<span id="cb15-16"><a href=""></a></span>
+<span id="cb15-17"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
+<span id="cb15-18"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
+<span id="cb15-19"><a href=""></a><span class="co">#| warning: false</span></span>
+<span id="cb15-20"><a href=""></a><span class="fu">library</span>(tidyverse, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb15-21"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb15-22"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb15-23"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb15-24"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb15-25"><a href=""></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb15-26"><a href=""></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb15-27"><a href=""></a>  <span class="fu">theme_minimal</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column center" style="width:45%;">
@@ -1528,30 +1577,30 @@
 <div style="font-size: 60%;">
 <p>HTML</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href=""></a><span class="sc">---</span></span>
-<span id="cb15-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
-<span id="cb15-3"><a href=""></a>format<span class="sc">:</span> html</span>
-<span id="cb15-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
-<span id="cb15-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb16-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
+<span id="cb16-3"><a href=""></a>format<span class="sc">:</span> html</span>
+<span id="cb16-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
+<span id="cb16-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>Word</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href=""></a><span class="sc">---</span></span>
-<span id="cb16-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
-<span id="cb16-3"><a href=""></a>format<span class="sc">:</span> docx</span>
-<span id="cb16-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
-<span id="cb16-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb17-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
+<span id="cb17-3"><a href=""></a>format<span class="sc">:</span> docx</span>
+<span id="cb17-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
+<span id="cb17-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>PDF</p>
 <blockquote>
 <p>Precisa instalar um pacote LaTeX</p>
 </blockquote>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href=""></a><span class="sc">---</span></span>
-<span id="cb17-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
-<span id="cb17-3"><a href=""></a>format<span class="sc">:</span> pdf</span>
-<span id="cb17-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
-<span id="cb17-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="sc">---</span></span>
+<span id="cb18-2"><a href=""></a>title<span class="sc">:</span> <span class="st">"Título"</span></span>
+<span id="cb18-3"><a href=""></a>format<span class="sc">:</span> pdf</span>
+<span id="cb18-4"><a href=""></a>editor<span class="sc">:</span> visual</span>
+<span id="cb18-5"><a href=""></a><span class="sc">---</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 <div class="footer">
@@ -1582,21 +1631,21 @@
 <div style="font-size: 70%;">
 <p><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href=""></a><span class="do">### Text formatting</span></span>
-<span id="cb18-2"><a href=""></a><span class="sc">*</span>italic<span class="sc">*</span> <span class="er">**</span>bold<span class="sc">**</span> <span class="er">~~</span>strikeout<span class="sc">~</span><span class="er">~</span> <span class="st">`</span><span class="at">code</span><span class="st">`</span></span>
-<span id="cb18-3"><a href=""></a>superscript<span class="sc">^</span><span class="dv">2</span><span class="sc">^</span> subscript<span class="sc">~</span><span class="dv">2</span><span class="sc">~</span></span>
-<span id="cb18-4"><a href=""></a>[underline]{.underline} [small caps]{.smallcaps}</span>
-<span id="cb18-5"><a href=""></a></span>
-<span id="cb18-6"><a href=""></a><span class="do">### Lists</span></span>
-<span id="cb18-7"><a href=""></a><span class="sc">-</span>   Bulleted list item <span class="dv">1</span></span>
-<span id="cb18-8"><a href=""></a><span class="sc">-</span>   Item <span class="dv">2</span></span>
-<span id="cb18-9"><a href=""></a>    <span class="sc">-</span>   Item <span class="dv">2</span>a</span>
-<span id="cb18-10"><a href=""></a>    <span class="sc">-</span>   Item <span class="dv">2</span>b</span>
-<span id="cb18-11"><a href=""></a><span class="fl">1.</span>  Numbered list item <span class="dv">1</span></span>
-<span id="cb18-12"><a href=""></a><span class="fl">2.</span>  Item <span class="fl">2.</span></span>
-<span id="cb18-13"><a href=""></a></span>
-<span id="cb18-14"><a href=""></a><span class="do">### Equations</span></span>
-<span id="cb18-15"><a href=""></a>inline math<span class="sc">:</span> <span class="er">$</span>E <span class="ot">=</span> mc<span class="sc">^</span>{<span class="dv">2</span>}<span class="sc">$</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a><span class="do">### Text formatting</span></span>
+<span id="cb19-2"><a href=""></a><span class="sc">*</span>italic<span class="sc">*</span> <span class="er">**</span>bold<span class="sc">**</span> <span class="er">~~</span>strikeout<span class="sc">~</span><span class="er">~</span> <span class="st">`</span><span class="at">code</span><span class="st">`</span></span>
+<span id="cb19-3"><a href=""></a>superscript<span class="sc">^</span><span class="dv">2</span><span class="sc">^</span> subscript<span class="sc">~</span><span class="dv">2</span><span class="sc">~</span></span>
+<span id="cb19-4"><a href=""></a>[underline]{.underline} [small caps]{.smallcaps}</span>
+<span id="cb19-5"><a href=""></a></span>
+<span id="cb19-6"><a href=""></a><span class="do">### Lists</span></span>
+<span id="cb19-7"><a href=""></a><span class="sc">-</span>   Bulleted list item <span class="dv">1</span></span>
+<span id="cb19-8"><a href=""></a><span class="sc">-</span>   Item <span class="dv">2</span></span>
+<span id="cb19-9"><a href=""></a>    <span class="sc">-</span>   Item <span class="dv">2</span>a</span>
+<span id="cb19-10"><a href=""></a>    <span class="sc">-</span>   Item <span class="dv">2</span>b</span>
+<span id="cb19-11"><a href=""></a><span class="fl">1.</span>  Numbered list item <span class="dv">1</span></span>
+<span id="cb19-12"><a href=""></a><span class="fl">2.</span>  Item <span class="fl">2.</span></span>
+<span id="cb19-13"><a href=""></a></span>
+<span id="cb19-14"><a href=""></a><span class="do">### Equations</span></span>
+<span id="cb19-15"><a href=""></a>inline math<span class="sc">:</span> <span class="er">$</span>E <span class="ot">=</span> mc<span class="sc">^</span>{<span class="dv">2</span>}<span class="sc">$</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column">
@@ -1635,22 +1684,22 @@
 <div style="font-size: 60%;">
 <p><br><br></p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href=""></a>The _three_ species of penguins have quite distinct </span>
-<span id="cb19-2"><a href=""></a>distributions of physical <span class="fu">dimensions</span> (<span class="sc">@</span>fig<span class="sc">-</span>penguins).</span>
-<span id="cb19-3"><a href=""></a></span>
-<span id="cb19-4"><a href=""></a><span class="st">````</span>{r}</span>
-<span id="cb19-5"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
-<span id="cb19-6"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
-<span id="cb19-7"><a href=""></a><span class="co">#| warning: false</span></span>
-<span id="cb19-8"><a href=""></a><span class="fu">library</span>(tidyverse, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb19-9"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb19-10"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
-<span id="cb19-11"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
-<span id="cb19-12"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb19-13"><a href=""></a>  <span class="fu">scale_color_manual</span>(</span>
-<span id="cb19-14"><a href=""></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
-<span id="cb19-15"><a href=""></a>  <span class="fu">theme_minimal</span>()</span>
-<span id="cb19-16"><a href=""></a><span class="st">````</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href=""></a>The _three_ species of penguins have quite distinct </span>
+<span id="cb20-2"><a href=""></a>distributions of physical <span class="fu">dimensions</span> (<span class="sc">@</span>fig<span class="sc">-</span>penguins).</span>
+<span id="cb20-3"><a href=""></a></span>
+<span id="cb20-4"><a href=""></a><span class="st">````</span>{r}</span>
+<span id="cb20-5"><a href=""></a><span class="co">#| label: fig-penguins</span></span>
+<span id="cb20-6"><a href=""></a><span class="co">#| fig-cap: "Dimensions of penguins across three species."</span></span>
+<span id="cb20-7"><a href=""></a><span class="co">#| warning: false</span></span>
+<span id="cb20-8"><a href=""></a><span class="fu">library</span>(tidyverse, <span class="at">quietly =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-9"><a href=""></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb20-10"><a href=""></a>penguins <span class="sc">|&gt;</span></span>
+<span id="cb20-11"><a href=""></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, <span class="at">y =</span> bill_length_mm)) <span class="sc">+</span></span>
+<span id="cb20-12"><a href=""></a>  <span class="fu">geom_point</span>(<span class="fu">aes</span>(<span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb20-13"><a href=""></a>  <span class="fu">scale_color_manual</span>(</span>
+<span id="cb20-14"><a href=""></a>    <span class="at">values =</span> <span class="fu">c</span>(<span class="st">"darkorange"</span>, <span class="st">"purple"</span>, <span class="st">"cyan4"</span>)) <span class="sc">+</span></span>
+<span id="cb20-15"><a href=""></a>  <span class="fu">theme_minimal</span>()</span>
+<span id="cb20-16"><a href=""></a><span class="st">````</span></span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </div>
 </div><div class="column" style="width:50%;">
@@ -1696,6 +1745,16 @@
 <div class="footer">
 <p><a href="https://github.com/course-intror/course-intror.github.io/settings/pages">GitHub pages</a></p>
 </div>
+</section>
+<section class="slide level2">
+<h2>Quarto</h2>
+<p><strong>Exemplos</strong></p>
+<ul>
+<li>Todos os slides que apresentei até aqui</li>
+<li>Livro <a href="https://analises-ecologicas.com">Análises Ecológicas no R</a></li>
+<li>Meu <a href="https://mauriciovancine.github.io/">site pessoal</a></li>
+<li>Vocês podem fazer um doc para o orientador com análises e textos</li>
+</ul>
 </section></section>
 <section>
 <section class="title-slide slide level1 center">

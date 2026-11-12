@@ -1047,6 +1047,16 @@ Artwork by [@allison_horst](https://x.com/allison_horst)
 [Reproducible Research in Computational Ecology](https://rdatatoolbox.github.io/)
 :::
 
+## RMarkdown e Quarto
+
+<center>
+<img src="img/rmarkdown_quarto.png" style="width:80%"/>
+</center>
+
+::: footer
+[I'm an R user: Quarto or R Markdown?](https://www.jumpingrivers.com/blog/quarto-rmarkdown-comparison/)
+:::
+
 # 
 
 <center>
@@ -1086,8 +1096,7 @@ Artwork by [@allison_horst](https://x.com/allison_horst)
 - Podemos usar o `Quarto` no terminal
 :::
 
-```{r}
-#| eval: false
+```{bash}
 quarto help
 ```
 
@@ -1572,6 +1581,16 @@ Podemos hospedar gratuitamente as saídas do `Quarto` de forma on-line no GitHub
 ::: footer
 [GitHub pages](https://github.com/course-intror/course-intror.github.io/settings/pages)
 :::
+
+## Quarto
+
+**Exemplos**
+
+- Todos os slides que apresentei até aqui
+- Livro [Análises Ecológicas no R](https://analises-ecologicas.com)
+- Meu [site pessoal](https://mauriciovancine.github.io/)
+- Vocês podem fazer um doc para o orientador com análises e textos
+- Ao infito e além...
 
 # 5. Automação e repetição
 

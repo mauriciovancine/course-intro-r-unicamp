@@ -51,6 +51,18 @@ lang: pt-br
 ![](img/rstudio_logo.svg){.absolute width=35% right=50 top=300}
 ![](img/git_logo.png){.absolute width=30% right=100 top=470}
 
+## Antes demais nada...
+
+**Não posso garantir que tudo vai funcionar...**
+
+<center>
+<img src="img/funciona_minha_maquina.jpeg" style="width:45%"/>
+</center>
+
+::: footer
+[Adaptado de NerdStickers](https://nerdstickers.com.br/stickers/flork-maquina/)
+:::
+
 # Prática 1
 
 ## Prática 1
@@ -331,12 +343,12 @@ $ git config --list
 
 **Forkar um diretório remoto**
 
-1. Forken o repositório `syllabus-text` da disciplina
+1. Forken o repositório [`course-intro-r-unicamp`](https://github.com/mauriciovancine/course-intro-r-unicamp) das aulas
 
 ![](img/github_fork_site.png){fig-align='center'}
 
 ::: footer
-[https://github.com/course-intror/syllabus-text](https://github.com/course-intror/syllabus-text)
+[https://github.com/mauriciovancine/course-intro-r-unicamp](https://github.com/mauriciovancine/course-intro-r-unicamp)
 :::
 
 # Prática 7
@@ -397,7 +409,7 @@ Preencher com dados do repositório do **GitHub**
 Preencher:
 
 ::: {style="font-size: 80%;"}
-- Repository URL: `git@github.com:mauriciovancine/teste.git`
+- Repository URL: `git@github.com:usuario/teste.git`
 - Project directory name: `preenchimento automático`
 - Create project as subdirectory of: `/home/mude/data/github`
 - Se uma janela aparecer, basta digitar "yes"
